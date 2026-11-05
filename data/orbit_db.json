@@ -1,0 +1,6497 @@
+{
+  "screenings": [
+    {
+      "id": "screening-suzume",
+      "titleFa": "سوزومه (قفل‌کردن درها)",
+      "titleEn": "Suzume no Tojimari",
+      "tagline": "تجربه‌ای رویایی از شاهکار جدید ماکوتو شینکای بر پرده نقره‌ای اختصاصی",
+      "genre": "انیمه • فانتزی ماجراجویی • درام",
+      "city": "تهران",
+      "venueName": "پردیس چارسو — سالن ۲ اختصاصی اوربیت",
+      "venueAddress": "تهران، خیابان جمهوری، تقاطع پل حافظ، طبقه ۶",
+      "date": "جمعه ۲۵ آبان ۱۴۰۳",
+      "time": "۱۹:۳۰",
+      "duration": "۱۲۲ دقیقه",
+      "ageRating": "+۱۲ سال",
+      "language": "ژاپنی اورجینال با زیرنویس اختصاصی فارسی و صدای دالبی اتموس",
+      "posterUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1000&auto=format&fit=crop",
+      "bannerUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop",
+      "synopsis": "سوزومه، دختری ۱۷ ساله از شهری آرام در کیوشو، با پسری جوان آشنا می‌شود که به دنبال درهایی مرموز می‌گردد. گشوده شدن این درها فجایعی را در سراسر ژاپن رقم می‌زند و سوزومه باید برای نجات جهان و بستن این درها سفری شگفت‌انگیز را آغاز کند...",
+      "featured": true,
+      "createdAt": "2026-11-01T10:00:00Z",
+      "seatMap": {
+        "rows": 8,
+        "cols": 12,
+        "seats": [
+          {
+            "id": "r1-c1",
+            "row": 1,
+            "col": 1,
+            "rowLabel": "A",
+            "seatNumber": 1,
+            "type": "blocked",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c2",
+            "row": 1,
+            "col": 2,
+            "rowLabel": "A",
+            "seatNumber": 2,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c3",
+            "row": 1,
+            "col": 3,
+            "rowLabel": "A",
+            "seatNumber": 3,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c4",
+            "row": 1,
+            "col": 4,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c5",
+            "row": 1,
+            "col": 5,
+            "rowLabel": "A",
+            "seatNumber": 4,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c6",
+            "row": 1,
+            "col": 6,
+            "rowLabel": "A",
+            "seatNumber": 5,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c7",
+            "row": 1,
+            "col": 7,
+            "rowLabel": "A",
+            "seatNumber": 6,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c8",
+            "row": 1,
+            "col": 8,
+            "rowLabel": "A",
+            "seatNumber": 7,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c9",
+            "row": 1,
+            "col": 9,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c10",
+            "row": 1,
+            "col": 10,
+            "rowLabel": "A",
+            "seatNumber": 8,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c11",
+            "row": 1,
+            "col": 11,
+            "rowLabel": "A",
+            "seatNumber": 9,
+            "type": "economy",
+            "price": 140000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c12",
+            "row": 1,
+            "col": 12,
+            "rowLabel": "A",
+            "seatNumber": 10,
+            "type": "blocked",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c1",
+            "row": 2,
+            "col": 1,
+            "rowLabel": "B",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c2",
+            "row": 2,
+            "col": 2,
+            "rowLabel": "B",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c3",
+            "row": 2,
+            "col": 3,
+            "rowLabel": "B",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c4",
+            "row": 2,
+            "col": 4,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c5",
+            "row": 2,
+            "col": 5,
+            "rowLabel": "B",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c6",
+            "row": 2,
+            "col": 6,
+            "rowLabel": "B",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c7",
+            "row": 2,
+            "col": 7,
+            "rowLabel": "B",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c8",
+            "row": 2,
+            "col": 8,
+            "rowLabel": "B",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c9",
+            "row": 2,
+            "col": 9,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c10",
+            "row": 2,
+            "col": 10,
+            "rowLabel": "B",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c11",
+            "row": 2,
+            "col": 11,
+            "rowLabel": "B",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c12",
+            "row": 2,
+            "col": 12,
+            "rowLabel": "B",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c1",
+            "row": 3,
+            "col": 1,
+            "rowLabel": "C",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c2",
+            "row": 3,
+            "col": 2,
+            "rowLabel": "C",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c3",
+            "row": 3,
+            "col": 3,
+            "rowLabel": "C",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c4",
+            "row": 3,
+            "col": 4,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c5",
+            "row": 3,
+            "col": 5,
+            "rowLabel": "C",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c6",
+            "row": 3,
+            "col": 6,
+            "rowLabel": "C",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c7",
+            "row": 3,
+            "col": 7,
+            "rowLabel": "C",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c8",
+            "row": 3,
+            "col": 8,
+            "rowLabel": "C",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c9",
+            "row": 3,
+            "col": 9,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c10",
+            "row": 3,
+            "col": 10,
+            "rowLabel": "C",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c11",
+            "row": 3,
+            "col": 11,
+            "rowLabel": "C",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c12",
+            "row": 3,
+            "col": 12,
+            "rowLabel": "C",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c1",
+            "row": 4,
+            "col": 1,
+            "rowLabel": "D",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c2",
+            "row": 4,
+            "col": 2,
+            "rowLabel": "D",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c3",
+            "row": 4,
+            "col": 3,
+            "rowLabel": "D",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c4",
+            "row": 4,
+            "col": 4,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c5",
+            "row": 4,
+            "col": 5,
+            "rowLabel": "D",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c6",
+            "row": 4,
+            "col": 6,
+            "rowLabel": "D",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c7",
+            "row": 4,
+            "col": 7,
+            "rowLabel": "D",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 190000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "سارا کاظمی",
+              "buyerPhone": "۰۹۳۵۲۲۲۳۳۴۴",
+              "bookingId": "ORB-831920",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r4-c8",
+            "row": 4,
+            "col": 8,
+            "rowLabel": "D",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 190000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "سارا کاظمی",
+              "buyerPhone": "۰۹۳۵۲۲۲۳۳۴۴",
+              "bookingId": "ORB-831920",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r4-c9",
+            "row": 4,
+            "col": 9,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c10",
+            "row": 4,
+            "col": 10,
+            "rowLabel": "D",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c11",
+            "row": 4,
+            "col": 11,
+            "rowLabel": "D",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c12",
+            "row": 4,
+            "col": 12,
+            "rowLabel": "D",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c1",
+            "row": 5,
+            "col": 1,
+            "rowLabel": "E",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c2",
+            "row": 5,
+            "col": 2,
+            "rowLabel": "E",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c3",
+            "row": 5,
+            "col": 3,
+            "rowLabel": "E",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c4",
+            "row": 5,
+            "col": 4,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c5",
+            "row": 5,
+            "col": 5,
+            "rowLabel": "E",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c6",
+            "row": 5,
+            "col": 6,
+            "rowLabel": "E",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c7",
+            "row": 5,
+            "col": 7,
+            "rowLabel": "E",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c8",
+            "row": 5,
+            "col": 8,
+            "rowLabel": "E",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c9",
+            "row": 5,
+            "col": 9,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c10",
+            "row": 5,
+            "col": 10,
+            "rowLabel": "E",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c11",
+            "row": 5,
+            "col": 11,
+            "rowLabel": "E",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c12",
+            "row": 5,
+            "col": 12,
+            "rowLabel": "E",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c1",
+            "row": 6,
+            "col": 1,
+            "rowLabel": "F",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c2",
+            "row": 6,
+            "col": 2,
+            "rowLabel": "F",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c3",
+            "row": 6,
+            "col": 3,
+            "rowLabel": "F",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c4",
+            "row": 6,
+            "col": 4,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c5",
+            "row": 6,
+            "col": 5,
+            "rowLabel": "F",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c6",
+            "row": 6,
+            "col": 6,
+            "rowLabel": "F",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c7",
+            "row": 6,
+            "col": 7,
+            "rowLabel": "F",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c8",
+            "row": 6,
+            "col": 8,
+            "rowLabel": "F",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c9",
+            "row": 6,
+            "col": 9,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c10",
+            "row": 6,
+            "col": 10,
+            "rowLabel": "F",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c11",
+            "row": 6,
+            "col": 11,
+            "rowLabel": "F",
+            "seatNumber": 9,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c12",
+            "row": 6,
+            "col": 12,
+            "rowLabel": "F",
+            "seatNumber": 10,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c1",
+            "row": 7,
+            "col": 1,
+            "rowLabel": "G",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c2",
+            "row": 7,
+            "col": 2,
+            "rowLabel": "G",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c3",
+            "row": 7,
+            "col": 3,
+            "rowLabel": "G",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c4",
+            "row": 7,
+            "col": 4,
+            "rowLabel": "G",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r7-c5",
+            "row": 7,
+            "col": 5,
+            "rowLabel": "G",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c6",
+            "row": 7,
+            "col": 6,
+            "rowLabel": "G",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c7",
+            "row": 7,
+            "col": 7,
+            "rowLabel": "G",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 250000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "مهرداد پاکدل",
+              "buyerPhone": "۰۹۱۹۵۵۵۶۶۷۷",
+              "bookingId": "ORB-746219",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r7-c8",
+            "row": 7,
+            "col": 8,
+            "rowLabel": "G",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c9",
+            "row": 7,
+            "col": 9,
+            "rowLabel": "G",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r7-c10",
+            "row": 7,
+            "col": 10,
+            "rowLabel": "G",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c11",
+            "row": 7,
+            "col": 11,
+            "rowLabel": "G",
+            "seatNumber": 9,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c12",
+            "row": 7,
+            "col": 12,
+            "rowLabel": "G",
+            "seatNumber": 10,
+            "type": "vip",
+            "price": 250000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c1",
+            "row": 8,
+            "col": 1,
+            "rowLabel": "H",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c2",
+            "row": 8,
+            "col": 2,
+            "rowLabel": "H",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c3",
+            "row": 8,
+            "col": 3,
+            "rowLabel": "H",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c4",
+            "row": 8,
+            "col": 4,
+            "rowLabel": "H",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r8-c5",
+            "row": 8,
+            "col": 5,
+            "rowLabel": "H",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c6",
+            "row": 8,
+            "col": 6,
+            "rowLabel": "H",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c7",
+            "row": 8,
+            "col": 7,
+            "rowLabel": "H",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c8",
+            "row": 8,
+            "col": 8,
+            "rowLabel": "H",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c9",
+            "row": 8,
+            "col": 9,
+            "rowLabel": "H",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r8-c10",
+            "row": 8,
+            "col": 10,
+            "rowLabel": "H",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c11",
+            "row": 8,
+            "col": 11,
+            "rowLabel": "H",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c12",
+            "row": 8,
+            "col": 12,
+            "rowLabel": "H",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 190000,
+            "status": "available"
+          }
+        ],
+        "vipPrice": 250000,
+        "standardPrice": 190000,
+        "economyPrice": 140000
+      }
+    },
+    {
+      "id": "screening-spirited-away",
+      "titleFa": "شهر اشباح",
+      "titleEn": "Spirited Away (Sen to Chihiro)",
+      "tagline": "بازپخش با کیفیت 4K و مسترینگ صدای سینمایی هایائو میازاکی",
+      "genre": "انیمه • فانتزی کلاسیک • شاهکار استودیو جیبلی",
+      "city": "شیراز",
+      "venueName": "سینما هنر شیراز — سالن یاقوت",
+      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
+      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
+      "time": "۲۰:۰۰",
+      "duration": "۱۲۵ دقیقه",
+      "ageRating": "عمومی (بدون محدودیت سنی)",
+      "language": "زبان اصلی ژاپنی با زیرنویس فارسی اختصاصی و کریستالی",
+      "posterUrl": "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop",
+      "bannerUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop",
+      "synopsis": "چیهیرو دختربچه ۱۰ ساله‌ای است که همراه پدر و مادرش وارد دنیایی ناشناخته از خدایان، اشباح و جادوگران می‌شود. پس از تبدیل شدن والدینش به حیوان، او برای نجات آنها و بازگشت به دنیای انسان‌ها در حمام اسرارآمیز یوکای مشغول به کار می‌شود...",
+      "featured": false,
+      "createdAt": "2026-11-01T11:00:00Z",
+      "seatMap": {
+        "rows": 7,
+        "cols": 10,
+        "seats": [
+          {
+            "id": "r1-c1",
+            "row": 1,
+            "col": 1,
+            "rowLabel": "A",
+            "seatNumber": 1,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c2",
+            "row": 1,
+            "col": 2,
+            "rowLabel": "A",
+            "seatNumber": 2,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c3",
+            "row": 1,
+            "col": 3,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c4",
+            "row": 1,
+            "col": 4,
+            "rowLabel": "A",
+            "seatNumber": 3,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c5",
+            "row": 1,
+            "col": 5,
+            "rowLabel": "A",
+            "seatNumber": 4,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c6",
+            "row": 1,
+            "col": 6,
+            "rowLabel": "A",
+            "seatNumber": 5,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c7",
+            "row": 1,
+            "col": 7,
+            "rowLabel": "A",
+            "seatNumber": 6,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c8",
+            "row": 1,
+            "col": 8,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c9",
+            "row": 1,
+            "col": 9,
+            "rowLabel": "A",
+            "seatNumber": 7,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c10",
+            "row": 1,
+            "col": 10,
+            "rowLabel": "A",
+            "seatNumber": 8,
+            "type": "economy",
+            "price": 120000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c1",
+            "row": 2,
+            "col": 1,
+            "rowLabel": "B",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c2",
+            "row": 2,
+            "col": 2,
+            "rowLabel": "B",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c3",
+            "row": 2,
+            "col": 3,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c4",
+            "row": 2,
+            "col": 4,
+            "rowLabel": "B",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c5",
+            "row": 2,
+            "col": 5,
+            "rowLabel": "B",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c6",
+            "row": 2,
+            "col": 6,
+            "rowLabel": "B",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c7",
+            "row": 2,
+            "col": 7,
+            "rowLabel": "B",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c8",
+            "row": 2,
+            "col": 8,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c9",
+            "row": 2,
+            "col": 9,
+            "rowLabel": "B",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c10",
+            "row": 2,
+            "col": 10,
+            "rowLabel": "B",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c1",
+            "row": 3,
+            "col": 1,
+            "rowLabel": "C",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c2",
+            "row": 3,
+            "col": 2,
+            "rowLabel": "C",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c3",
+            "row": 3,
+            "col": 3,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c4",
+            "row": 3,
+            "col": 4,
+            "rowLabel": "C",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c5",
+            "row": 3,
+            "col": 5,
+            "rowLabel": "C",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c6",
+            "row": 3,
+            "col": 6,
+            "rowLabel": "C",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 170000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "آرش علوی",
+              "buyerPhone": "۰۹۳۶۷۷۷۸۸۹۹",
+              "bookingId": "ORB-519842",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r3-c7",
+            "row": 3,
+            "col": 7,
+            "rowLabel": "C",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c8",
+            "row": 3,
+            "col": 8,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c9",
+            "row": 3,
+            "col": 9,
+            "rowLabel": "C",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c10",
+            "row": 3,
+            "col": 10,
+            "rowLabel": "C",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c1",
+            "row": 4,
+            "col": 1,
+            "rowLabel": "D",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c2",
+            "row": 4,
+            "col": 2,
+            "rowLabel": "D",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c3",
+            "row": 4,
+            "col": 3,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c4",
+            "row": 4,
+            "col": 4,
+            "rowLabel": "D",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c5",
+            "row": 4,
+            "col": 5,
+            "rowLabel": "D",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c6",
+            "row": 4,
+            "col": 6,
+            "rowLabel": "D",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c7",
+            "row": 4,
+            "col": 7,
+            "rowLabel": "D",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c8",
+            "row": 4,
+            "col": 8,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c9",
+            "row": 4,
+            "col": 9,
+            "rowLabel": "D",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c10",
+            "row": 4,
+            "col": 10,
+            "rowLabel": "D",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c1",
+            "row": 5,
+            "col": 1,
+            "rowLabel": "E",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c2",
+            "row": 5,
+            "col": 2,
+            "rowLabel": "E",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c3",
+            "row": 5,
+            "col": 3,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c4",
+            "row": 5,
+            "col": 4,
+            "rowLabel": "E",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c5",
+            "row": 5,
+            "col": 5,
+            "rowLabel": "E",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 220000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "نیلوفر زمانی",
+              "buyerPhone": "۰۹۱۲۸۸۸۹۹۰۰",
+              "bookingId": "ORB-625143",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r5-c6",
+            "row": 5,
+            "col": 6,
+            "rowLabel": "E",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 220000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "نیلوفر زمانی",
+              "buyerPhone": "۰۹۱۲۸۸۸۹۹۰۰",
+              "bookingId": "ORB-625143",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r5-c7",
+            "row": 5,
+            "col": 7,
+            "rowLabel": "E",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c8",
+            "row": 5,
+            "col": 8,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c9",
+            "row": 5,
+            "col": 9,
+            "rowLabel": "E",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c10",
+            "row": 5,
+            "col": 10,
+            "rowLabel": "E",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c1",
+            "row": 6,
+            "col": 1,
+            "rowLabel": "F",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c2",
+            "row": 6,
+            "col": 2,
+            "rowLabel": "F",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c3",
+            "row": 6,
+            "col": 3,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c4",
+            "row": 6,
+            "col": 4,
+            "rowLabel": "F",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c5",
+            "row": 6,
+            "col": 5,
+            "rowLabel": "F",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c6",
+            "row": 6,
+            "col": 6,
+            "rowLabel": "F",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c7",
+            "row": 6,
+            "col": 7,
+            "rowLabel": "F",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c8",
+            "row": 6,
+            "col": 8,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c9",
+            "row": 6,
+            "col": 9,
+            "rowLabel": "F",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c10",
+            "row": 6,
+            "col": 10,
+            "rowLabel": "F",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 220000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c1",
+            "row": 7,
+            "col": 1,
+            "rowLabel": "G",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c2",
+            "row": 7,
+            "col": 2,
+            "rowLabel": "G",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c3",
+            "row": 7,
+            "col": 3,
+            "rowLabel": "G",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r7-c4",
+            "row": 7,
+            "col": 4,
+            "rowLabel": "G",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c5",
+            "row": 7,
+            "col": 5,
+            "rowLabel": "G",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c6",
+            "row": 7,
+            "col": 6,
+            "rowLabel": "G",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c7",
+            "row": 7,
+            "col": 7,
+            "rowLabel": "G",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c8",
+            "row": 7,
+            "col": 8,
+            "rowLabel": "G",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r7-c9",
+            "row": 7,
+            "col": 9,
+            "rowLabel": "G",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c10",
+            "row": 7,
+            "col": 10,
+            "rowLabel": "G",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 170000,
+            "status": "available"
+          }
+        ],
+        "vipPrice": 220000,
+        "standardPrice": 170000,
+        "economyPrice": 120000
+      }
+    },
+    {
+      "id": "screening-oppenheimer",
+      "titleFa": "اوپنهایمر — نسخه آیمکس ۷۰ میلی‌متری",
+      "titleEn": "Oppenheimer (IMAX Experience)",
+      "tagline": "روایتی انفجاری از پدر بمب اتم با صدای سهمگین آیمکس",
+      "genre": "بیوگرافی • تاریخی • درام هیجان‌انگیز کریستوفر نولان",
+      "city": "اصفهان",
+      "venueName": "پردیس سینمایی ساحل اصفهان — سالن اصلی آیمکس",
+      "venueAddress": "اصفهان، میدان انقلاب، ابتدای خیابان چهارباغ عباسی",
+      "date": "شنبه ۳ آذر ۱۴۰۳",
+      "time": "۱۸:۰۰",
+      "duration": "۱۸۰ دقیقه",
+      "ageRating": "+۱۵ سال",
+      "language": "زبان اصلی انگلیسی با زیرنویس دقیق اصطلاحات علمی و تاریخی",
+      "posterUrl": "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1000&auto=format&fit=crop",
+      "bannerUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
+      "synopsis": "داستان جی. رابرت اوپنهایمر، فیزیکدان برجسته آمریکایی و مدیر پروژه سرنوشت‌ساز منهتن در خلال جنگ جهانی دوم، و چالش‌های اخلاقی و سیاسی پیرامون خلق نخستین سلاح هسته‌ای جهان...",
+      "featured": false,
+      "createdAt": "2026-11-02T12:00:00Z",
+      "seatMap": {
+        "rows": 9,
+        "cols": 14,
+        "seats": [
+          {
+            "id": "r1-c1",
+            "row": 1,
+            "col": 1,
+            "rowLabel": "A",
+            "seatNumber": 1,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c2",
+            "row": 1,
+            "col": 2,
+            "rowLabel": "A",
+            "seatNumber": 2,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c3",
+            "row": 1,
+            "col": 3,
+            "rowLabel": "A",
+            "seatNumber": 3,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c4",
+            "row": 1,
+            "col": 4,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c5",
+            "row": 1,
+            "col": 5,
+            "rowLabel": "A",
+            "seatNumber": 4,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c6",
+            "row": 1,
+            "col": 6,
+            "rowLabel": "A",
+            "seatNumber": 5,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c7",
+            "row": 1,
+            "col": 7,
+            "rowLabel": "A",
+            "seatNumber": 6,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c8",
+            "row": 1,
+            "col": 8,
+            "rowLabel": "A",
+            "seatNumber": 7,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c9",
+            "row": 1,
+            "col": 9,
+            "rowLabel": "A",
+            "seatNumber": 8,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c10",
+            "row": 1,
+            "col": 10,
+            "rowLabel": "A",
+            "seatNumber": 9,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c11",
+            "row": 1,
+            "col": 11,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c12",
+            "row": 1,
+            "col": 12,
+            "rowLabel": "A",
+            "seatNumber": 10,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c13",
+            "row": 1,
+            "col": 13,
+            "rowLabel": "A",
+            "seatNumber": 11,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c14",
+            "row": 1,
+            "col": 14,
+            "rowLabel": "A",
+            "seatNumber": 12,
+            "type": "economy",
+            "price": 150000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c1",
+            "row": 2,
+            "col": 1,
+            "rowLabel": "B",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c2",
+            "row": 2,
+            "col": 2,
+            "rowLabel": "B",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c3",
+            "row": 2,
+            "col": 3,
+            "rowLabel": "B",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c4",
+            "row": 2,
+            "col": 4,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c5",
+            "row": 2,
+            "col": 5,
+            "rowLabel": "B",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c6",
+            "row": 2,
+            "col": 6,
+            "rowLabel": "B",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c7",
+            "row": 2,
+            "col": 7,
+            "rowLabel": "B",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c8",
+            "row": 2,
+            "col": 8,
+            "rowLabel": "B",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c9",
+            "row": 2,
+            "col": 9,
+            "rowLabel": "B",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c10",
+            "row": 2,
+            "col": 10,
+            "rowLabel": "B",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c11",
+            "row": 2,
+            "col": 11,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c12",
+            "row": 2,
+            "col": 12,
+            "rowLabel": "B",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c13",
+            "row": 2,
+            "col": 13,
+            "rowLabel": "B",
+            "seatNumber": 11,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c14",
+            "row": 2,
+            "col": 14,
+            "rowLabel": "B",
+            "seatNumber": 12,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c1",
+            "row": 3,
+            "col": 1,
+            "rowLabel": "C",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c2",
+            "row": 3,
+            "col": 2,
+            "rowLabel": "C",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c3",
+            "row": 3,
+            "col": 3,
+            "rowLabel": "C",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c4",
+            "row": 3,
+            "col": 4,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c5",
+            "row": 3,
+            "col": 5,
+            "rowLabel": "C",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c6",
+            "row": 3,
+            "col": 6,
+            "rowLabel": "C",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c7",
+            "row": 3,
+            "col": 7,
+            "rowLabel": "C",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c8",
+            "row": 3,
+            "col": 8,
+            "rowLabel": "C",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c9",
+            "row": 3,
+            "col": 9,
+            "rowLabel": "C",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c10",
+            "row": 3,
+            "col": 10,
+            "rowLabel": "C",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c11",
+            "row": 3,
+            "col": 11,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c12",
+            "row": 3,
+            "col": 12,
+            "rowLabel": "C",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c13",
+            "row": 3,
+            "col": 13,
+            "rowLabel": "C",
+            "seatNumber": 11,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c14",
+            "row": 3,
+            "col": 14,
+            "rowLabel": "C",
+            "seatNumber": 12,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c1",
+            "row": 4,
+            "col": 1,
+            "rowLabel": "D",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c2",
+            "row": 4,
+            "col": 2,
+            "rowLabel": "D",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c3",
+            "row": 4,
+            "col": 3,
+            "rowLabel": "D",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c4",
+            "row": 4,
+            "col": 4,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c5",
+            "row": 4,
+            "col": 5,
+            "rowLabel": "D",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c6",
+            "row": 4,
+            "col": 6,
+            "rowLabel": "D",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c7",
+            "row": 4,
+            "col": 7,
+            "rowLabel": "D",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c8",
+            "row": 4,
+            "col": 8,
+            "rowLabel": "D",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c9",
+            "row": 4,
+            "col": 9,
+            "rowLabel": "D",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c10",
+            "row": 4,
+            "col": 10,
+            "rowLabel": "D",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c11",
+            "row": 4,
+            "col": 11,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c12",
+            "row": 4,
+            "col": 12,
+            "rowLabel": "D",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c13",
+            "row": 4,
+            "col": 13,
+            "rowLabel": "D",
+            "seatNumber": 11,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c14",
+            "row": 4,
+            "col": 14,
+            "rowLabel": "D",
+            "seatNumber": 12,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c1",
+            "row": 5,
+            "col": 1,
+            "rowLabel": "E",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c2",
+            "row": 5,
+            "col": 2,
+            "rowLabel": "E",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c3",
+            "row": 5,
+            "col": 3,
+            "rowLabel": "E",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c4",
+            "row": 5,
+            "col": 4,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c5",
+            "row": 5,
+            "col": 5,
+            "rowLabel": "E",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c6",
+            "row": 5,
+            "col": 6,
+            "rowLabel": "E",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c7",
+            "row": 5,
+            "col": 7,
+            "rowLabel": "E",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c8",
+            "row": 5,
+            "col": 8,
+            "rowLabel": "E",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c9",
+            "row": 5,
+            "col": 9,
+            "rowLabel": "E",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c10",
+            "row": 5,
+            "col": 10,
+            "rowLabel": "E",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c11",
+            "row": 5,
+            "col": 11,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c12",
+            "row": 5,
+            "col": 12,
+            "rowLabel": "E",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c13",
+            "row": 5,
+            "col": 13,
+            "rowLabel": "E",
+            "seatNumber": 11,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c14",
+            "row": 5,
+            "col": 14,
+            "rowLabel": "E",
+            "seatNumber": 12,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c1",
+            "row": 6,
+            "col": 1,
+            "rowLabel": "F",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c2",
+            "row": 6,
+            "col": 2,
+            "rowLabel": "F",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c3",
+            "row": 6,
+            "col": 3,
+            "rowLabel": "F",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c4",
+            "row": 6,
+            "col": 4,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c5",
+            "row": 6,
+            "col": 5,
+            "rowLabel": "F",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c6",
+            "row": 6,
+            "col": 6,
+            "rowLabel": "F",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c7",
+            "row": 6,
+            "col": 7,
+            "rowLabel": "F",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c8",
+            "row": 6,
+            "col": 8,
+            "rowLabel": "F",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c9",
+            "row": 6,
+            "col": 9,
+            "rowLabel": "F",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c10",
+            "row": 6,
+            "col": 10,
+            "rowLabel": "F",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c11",
+            "row": 6,
+            "col": 11,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c12",
+            "row": 6,
+            "col": 12,
+            "rowLabel": "F",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c13",
+            "row": 6,
+            "col": 13,
+            "rowLabel": "F",
+            "seatNumber": 11,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c14",
+            "row": 6,
+            "col": 14,
+            "rowLabel": "F",
+            "seatNumber": 12,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c1",
+            "row": 7,
+            "col": 1,
+            "rowLabel": "G",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c2",
+            "row": 7,
+            "col": 2,
+            "rowLabel": "G",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c3",
+            "row": 7,
+            "col": 3,
+            "rowLabel": "G",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c4",
+            "row": 7,
+            "col": 4,
+            "rowLabel": "G",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r7-c5",
+            "row": 7,
+            "col": 5,
+            "rowLabel": "G",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c6",
+            "row": 7,
+            "col": 6,
+            "rowLabel": "G",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 280000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "دانیال کریمی",
+              "buyerPhone": "۰۹۱۰۳۳۳۴۴۵۵",
+              "bookingId": "ORB-419082",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r7-c7",
+            "row": 7,
+            "col": 7,
+            "rowLabel": "G",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 280000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "دانیال کریمی",
+              "buyerPhone": "۰۹۱۰۳۳۳۴۴۵۵",
+              "bookingId": "ORB-419082",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r7-c8",
+            "row": 7,
+            "col": 8,
+            "rowLabel": "G",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 280000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "دانیال کریمی",
+              "buyerPhone": "۰۹۱۰۳۳۳۴۴۵۵",
+              "bookingId": "ORB-419082",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r7-c9",
+            "row": 7,
+            "col": 9,
+            "rowLabel": "G",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c10",
+            "row": 7,
+            "col": 10,
+            "rowLabel": "G",
+            "seatNumber": 9,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c11",
+            "row": 7,
+            "col": 11,
+            "rowLabel": "G",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r7-c12",
+            "row": 7,
+            "col": 12,
+            "rowLabel": "G",
+            "seatNumber": 10,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c13",
+            "row": 7,
+            "col": 13,
+            "rowLabel": "G",
+            "seatNumber": 11,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r7-c14",
+            "row": 7,
+            "col": 14,
+            "rowLabel": "G",
+            "seatNumber": 12,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c1",
+            "row": 8,
+            "col": 1,
+            "rowLabel": "H",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c2",
+            "row": 8,
+            "col": 2,
+            "rowLabel": "H",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c3",
+            "row": 8,
+            "col": 3,
+            "rowLabel": "H",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c4",
+            "row": 8,
+            "col": 4,
+            "rowLabel": "H",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r8-c5",
+            "row": 8,
+            "col": 5,
+            "rowLabel": "H",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c6",
+            "row": 8,
+            "col": 6,
+            "rowLabel": "H",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c7",
+            "row": 8,
+            "col": 7,
+            "rowLabel": "H",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 280000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "پگاه صادقی",
+              "buyerPhone": "۰۹۱۲۹۹۹۳۳۲۲",
+              "bookingId": "ORB-384910",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r8-c8",
+            "row": 8,
+            "col": 8,
+            "rowLabel": "H",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c9",
+            "row": 8,
+            "col": 9,
+            "rowLabel": "H",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c10",
+            "row": 8,
+            "col": 10,
+            "rowLabel": "H",
+            "seatNumber": 9,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c11",
+            "row": 8,
+            "col": 11,
+            "rowLabel": "H",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r8-c12",
+            "row": 8,
+            "col": 12,
+            "rowLabel": "H",
+            "seatNumber": 10,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c13",
+            "row": 8,
+            "col": 13,
+            "rowLabel": "H",
+            "seatNumber": 11,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r8-c14",
+            "row": 8,
+            "col": 14,
+            "rowLabel": "H",
+            "seatNumber": 12,
+            "type": "vip",
+            "price": 280000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c1",
+            "row": 9,
+            "col": 1,
+            "rowLabel": "I",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c2",
+            "row": 9,
+            "col": 2,
+            "rowLabel": "I",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c3",
+            "row": 9,
+            "col": 3,
+            "rowLabel": "I",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c4",
+            "row": 9,
+            "col": 4,
+            "rowLabel": "I",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r9-c5",
+            "row": 9,
+            "col": 5,
+            "rowLabel": "I",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c6",
+            "row": 9,
+            "col": 6,
+            "rowLabel": "I",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c7",
+            "row": 9,
+            "col": 7,
+            "rowLabel": "I",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c8",
+            "row": 9,
+            "col": 8,
+            "rowLabel": "I",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c9",
+            "row": 9,
+            "col": 9,
+            "rowLabel": "I",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c10",
+            "row": 9,
+            "col": 10,
+            "rowLabel": "I",
+            "seatNumber": 9,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c11",
+            "row": 9,
+            "col": 11,
+            "rowLabel": "I",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r9-c12",
+            "row": 9,
+            "col": 12,
+            "rowLabel": "I",
+            "seatNumber": 10,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c13",
+            "row": 9,
+            "col": 13,
+            "rowLabel": "I",
+            "seatNumber": 11,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          },
+          {
+            "id": "r9-c14",
+            "row": 9,
+            "col": 14,
+            "rowLabel": "I",
+            "seatNumber": 12,
+            "type": "standard",
+            "price": 210000,
+            "status": "available"
+          }
+        ],
+        "vipPrice": 280000,
+        "standardPrice": 210000,
+        "economyPrice": 150000
+      }
+    },
+    {
+      "id": "screening-fireflies",
+      "titleFa": "مدفن کرم‌های شب‌تاب",
+      "titleEn": "Grave of the Fireflies",
+      "tagline": "تاثیرگذارترین درام ضدجنگ تاریخ انیمیشن استودیو جیبلی",
+      "genre": "انیمه کلاسیک • درام جنگی • اقتباس ماندگار",
+      "city": "مشهد",
+      "venueName": "پردیس سینمایی هویزه مشهد — سالن وی‌آی‌پی",
+      "venueAddress": "مشهد، خیابان دانشگاه، چهارراه گلستان",
+      "date": "دوشنبه ۵ آذر ۱۴۰۳",
+      "time": "۲۱:۰۰",
+      "duration": "۸۹ دقیقه",
+      "ageRating": "+۱۴ سال",
+      "language": "زبان اصلی ژاپنی با زیرنویس فارسی تنظیم‌شده",
+      "posterUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop",
+      "bannerUrl": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?q=80&w=1600&auto=format&fit=crop",
+      "synopsis": "در روزهای پایانی جنگ جهانی دوم در ژاپن، سیتا و خواهر کوچکش ستسوکو پس از نابودی خانه‌شان، ناچار به تقلا برای بقا در شرایط بی‌رحمانه پس از بمباران می‌شوند...",
+      "featured": false,
+      "createdAt": "2026-11-03T14:00:00Z",
+      "seatMap": {
+        "rows": 6,
+        "cols": 10,
+        "seats": [
+          {
+            "id": "r1-c1",
+            "row": 1,
+            "col": 1,
+            "rowLabel": "A",
+            "seatNumber": 1,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c2",
+            "row": 1,
+            "col": 2,
+            "rowLabel": "A",
+            "seatNumber": 2,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c3",
+            "row": 1,
+            "col": 3,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c4",
+            "row": 1,
+            "col": 4,
+            "rowLabel": "A",
+            "seatNumber": 3,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c5",
+            "row": 1,
+            "col": 5,
+            "rowLabel": "A",
+            "seatNumber": 4,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c6",
+            "row": 1,
+            "col": 6,
+            "rowLabel": "A",
+            "seatNumber": 5,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c7",
+            "row": 1,
+            "col": 7,
+            "rowLabel": "A",
+            "seatNumber": 6,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c8",
+            "row": 1,
+            "col": 8,
+            "rowLabel": "A",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r1-c9",
+            "row": 1,
+            "col": 9,
+            "rowLabel": "A",
+            "seatNumber": 7,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r1-c10",
+            "row": 1,
+            "col": 10,
+            "rowLabel": "A",
+            "seatNumber": 8,
+            "type": "economy",
+            "price": 110000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c1",
+            "row": 2,
+            "col": 1,
+            "rowLabel": "B",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c2",
+            "row": 2,
+            "col": 2,
+            "rowLabel": "B",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c3",
+            "row": 2,
+            "col": 3,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c4",
+            "row": 2,
+            "col": 4,
+            "rowLabel": "B",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c5",
+            "row": 2,
+            "col": 5,
+            "rowLabel": "B",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c6",
+            "row": 2,
+            "col": 6,
+            "rowLabel": "B",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c7",
+            "row": 2,
+            "col": 7,
+            "rowLabel": "B",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c8",
+            "row": 2,
+            "col": 8,
+            "rowLabel": "B",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r2-c9",
+            "row": 2,
+            "col": 9,
+            "rowLabel": "B",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r2-c10",
+            "row": 2,
+            "col": 10,
+            "rowLabel": "B",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c1",
+            "row": 3,
+            "col": 1,
+            "rowLabel": "C",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c2",
+            "row": 3,
+            "col": 2,
+            "rowLabel": "C",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c3",
+            "row": 3,
+            "col": 3,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c4",
+            "row": 3,
+            "col": 4,
+            "rowLabel": "C",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c5",
+            "row": 3,
+            "col": 5,
+            "rowLabel": "C",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c6",
+            "row": 3,
+            "col": 6,
+            "rowLabel": "C",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c7",
+            "row": 3,
+            "col": 7,
+            "rowLabel": "C",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c8",
+            "row": 3,
+            "col": 8,
+            "rowLabel": "C",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r3-c9",
+            "row": 3,
+            "col": 9,
+            "rowLabel": "C",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r3-c10",
+            "row": 3,
+            "col": 10,
+            "rowLabel": "C",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c1",
+            "row": 4,
+            "col": 1,
+            "rowLabel": "D",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c2",
+            "row": 4,
+            "col": 2,
+            "rowLabel": "D",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c3",
+            "row": 4,
+            "col": 3,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c4",
+            "row": 4,
+            "col": 4,
+            "rowLabel": "D",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c5",
+            "row": 4,
+            "col": 5,
+            "rowLabel": "D",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c6",
+            "row": 4,
+            "col": 6,
+            "rowLabel": "D",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c7",
+            "row": 4,
+            "col": 7,
+            "rowLabel": "D",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c8",
+            "row": 4,
+            "col": 8,
+            "rowLabel": "D",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r4-c9",
+            "row": 4,
+            "col": 9,
+            "rowLabel": "D",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r4-c10",
+            "row": 4,
+            "col": 10,
+            "rowLabel": "D",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c1",
+            "row": 5,
+            "col": 1,
+            "rowLabel": "E",
+            "seatNumber": 1,
+            "type": "vip",
+            "price": 200000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c2",
+            "row": 5,
+            "col": 2,
+            "rowLabel": "E",
+            "seatNumber": 2,
+            "type": "vip",
+            "price": 200000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c3",
+            "row": 5,
+            "col": 3,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c4",
+            "row": 5,
+            "col": 4,
+            "rowLabel": "E",
+            "seatNumber": 3,
+            "type": "vip",
+            "price": 200000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "فرهاد نادری",
+              "buyerPhone": "۰۹۳۵۴۴۴۱۱۲۲",
+              "bookingId": "ORB-291048",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r5-c5",
+            "row": 5,
+            "col": 5,
+            "rowLabel": "E",
+            "seatNumber": 4,
+            "type": "vip",
+            "price": 200000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "فرهاد نادری",
+              "buyerPhone": "۰۹۳۵۴۴۴۱۱۲۲",
+              "bookingId": "ORB-291048",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
+          },
+          {
+            "id": "r5-c6",
+            "row": 5,
+            "col": 6,
+            "rowLabel": "E",
+            "seatNumber": 5,
+            "type": "vip",
+            "price": 200000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c7",
+            "row": 5,
+            "col": 7,
+            "rowLabel": "E",
+            "seatNumber": 6,
+            "type": "vip",
+            "price": 200000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c8",
+            "row": 5,
+            "col": 8,
+            "rowLabel": "E",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r5-c9",
+            "row": 5,
+            "col": 9,
+            "rowLabel": "E",
+            "seatNumber": 7,
+            "type": "vip",
+            "price": 200000,
+            "status": "available"
+          },
+          {
+            "id": "r5-c10",
+            "row": 5,
+            "col": 10,
+            "rowLabel": "E",
+            "seatNumber": 8,
+            "type": "vip",
+            "price": 200000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c1",
+            "row": 6,
+            "col": 1,
+            "rowLabel": "F",
+            "seatNumber": 1,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c2",
+            "row": 6,
+            "col": 2,
+            "rowLabel": "F",
+            "seatNumber": 2,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c3",
+            "row": 6,
+            "col": 3,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c4",
+            "row": 6,
+            "col": 4,
+            "rowLabel": "F",
+            "seatNumber": 3,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c5",
+            "row": 6,
+            "col": 5,
+            "rowLabel": "F",
+            "seatNumber": 4,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c6",
+            "row": 6,
+            "col": 6,
+            "rowLabel": "F",
+            "seatNumber": 5,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c7",
+            "row": 6,
+            "col": 7,
+            "rowLabel": "F",
+            "seatNumber": 6,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c8",
+            "row": 6,
+            "col": 8,
+            "rowLabel": "F",
+            "seatNumber": 0,
+            "type": "aisle",
+            "price": 0,
+            "status": "available"
+          },
+          {
+            "id": "r6-c9",
+            "row": 6,
+            "col": 9,
+            "rowLabel": "F",
+            "seatNumber": 7,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          },
+          {
+            "id": "r6-c10",
+            "row": 6,
+            "col": 10,
+            "rowLabel": "F",
+            "seatNumber": 8,
+            "type": "standard",
+            "price": 160000,
+            "status": "available"
+          }
+        ],
+        "vipPrice": 200000,
+        "standardPrice": 160000,
+        "economyPrice": 110000
+      }
+    }
+  ],
+  "bookings": [
+    {
+      "id": "ORB-831920",
+      "screeningId": "screening-suzume",
+      "movieTitleFa": "سوزومه (قفل‌کردن درها)",
+      "movieTitleEn": "Suzume no Tojimari",
+      "city": "تهران",
+      "venueName": "پردیس چارسو — سالن ۲ اختصاصی اوربیت",
+      "venueAddress": "تهران، خیابان جمهوری، تقاطع پل حافظ، طبقه ۶",
+      "date": "جمعه ۲۵ آبان ۱۴۰۳",
+      "time": "۱۹:۳۰",
+      "buyerName": "سارا کاظمی",
+      "buyerPhone": "09352223344",
+      "seatIds": [
+        "r4-c7",
+        "r4-c8"
+      ],
+      "seatDetails": [
+        {
+          "seatId": "r4-c7",
+          "rowLabel": "D",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "seatId": "r4-c8",
+          "rowLabel": "D",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 190000
+        }
+      ],
+      "totalAmount": 380000,
+      "status": "confirmed",
+      "createdAt": "2026-11-04T16:10:00Z",
+      "paymentRef": "PAY-7719283"
+    },
+    {
+      "id": "ORB-625143",
+      "screeningId": "screening-spirited-away",
+      "movieTitleFa": "شهر اشباح",
+      "movieTitleEn": "Spirited Away",
+      "city": "شیراز",
+      "venueName": "سینما هنر شیراز — سالن یاقوت",
+      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
+      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
+      "time": "۲۰:۰۰",
+      "buyerName": "نیلوفر زمانی",
+      "buyerPhone": "09128889900",
+      "seatIds": [
+        "r5-c5",
+        "r5-c6"
+      ],
+      "seatDetails": [
+        {
+          "seatId": "r5-c5",
+          "rowLabel": "E",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "seatId": "r5-c6",
+          "rowLabel": "E",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 220000
+        }
+      ],
+      "totalAmount": 440000,
+      "status": "confirmed",
+      "createdAt": "2026-11-04T18:45:00Z",
+      "paymentRef": "PAY-6629102"
+    }
+  ],
+  "venueTemplates": [
+    {
+      "id": "tpl-charsoo-main",
+      "name": "پردیس چارسو — سالن ۲ (۸ ردیف × ۱۲ ستون)",
+      "rows": 8,
+      "cols": 12,
+      "vipPrice": 250000,
+      "standardPrice": 190000,
+      "economyPrice": 140000,
+      "seats": [
+        {
+          "id": "r1-c1",
+          "row": 1,
+          "col": 1,
+          "rowLabel": "A",
+          "seatNumber": 1,
+          "type": "blocked",
+          "price": 190000
+        },
+        {
+          "id": "r1-c2",
+          "row": 1,
+          "col": 2,
+          "rowLabel": "A",
+          "seatNumber": 2,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c3",
+          "row": 1,
+          "col": 3,
+          "rowLabel": "A",
+          "seatNumber": 3,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c4",
+          "row": 1,
+          "col": 4,
+          "rowLabel": "A",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r1-c5",
+          "row": 1,
+          "col": 5,
+          "rowLabel": "A",
+          "seatNumber": 4,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c6",
+          "row": 1,
+          "col": 6,
+          "rowLabel": "A",
+          "seatNumber": 5,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c7",
+          "row": 1,
+          "col": 7,
+          "rowLabel": "A",
+          "seatNumber": 6,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c8",
+          "row": 1,
+          "col": 8,
+          "rowLabel": "A",
+          "seatNumber": 7,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c9",
+          "row": 1,
+          "col": 9,
+          "rowLabel": "A",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r1-c10",
+          "row": 1,
+          "col": 10,
+          "rowLabel": "A",
+          "seatNumber": 8,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c11",
+          "row": 1,
+          "col": 11,
+          "rowLabel": "A",
+          "seatNumber": 9,
+          "type": "economy",
+          "price": 140000
+        },
+        {
+          "id": "r1-c12",
+          "row": 1,
+          "col": 12,
+          "rowLabel": "A",
+          "seatNumber": 10,
+          "type": "blocked",
+          "price": 190000
+        },
+        {
+          "id": "r2-c1",
+          "row": 2,
+          "col": 1,
+          "rowLabel": "B",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c2",
+          "row": 2,
+          "col": 2,
+          "rowLabel": "B",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c3",
+          "row": 2,
+          "col": 3,
+          "rowLabel": "B",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c4",
+          "row": 2,
+          "col": 4,
+          "rowLabel": "B",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r2-c5",
+          "row": 2,
+          "col": 5,
+          "rowLabel": "B",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c6",
+          "row": 2,
+          "col": 6,
+          "rowLabel": "B",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c7",
+          "row": 2,
+          "col": 7,
+          "rowLabel": "B",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c8",
+          "row": 2,
+          "col": 8,
+          "rowLabel": "B",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c9",
+          "row": 2,
+          "col": 9,
+          "rowLabel": "B",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r2-c10",
+          "row": 2,
+          "col": 10,
+          "rowLabel": "B",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c11",
+          "row": 2,
+          "col": 11,
+          "rowLabel": "B",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r2-c12",
+          "row": 2,
+          "col": 12,
+          "rowLabel": "B",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c1",
+          "row": 3,
+          "col": 1,
+          "rowLabel": "C",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c2",
+          "row": 3,
+          "col": 2,
+          "rowLabel": "C",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c3",
+          "row": 3,
+          "col": 3,
+          "rowLabel": "C",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c4",
+          "row": 3,
+          "col": 4,
+          "rowLabel": "C",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r3-c5",
+          "row": 3,
+          "col": 5,
+          "rowLabel": "C",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c6",
+          "row": 3,
+          "col": 6,
+          "rowLabel": "C",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c7",
+          "row": 3,
+          "col": 7,
+          "rowLabel": "C",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c8",
+          "row": 3,
+          "col": 8,
+          "rowLabel": "C",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c9",
+          "row": 3,
+          "col": 9,
+          "rowLabel": "C",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r3-c10",
+          "row": 3,
+          "col": 10,
+          "rowLabel": "C",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c11",
+          "row": 3,
+          "col": 11,
+          "rowLabel": "C",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r3-c12",
+          "row": 3,
+          "col": 12,
+          "rowLabel": "C",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c1",
+          "row": 4,
+          "col": 1,
+          "rowLabel": "D",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c2",
+          "row": 4,
+          "col": 2,
+          "rowLabel": "D",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c3",
+          "row": 4,
+          "col": 3,
+          "rowLabel": "D",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c4",
+          "row": 4,
+          "col": 4,
+          "rowLabel": "D",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r4-c5",
+          "row": 4,
+          "col": 5,
+          "rowLabel": "D",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c6",
+          "row": 4,
+          "col": 6,
+          "rowLabel": "D",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c7",
+          "row": 4,
+          "col": 7,
+          "rowLabel": "D",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c8",
+          "row": 4,
+          "col": 8,
+          "rowLabel": "D",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c9",
+          "row": 4,
+          "col": 9,
+          "rowLabel": "D",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r4-c10",
+          "row": 4,
+          "col": 10,
+          "rowLabel": "D",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c11",
+          "row": 4,
+          "col": 11,
+          "rowLabel": "D",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r4-c12",
+          "row": 4,
+          "col": 12,
+          "rowLabel": "D",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c1",
+          "row": 5,
+          "col": 1,
+          "rowLabel": "E",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c2",
+          "row": 5,
+          "col": 2,
+          "rowLabel": "E",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c3",
+          "row": 5,
+          "col": 3,
+          "rowLabel": "E",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c4",
+          "row": 5,
+          "col": 4,
+          "rowLabel": "E",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r5-c5",
+          "row": 5,
+          "col": 5,
+          "rowLabel": "E",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c6",
+          "row": 5,
+          "col": 6,
+          "rowLabel": "E",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c7",
+          "row": 5,
+          "col": 7,
+          "rowLabel": "E",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c8",
+          "row": 5,
+          "col": 8,
+          "rowLabel": "E",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c9",
+          "row": 5,
+          "col": 9,
+          "rowLabel": "E",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r5-c10",
+          "row": 5,
+          "col": 10,
+          "rowLabel": "E",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c11",
+          "row": 5,
+          "col": 11,
+          "rowLabel": "E",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r5-c12",
+          "row": 5,
+          "col": 12,
+          "rowLabel": "E",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r6-c1",
+          "row": 6,
+          "col": 1,
+          "rowLabel": "F",
+          "seatNumber": 1,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c2",
+          "row": 6,
+          "col": 2,
+          "rowLabel": "F",
+          "seatNumber": 2,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c3",
+          "row": 6,
+          "col": 3,
+          "rowLabel": "F",
+          "seatNumber": 3,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c4",
+          "row": 6,
+          "col": 4,
+          "rowLabel": "F",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r6-c5",
+          "row": 6,
+          "col": 5,
+          "rowLabel": "F",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c6",
+          "row": 6,
+          "col": 6,
+          "rowLabel": "F",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c7",
+          "row": 6,
+          "col": 7,
+          "rowLabel": "F",
+          "seatNumber": 6,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c8",
+          "row": 6,
+          "col": 8,
+          "rowLabel": "F",
+          "seatNumber": 7,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c9",
+          "row": 6,
+          "col": 9,
+          "rowLabel": "F",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r6-c10",
+          "row": 6,
+          "col": 10,
+          "rowLabel": "F",
+          "seatNumber": 8,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c11",
+          "row": 6,
+          "col": 11,
+          "rowLabel": "F",
+          "seatNumber": 9,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r6-c12",
+          "row": 6,
+          "col": 12,
+          "rowLabel": "F",
+          "seatNumber": 10,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c1",
+          "row": 7,
+          "col": 1,
+          "rowLabel": "G",
+          "seatNumber": 1,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c2",
+          "row": 7,
+          "col": 2,
+          "rowLabel": "G",
+          "seatNumber": 2,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c3",
+          "row": 7,
+          "col": 3,
+          "rowLabel": "G",
+          "seatNumber": 3,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c4",
+          "row": 7,
+          "col": 4,
+          "rowLabel": "G",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r7-c5",
+          "row": 7,
+          "col": 5,
+          "rowLabel": "G",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c6",
+          "row": 7,
+          "col": 6,
+          "rowLabel": "G",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c7",
+          "row": 7,
+          "col": 7,
+          "rowLabel": "G",
+          "seatNumber": 6,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c8",
+          "row": 7,
+          "col": 8,
+          "rowLabel": "G",
+          "seatNumber": 7,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c9",
+          "row": 7,
+          "col": 9,
+          "rowLabel": "G",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r7-c10",
+          "row": 7,
+          "col": 10,
+          "rowLabel": "G",
+          "seatNumber": 8,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c11",
+          "row": 7,
+          "col": 11,
+          "rowLabel": "G",
+          "seatNumber": 9,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r7-c12",
+          "row": 7,
+          "col": 12,
+          "rowLabel": "G",
+          "seatNumber": 10,
+          "type": "vip",
+          "price": 250000
+        },
+        {
+          "id": "r8-c1",
+          "row": 8,
+          "col": 1,
+          "rowLabel": "H",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c2",
+          "row": 8,
+          "col": 2,
+          "rowLabel": "H",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c3",
+          "row": 8,
+          "col": 3,
+          "rowLabel": "H",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c4",
+          "row": 8,
+          "col": 4,
+          "rowLabel": "H",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r8-c5",
+          "row": 8,
+          "col": 5,
+          "rowLabel": "H",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c6",
+          "row": 8,
+          "col": 6,
+          "rowLabel": "H",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c7",
+          "row": 8,
+          "col": 7,
+          "rowLabel": "H",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c8",
+          "row": 8,
+          "col": 8,
+          "rowLabel": "H",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c9",
+          "row": 8,
+          "col": 9,
+          "rowLabel": "H",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r8-c10",
+          "row": 8,
+          "col": 10,
+          "rowLabel": "H",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c11",
+          "row": 8,
+          "col": 11,
+          "rowLabel": "H",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 190000
+        },
+        {
+          "id": "r8-c12",
+          "row": 8,
+          "col": 12,
+          "rowLabel": "H",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 190000
+        }
+      ]
+    },
+    {
+      "id": "tpl-shiraz-yaqoot",
+      "name": "سینما هنر شیراز — سالن یاقوت (۷ ردیف × ۱۰ ستون)",
+      "rows": 7,
+      "cols": 10,
+      "vipPrice": 220000,
+      "standardPrice": 170000,
+      "economyPrice": 120000,
+      "seats": [
+        {
+          "id": "r1-c1",
+          "row": 1,
+          "col": 1,
+          "rowLabel": "A",
+          "seatNumber": 1,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c2",
+          "row": 1,
+          "col": 2,
+          "rowLabel": "A",
+          "seatNumber": 2,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c3",
+          "row": 1,
+          "col": 3,
+          "rowLabel": "A",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r1-c4",
+          "row": 1,
+          "col": 4,
+          "rowLabel": "A",
+          "seatNumber": 3,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c5",
+          "row": 1,
+          "col": 5,
+          "rowLabel": "A",
+          "seatNumber": 4,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c6",
+          "row": 1,
+          "col": 6,
+          "rowLabel": "A",
+          "seatNumber": 5,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c7",
+          "row": 1,
+          "col": 7,
+          "rowLabel": "A",
+          "seatNumber": 6,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c8",
+          "row": 1,
+          "col": 8,
+          "rowLabel": "A",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r1-c9",
+          "row": 1,
+          "col": 9,
+          "rowLabel": "A",
+          "seatNumber": 7,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r1-c10",
+          "row": 1,
+          "col": 10,
+          "rowLabel": "A",
+          "seatNumber": 8,
+          "type": "economy",
+          "price": 120000
+        },
+        {
+          "id": "r2-c1",
+          "row": 2,
+          "col": 1,
+          "rowLabel": "B",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c2",
+          "row": 2,
+          "col": 2,
+          "rowLabel": "B",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c3",
+          "row": 2,
+          "col": 3,
+          "rowLabel": "B",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r2-c4",
+          "row": 2,
+          "col": 4,
+          "rowLabel": "B",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c5",
+          "row": 2,
+          "col": 5,
+          "rowLabel": "B",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c6",
+          "row": 2,
+          "col": 6,
+          "rowLabel": "B",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c7",
+          "row": 2,
+          "col": 7,
+          "rowLabel": "B",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c8",
+          "row": 2,
+          "col": 8,
+          "rowLabel": "B",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r2-c9",
+          "row": 2,
+          "col": 9,
+          "rowLabel": "B",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r2-c10",
+          "row": 2,
+          "col": 10,
+          "rowLabel": "B",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c1",
+          "row": 3,
+          "col": 1,
+          "rowLabel": "C",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c2",
+          "row": 3,
+          "col": 2,
+          "rowLabel": "C",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c3",
+          "row": 3,
+          "col": 3,
+          "rowLabel": "C",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r3-c4",
+          "row": 3,
+          "col": 4,
+          "rowLabel": "C",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c5",
+          "row": 3,
+          "col": 5,
+          "rowLabel": "C",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c6",
+          "row": 3,
+          "col": 6,
+          "rowLabel": "C",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c7",
+          "row": 3,
+          "col": 7,
+          "rowLabel": "C",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c8",
+          "row": 3,
+          "col": 8,
+          "rowLabel": "C",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r3-c9",
+          "row": 3,
+          "col": 9,
+          "rowLabel": "C",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r3-c10",
+          "row": 3,
+          "col": 10,
+          "rowLabel": "C",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c1",
+          "row": 4,
+          "col": 1,
+          "rowLabel": "D",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c2",
+          "row": 4,
+          "col": 2,
+          "rowLabel": "D",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c3",
+          "row": 4,
+          "col": 3,
+          "rowLabel": "D",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r4-c4",
+          "row": 4,
+          "col": 4,
+          "rowLabel": "D",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c5",
+          "row": 4,
+          "col": 5,
+          "rowLabel": "D",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c6",
+          "row": 4,
+          "col": 6,
+          "rowLabel": "D",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c7",
+          "row": 4,
+          "col": 7,
+          "rowLabel": "D",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c8",
+          "row": 4,
+          "col": 8,
+          "rowLabel": "D",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r4-c9",
+          "row": 4,
+          "col": 9,
+          "rowLabel": "D",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r4-c10",
+          "row": 4,
+          "col": 10,
+          "rowLabel": "D",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r5-c1",
+          "row": 5,
+          "col": 1,
+          "rowLabel": "E",
+          "seatNumber": 1,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c2",
+          "row": 5,
+          "col": 2,
+          "rowLabel": "E",
+          "seatNumber": 2,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c3",
+          "row": 5,
+          "col": 3,
+          "rowLabel": "E",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r5-c4",
+          "row": 5,
+          "col": 4,
+          "rowLabel": "E",
+          "seatNumber": 3,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c5",
+          "row": 5,
+          "col": 5,
+          "rowLabel": "E",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c6",
+          "row": 5,
+          "col": 6,
+          "rowLabel": "E",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c7",
+          "row": 5,
+          "col": 7,
+          "rowLabel": "E",
+          "seatNumber": 6,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c8",
+          "row": 5,
+          "col": 8,
+          "rowLabel": "E",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r5-c9",
+          "row": 5,
+          "col": 9,
+          "rowLabel": "E",
+          "seatNumber": 7,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r5-c10",
+          "row": 5,
+          "col": 10,
+          "rowLabel": "E",
+          "seatNumber": 8,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c1",
+          "row": 6,
+          "col": 1,
+          "rowLabel": "F",
+          "seatNumber": 1,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c2",
+          "row": 6,
+          "col": 2,
+          "rowLabel": "F",
+          "seatNumber": 2,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c3",
+          "row": 6,
+          "col": 3,
+          "rowLabel": "F",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r6-c4",
+          "row": 6,
+          "col": 4,
+          "rowLabel": "F",
+          "seatNumber": 3,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c5",
+          "row": 6,
+          "col": 5,
+          "rowLabel": "F",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c6",
+          "row": 6,
+          "col": 6,
+          "rowLabel": "F",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c7",
+          "row": 6,
+          "col": 7,
+          "rowLabel": "F",
+          "seatNumber": 6,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c8",
+          "row": 6,
+          "col": 8,
+          "rowLabel": "F",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r6-c9",
+          "row": 6,
+          "col": 9,
+          "rowLabel": "F",
+          "seatNumber": 7,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r6-c10",
+          "row": 6,
+          "col": 10,
+          "rowLabel": "F",
+          "seatNumber": 8,
+          "type": "vip",
+          "price": 220000
+        },
+        {
+          "id": "r7-c1",
+          "row": 7,
+          "col": 1,
+          "rowLabel": "G",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c2",
+          "row": 7,
+          "col": 2,
+          "rowLabel": "G",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c3",
+          "row": 7,
+          "col": 3,
+          "rowLabel": "G",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r7-c4",
+          "row": 7,
+          "col": 4,
+          "rowLabel": "G",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c5",
+          "row": 7,
+          "col": 5,
+          "rowLabel": "G",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c6",
+          "row": 7,
+          "col": 6,
+          "rowLabel": "G",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c7",
+          "row": 7,
+          "col": 7,
+          "rowLabel": "G",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c8",
+          "row": 7,
+          "col": 8,
+          "rowLabel": "G",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r7-c9",
+          "row": 7,
+          "col": 9,
+          "rowLabel": "G",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "id": "r7-c10",
+          "row": 7,
+          "col": 10,
+          "rowLabel": "G",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 170000
+        }
+      ]
+    },
+    {
+      "id": "tpl-imax-general",
+      "name": "سالن بزرگ آیمکس (۹ ردیف × ۱۴ ستون)",
+      "rows": 9,
+      "cols": 14,
+      "vipPrice": 280000,
+      "standardPrice": 210000,
+      "economyPrice": 150000,
+      "seats": [
+        {
+          "id": "r1-c1",
+          "row": 1,
+          "col": 1,
+          "rowLabel": "A",
+          "seatNumber": 1,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c2",
+          "row": 1,
+          "col": 2,
+          "rowLabel": "A",
+          "seatNumber": 2,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c3",
+          "row": 1,
+          "col": 3,
+          "rowLabel": "A",
+          "seatNumber": 3,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c4",
+          "row": 1,
+          "col": 4,
+          "rowLabel": "A",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r1-c5",
+          "row": 1,
+          "col": 5,
+          "rowLabel": "A",
+          "seatNumber": 4,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c6",
+          "row": 1,
+          "col": 6,
+          "rowLabel": "A",
+          "seatNumber": 5,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c7",
+          "row": 1,
+          "col": 7,
+          "rowLabel": "A",
+          "seatNumber": 6,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c8",
+          "row": 1,
+          "col": 8,
+          "rowLabel": "A",
+          "seatNumber": 7,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c9",
+          "row": 1,
+          "col": 9,
+          "rowLabel": "A",
+          "seatNumber": 8,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c10",
+          "row": 1,
+          "col": 10,
+          "rowLabel": "A",
+          "seatNumber": 9,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c11",
+          "row": 1,
+          "col": 11,
+          "rowLabel": "A",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r1-c12",
+          "row": 1,
+          "col": 12,
+          "rowLabel": "A",
+          "seatNumber": 10,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c13",
+          "row": 1,
+          "col": 13,
+          "rowLabel": "A",
+          "seatNumber": 11,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r1-c14",
+          "row": 1,
+          "col": 14,
+          "rowLabel": "A",
+          "seatNumber": 12,
+          "type": "economy",
+          "price": 150000
+        },
+        {
+          "id": "r2-c1",
+          "row": 2,
+          "col": 1,
+          "rowLabel": "B",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c2",
+          "row": 2,
+          "col": 2,
+          "rowLabel": "B",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c3",
+          "row": 2,
+          "col": 3,
+          "rowLabel": "B",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c4",
+          "row": 2,
+          "col": 4,
+          "rowLabel": "B",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r2-c5",
+          "row": 2,
+          "col": 5,
+          "rowLabel": "B",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c6",
+          "row": 2,
+          "col": 6,
+          "rowLabel": "B",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c7",
+          "row": 2,
+          "col": 7,
+          "rowLabel": "B",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c8",
+          "row": 2,
+          "col": 8,
+          "rowLabel": "B",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c9",
+          "row": 2,
+          "col": 9,
+          "rowLabel": "B",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c10",
+          "row": 2,
+          "col": 10,
+          "rowLabel": "B",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c11",
+          "row": 2,
+          "col": 11,
+          "rowLabel": "B",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r2-c12",
+          "row": 2,
+          "col": 12,
+          "rowLabel": "B",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c13",
+          "row": 2,
+          "col": 13,
+          "rowLabel": "B",
+          "seatNumber": 11,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r2-c14",
+          "row": 2,
+          "col": 14,
+          "rowLabel": "B",
+          "seatNumber": 12,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c1",
+          "row": 3,
+          "col": 1,
+          "rowLabel": "C",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c2",
+          "row": 3,
+          "col": 2,
+          "rowLabel": "C",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c3",
+          "row": 3,
+          "col": 3,
+          "rowLabel": "C",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c4",
+          "row": 3,
+          "col": 4,
+          "rowLabel": "C",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r3-c5",
+          "row": 3,
+          "col": 5,
+          "rowLabel": "C",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c6",
+          "row": 3,
+          "col": 6,
+          "rowLabel": "C",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c7",
+          "row": 3,
+          "col": 7,
+          "rowLabel": "C",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c8",
+          "row": 3,
+          "col": 8,
+          "rowLabel": "C",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c9",
+          "row": 3,
+          "col": 9,
+          "rowLabel": "C",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c10",
+          "row": 3,
+          "col": 10,
+          "rowLabel": "C",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c11",
+          "row": 3,
+          "col": 11,
+          "rowLabel": "C",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r3-c12",
+          "row": 3,
+          "col": 12,
+          "rowLabel": "C",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c13",
+          "row": 3,
+          "col": 13,
+          "rowLabel": "C",
+          "seatNumber": 11,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r3-c14",
+          "row": 3,
+          "col": 14,
+          "rowLabel": "C",
+          "seatNumber": 12,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c1",
+          "row": 4,
+          "col": 1,
+          "rowLabel": "D",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c2",
+          "row": 4,
+          "col": 2,
+          "rowLabel": "D",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c3",
+          "row": 4,
+          "col": 3,
+          "rowLabel": "D",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c4",
+          "row": 4,
+          "col": 4,
+          "rowLabel": "D",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r4-c5",
+          "row": 4,
+          "col": 5,
+          "rowLabel": "D",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c6",
+          "row": 4,
+          "col": 6,
+          "rowLabel": "D",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c7",
+          "row": 4,
+          "col": 7,
+          "rowLabel": "D",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c8",
+          "row": 4,
+          "col": 8,
+          "rowLabel": "D",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c9",
+          "row": 4,
+          "col": 9,
+          "rowLabel": "D",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c10",
+          "row": 4,
+          "col": 10,
+          "rowLabel": "D",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c11",
+          "row": 4,
+          "col": 11,
+          "rowLabel": "D",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r4-c12",
+          "row": 4,
+          "col": 12,
+          "rowLabel": "D",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c13",
+          "row": 4,
+          "col": 13,
+          "rowLabel": "D",
+          "seatNumber": 11,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r4-c14",
+          "row": 4,
+          "col": 14,
+          "rowLabel": "D",
+          "seatNumber": 12,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c1",
+          "row": 5,
+          "col": 1,
+          "rowLabel": "E",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c2",
+          "row": 5,
+          "col": 2,
+          "rowLabel": "E",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c3",
+          "row": 5,
+          "col": 3,
+          "rowLabel": "E",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c4",
+          "row": 5,
+          "col": 4,
+          "rowLabel": "E",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r5-c5",
+          "row": 5,
+          "col": 5,
+          "rowLabel": "E",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c6",
+          "row": 5,
+          "col": 6,
+          "rowLabel": "E",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c7",
+          "row": 5,
+          "col": 7,
+          "rowLabel": "E",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c8",
+          "row": 5,
+          "col": 8,
+          "rowLabel": "E",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c9",
+          "row": 5,
+          "col": 9,
+          "rowLabel": "E",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c10",
+          "row": 5,
+          "col": 10,
+          "rowLabel": "E",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c11",
+          "row": 5,
+          "col": 11,
+          "rowLabel": "E",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r5-c12",
+          "row": 5,
+          "col": 12,
+          "rowLabel": "E",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c13",
+          "row": 5,
+          "col": 13,
+          "rowLabel": "E",
+          "seatNumber": 11,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r5-c14",
+          "row": 5,
+          "col": 14,
+          "rowLabel": "E",
+          "seatNumber": 12,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c1",
+          "row": 6,
+          "col": 1,
+          "rowLabel": "F",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c2",
+          "row": 6,
+          "col": 2,
+          "rowLabel": "F",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c3",
+          "row": 6,
+          "col": 3,
+          "rowLabel": "F",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c4",
+          "row": 6,
+          "col": 4,
+          "rowLabel": "F",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r6-c5",
+          "row": 6,
+          "col": 5,
+          "rowLabel": "F",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c6",
+          "row": 6,
+          "col": 6,
+          "rowLabel": "F",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c7",
+          "row": 6,
+          "col": 7,
+          "rowLabel": "F",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c8",
+          "row": 6,
+          "col": 8,
+          "rowLabel": "F",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c9",
+          "row": 6,
+          "col": 9,
+          "rowLabel": "F",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c10",
+          "row": 6,
+          "col": 10,
+          "rowLabel": "F",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c11",
+          "row": 6,
+          "col": 11,
+          "rowLabel": "F",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r6-c12",
+          "row": 6,
+          "col": 12,
+          "rowLabel": "F",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c13",
+          "row": 6,
+          "col": 13,
+          "rowLabel": "F",
+          "seatNumber": 11,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r6-c14",
+          "row": 6,
+          "col": 14,
+          "rowLabel": "F",
+          "seatNumber": 12,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r7-c1",
+          "row": 7,
+          "col": 1,
+          "rowLabel": "G",
+          "seatNumber": 1,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c2",
+          "row": 7,
+          "col": 2,
+          "rowLabel": "G",
+          "seatNumber": 2,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c3",
+          "row": 7,
+          "col": 3,
+          "rowLabel": "G",
+          "seatNumber": 3,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c4",
+          "row": 7,
+          "col": 4,
+          "rowLabel": "G",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r7-c5",
+          "row": 7,
+          "col": 5,
+          "rowLabel": "G",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c6",
+          "row": 7,
+          "col": 6,
+          "rowLabel": "G",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c7",
+          "row": 7,
+          "col": 7,
+          "rowLabel": "G",
+          "seatNumber": 6,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c8",
+          "row": 7,
+          "col": 8,
+          "rowLabel": "G",
+          "seatNumber": 7,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c9",
+          "row": 7,
+          "col": 9,
+          "rowLabel": "G",
+          "seatNumber": 8,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c10",
+          "row": 7,
+          "col": 10,
+          "rowLabel": "G",
+          "seatNumber": 9,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c11",
+          "row": 7,
+          "col": 11,
+          "rowLabel": "G",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r7-c12",
+          "row": 7,
+          "col": 12,
+          "rowLabel": "G",
+          "seatNumber": 10,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c13",
+          "row": 7,
+          "col": 13,
+          "rowLabel": "G",
+          "seatNumber": 11,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r7-c14",
+          "row": 7,
+          "col": 14,
+          "rowLabel": "G",
+          "seatNumber": 12,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c1",
+          "row": 8,
+          "col": 1,
+          "rowLabel": "H",
+          "seatNumber": 1,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c2",
+          "row": 8,
+          "col": 2,
+          "rowLabel": "H",
+          "seatNumber": 2,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c3",
+          "row": 8,
+          "col": 3,
+          "rowLabel": "H",
+          "seatNumber": 3,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c4",
+          "row": 8,
+          "col": 4,
+          "rowLabel": "H",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r8-c5",
+          "row": 8,
+          "col": 5,
+          "rowLabel": "H",
+          "seatNumber": 4,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c6",
+          "row": 8,
+          "col": 6,
+          "rowLabel": "H",
+          "seatNumber": 5,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c7",
+          "row": 8,
+          "col": 7,
+          "rowLabel": "H",
+          "seatNumber": 6,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c8",
+          "row": 8,
+          "col": 8,
+          "rowLabel": "H",
+          "seatNumber": 7,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c9",
+          "row": 8,
+          "col": 9,
+          "rowLabel": "H",
+          "seatNumber": 8,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c10",
+          "row": 8,
+          "col": 10,
+          "rowLabel": "H",
+          "seatNumber": 9,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c11",
+          "row": 8,
+          "col": 11,
+          "rowLabel": "H",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r8-c12",
+          "row": 8,
+          "col": 12,
+          "rowLabel": "H",
+          "seatNumber": 10,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c13",
+          "row": 8,
+          "col": 13,
+          "rowLabel": "H",
+          "seatNumber": 11,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r8-c14",
+          "row": 8,
+          "col": 14,
+          "rowLabel": "H",
+          "seatNumber": 12,
+          "type": "vip",
+          "price": 280000
+        },
+        {
+          "id": "r9-c1",
+          "row": 9,
+          "col": 1,
+          "rowLabel": "I",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c2",
+          "row": 9,
+          "col": 2,
+          "rowLabel": "I",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c3",
+          "row": 9,
+          "col": 3,
+          "rowLabel": "I",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c4",
+          "row": 9,
+          "col": 4,
+          "rowLabel": "I",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r9-c5",
+          "row": 9,
+          "col": 5,
+          "rowLabel": "I",
+          "seatNumber": 4,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c6",
+          "row": 9,
+          "col": 6,
+          "rowLabel": "I",
+          "seatNumber": 5,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c7",
+          "row": 9,
+          "col": 7,
+          "rowLabel": "I",
+          "seatNumber": 6,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c8",
+          "row": 9,
+          "col": 8,
+          "rowLabel": "I",
+          "seatNumber": 7,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c9",
+          "row": 9,
+          "col": 9,
+          "rowLabel": "I",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c10",
+          "row": 9,
+          "col": 10,
+          "rowLabel": "I",
+          "seatNumber": 9,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c11",
+          "row": 9,
+          "col": 11,
+          "rowLabel": "I",
+          "seatNumber": 0,
+          "type": "aisle",
+          "price": 0
+        },
+        {
+          "id": "r9-c12",
+          "row": 9,
+          "col": 12,
+          "rowLabel": "I",
+          "seatNumber": 10,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c13",
+          "row": 9,
+          "col": 13,
+          "rowLabel": "I",
+          "seatNumber": 11,
+          "type": "standard",
+          "price": 210000
+        },
+        {
+          "id": "r9-c14",
+          "row": 9,
+          "col": 14,
+          "rowLabel": "I",
+          "seatNumber": 12,
+          "type": "standard",
+          "price": 210000
+        }
+      ]
+    }
+  ],
+  "admins": [
+    {
+      "id": "admin-1",
+      "username": "admin",
+      "password": "orbit1234",
+      "name": "مدیر کل اوربیت",
+      "role": "superadmin",
+      "createdAt": "2026-11-01T10:00:00Z"
+    }
+  ],
+  "settings": {
+    "logoUrl": "",
+    "brandName": "ORBIT",
+    "brandSubtitle": "اکران‌های اختصاصی",
+    "brandTagline": "اکران‌های سینمایی و انیمه با کیفیت برتر",
+    "aboutTitle": "درباره پلتفرم اکران‌های اختصاصی اوربیت",
+    "aboutText": "اوربیت (ORBIT Screenings) جامعه و پلتفرمی مستقل برای اکران‌های اختصاصی و رویدادمحور برترین آثار سینمای جهان و انیمه‌های برجسته است. ما با همکاری بهترین سالن‌های سینمایی مجهز به پیشرفته‌ترین سیستم‌های صوت دالبی اتموس و تصویر کریستالی در شهرهای تهران، شیراز، اصفهان، مشهد و تبریز، تجربه‌ای بی‌نظیر و تکرارنشدنی را برای دوستداران سینما و انیمه خلق می‌کنیم.",
+    "aboutVision": "هدف ما ایجاد بستری مدرن، شفاف و بدون دغدغه برای گردهمایی علاقه‌مندان به سینما و تجربه مشترک شاهکارهای پرده نقره‌ای با بالاترین کیفیت ممکن است.",
+    "contactPhone": "۰۲۱-۸۸۹۹۰۰۱۱",
+    "contactEmail": "contact@orbit-cinema.ir",
+    "contactAddress": "تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸",
+    "contactInstagram": "orbit_screenings",
+    "contactTelegram": "orbit_screenings"
+  },
+  "tickets": [
+    {
+      "id": "TCK-109283",
+      "name": "محمد حسینی",
+      "phone": "09121234567",
+      "ticketId": "ORB-918234",
+      "subject": "تغییر سانس اکران فیلم سوزومه",
+      "message": "با سلام، من برای سانس جمعه ساعت ۱۸ بلیت رزرو کرده‌ام، اما متاسفانه برایم مشکلی پیش آمده است. آیا امکان تغییر سانس به روز یکشنبه وجود دارد؟ با تشکر.",
+      "status": "resolved",
+      "createdAt": "2026-11-05T05:17:04.058Z"
+    },
+    {
+      "id": "TCK-481920",
+      "name": "زهرا احمدی",
+      "phone": "09359876543",
+      "ticketId": "",
+      "subject": "سوال در مورد سیستم صوتی سالن شیراز",
+      "message": "درود، می‌خواستم بپرسم آیا در اکران شهر اشباح در شیراز، نسخه زیرنویس فارسی اختصاصی پخش می‌شود یا دوبله؟ و آیا کیفیت صدا دالبی ۵.۱ است؟",
+      "status": "resolved",
+      "createdAt": "2026-11-04T10:17:04.058Z"
+    }
+  ]
+}
