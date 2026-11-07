@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { getScreenings } from '@/lib/db';
 import { formatPrice, toPersianDigits } from '@/lib/utils';
-import { Film, MapPin, Calendar, Clock, Sparkles, ChevronLeft, Ticket, Flame, CheckCircle2 } from 'lucide-react';
+import { Film, MapPin, Calendar, Clock, Sparkles, ChevronLeft, Ticket, Flame, CheckCircle2, Ban } from 'lucide-react';
 
 const CITIES = ['همه شهرها', 'تهران', 'شیراز', 'اصفهان', 'مشهد', 'تبریز'];
 
@@ -41,10 +41,17 @@ export default function HomePage({ searchParams }: PageProps) {
                 <div className="lg:col-span-7 space-y-6">
                   
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#7B2CBF] to-[#3A86FF] text-white text-xs font-semibold shadow-glow">
-                      <Flame className="w-3.5 h-3.5 text-yellow-300" />
-                      اکران ویژه و انحصاری
-                    </span>
+                    {featured.isSoldOut ? (
+                      <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-600 text-white text-xs font-black shadow-lg uppercase tracking-wider">
+                        <Ban className="w-3.5 h-3.5" />
+                        تکمیل ظرفیت (SOLD OUT)
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#7B2CBF] to-[#3A86FF] text-white text-xs font-semibold shadow-glow">
+                        <Flame className="w-3.5 h-3.5 text-yellow-300" />
+                        اکران ویژه و انحصاری
+                      </span>
+                    )}
                     <span className="px-3 py-1 rounded-full bg-white/10 text-[#00F0FF] border border-[#00F0FF]/30 text-xs font-medium">
                       {featured.city}
                     </span>
@@ -101,18 +108,34 @@ export default function HomePage({ searchParams }: PageProps) {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-                    <Link
-                      href={`/screening/${featured.id}`}
-                      className="btn-cosmic px-8 py-4 rounded-2xl font-bold text-sm sm:text-base text-center flex items-center justify-center gap-3 shadow-glow"
-                    >
-                      <Ticket className="w-5 h-5 text-white" />
-                      <span>انتخاب صندلی و خرید بلیت</span>
-                      <ChevronLeft className="w-4 h-4" />
-                    </Link>
+                    {featured.isSoldOut ? (
+                      <button
+                        disabled
+                        className="px-8 py-4 rounded-2xl bg-rose-950/60 border border-rose-500/40 text-rose-300 font-bold text-sm sm:text-base flex items-center justify-center gap-3 cursor-not-allowed shadow-none"
+                      >
+                        <Ban className="w-5 h-5 text-rose-400" />
+                        <span>تکمیل ظرفیت (Sold Out)</span>
+                      </button>
+                    ) : (
+                      <Link
+                        href={`/screening/${featured.id}`}
+                        className="btn-cosmic px-8 py-4 rounded-2xl font-bold text-sm sm:text-base text-center flex items-center justify-center gap-3 shadow-glow"
+                      >
+                        <Ticket className="w-5 h-5 text-white" />
+                        <span>انتخاب صندلی و خرید بلیت</span>
+                        <ChevronLeft className="w-4 h-4" />
+                      </Link>
+                    )}
 
                     <div className="text-xs text-slate-400 flex items-center justify-center sm:justify-start gap-1">
-                      <CheckCircle2 className="w-4 h-4 text-[#06D6A0]" />
-                      <span>قیمت بلیت: از {formatPrice(featured.seatMap?.economyPrice || 140000)}</span>
+                      {featured.isSoldOut ? (
+                        <span className="text-rose-400 font-semibold">فروش بلیت برای این اکران متوقف شده است</span>
+                      ) : (
+                        <>
+                          <CheckCircle2 className="w-4 h-4 text-[#06D6A0]" />
+                          <span>قیمت بلیت: از {formatPrice(featured.seatMap?.economyPrice || 140000)}</span>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -126,6 +149,13 @@ export default function HomePage({ searchParams }: PageProps) {
                       alt={featured.titleFa}
                       className="w-full h-full object-cover"
                     />
+                    {featured.isSoldOut && (
+                      <div className="absolute inset-0 z-20 bg-black/60 backdrop-blur-[2px] flex items-center justify-center">
+                        <span className="px-5 py-2.5 rounded-2xl bg-rose-600 text-white font-black text-sm tracking-widest uppercase shadow-[0_0_30px_rgba(244,63,94,0.7)] border-2 border-rose-400 rotate-[-8deg]">
+                          SOLD OUT
+                        </span>
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                       <span className="text-xs font-medium text-white bg-black/60 backdrop-blur px-3 py-1.5 rounded-lg">
                         {featured.language}
@@ -215,9 +245,17 @@ export default function HomePage({ searchParams }: PageProps) {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
 
+                    {screening.isSoldOut && (
+                      <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10 flex items-center justify-center">
+                        <span className="px-4 py-2 rounded-xl bg-rose-600 text-white font-black text-xs sm:text-sm tracking-widest uppercase shadow-2xl border border-rose-400 rotate-[-6deg]">
+                          SOLD OUT
+                        </span>
+                      </div>
+                    )}
+
                     <div className="absolute inset-0 bg-gradient-to-t from-[#12131A] via-transparent to-transparent opacity-90" />
 
-                    <div className="absolute top-3 right-3 left-3 flex items-center justify-between gap-2">
+                    <div className="absolute top-3 right-3 left-3 flex items-center justify-between gap-2 z-10">
                       <span className="px-2.5 py-1 rounded-lg bg-[#0B0C10]/80 backdrop-blur text-[#00F0FF] border border-[#00F0FF]/30 text-[11px] font-semibold">
                         {screening.city}
                       </span>
@@ -226,13 +264,19 @@ export default function HomePage({ searchParams }: PageProps) {
                       </span>
                     </div>
 
-                    <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between text-[11px]">
+                    <div className="absolute bottom-3 right-3 left-3 flex items-center justify-between text-[11px] z-10">
                       <span className="text-slate-300 truncate max-w-[65%] font-medium">
                         {screening.venueName}
                       </span>
-                      <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold">
-                        {toPersianDigits(availableCount)} صندلی خالی
-                      </span>
+                      {screening.isSoldOut ? (
+                        <span className="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[10px] font-bold">
+                          تکمیل ظرفیت (Sold Out)
+                        </span>
+                      ) : (
+                        <span className="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold">
+                          {toPersianDigits(availableCount)} صندلی خالی
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -278,14 +322,24 @@ export default function HomePage({ searchParams }: PageProps) {
                       </span>
                     </div>
 
-                    <Link
-                      href={`/screening/${screening.id}`}
-                      className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#7B2CBF]/90 to-[#3A86FF]/90 hover:from-[#7B2CBF] hover:to-[#3A86FF] text-white text-xs font-bold text-center flex items-center justify-center gap-2 transition-all shadow-sm group-hover:shadow-glow"
-                    >
-                      <Ticket className="w-4 h-4" />
-                      <span>انتخاب صندلی و رزرو</span>
-                      <ChevronLeft className="w-3.5 h-3.5" />
-                    </Link>
+                    {screening.isSoldOut ? (
+                      <button
+                        disabled
+                        className="w-full py-2.5 rounded-xl bg-rose-950/40 border border-rose-500/30 text-rose-300 text-xs font-bold text-center flex items-center justify-center gap-2 cursor-not-allowed opacity-80"
+                      >
+                        <Ban className="w-4 h-4 text-rose-400" />
+                        <span>تکمیل ظرفیت (Sold Out)</span>
+                      </button>
+                    ) : (
+                      <Link
+                        href={`/screening/${screening.id}`}
+                        className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#7B2CBF]/90 to-[#3A86FF]/90 hover:from-[#7B2CBF] hover:to-[#3A86FF] text-white text-xs font-bold text-center flex items-center justify-center gap-2 transition-all shadow-sm group-hover:shadow-glow"
+                      >
+                        <Ticket className="w-4 h-4" />
+                        <span>انتخاب صندلی و رزرو</span>
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               );

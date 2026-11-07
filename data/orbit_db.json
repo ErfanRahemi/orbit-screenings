@@ -1,27 +1,30 @@
 {
   "screenings": [
     {
-      "id": "screening-suzume",
-      "titleFa": "سوزومه (قفل‌کردن درها)",
-      "titleEn": "Suzume no Tojimari",
-      "tagline": "تجربه‌ای رویایی از شاهکار جدید ماکوتو شینکای بر پرده نقره‌ای اختصاصی",
-      "genre": "انیمه • فانتزی ماجراجویی • درام",
-      "city": "تهران",
-      "venueName": "پردیس چارسو — سالن ۲ اختصاصی اوربیت",
-      "venueAddress": "تهران، خیابان جمهوری، تقاطع پل حافظ، طبقه ۶",
-      "date": "جمعه ۲۵ آبان ۱۴۰۳",
-      "time": "۱۹:۳۰",
-      "duration": "۱۲۲ دقیقه",
-      "ageRating": "+۱۲ سال",
-      "language": "ژاپنی اورجینال با زیرنویس اختصاصی فارسی و صدای دالبی اتموس",
-      "posterUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1000&auto=format&fit=crop",
-      "bannerUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop",
-      "synopsis": "سوزومه، دختری ۱۷ ساله از شهری آرام در کیوشو، با پسری جوان آشنا می‌شود که به دنبال درهایی مرموز می‌گردد. گشوده شدن این درها فجایعی را در سراسر ژاپن رقم می‌زند و سوزومه باید برای نجات جهان و بستن این درها سفری شگفت‌انگیز را آغاز کند...",
-      "featured": true,
-      "createdAt": "2026-11-01T10:00:00Z",
+      "id": "screening-spirited-away",
+      "titleFa": "شهر اشباح",
+      "titleEn": "Spirited Away (Sen to Chihiro)",
+      "tagline": "بازپخش با کیفیت 4K و مسترینگ صدای سینمایی هایائو میازاکی",
+      "genre": "انیمه • فانتزی کلاسیک • شاهکار استودیو جیبلی",
+      "city": "شیراز",
+      "venueName": "سینما هنر شیراز — سالن یاقوت",
+      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
+      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
+      "time": "۲۰:۰۰",
+      "duration": "۱۲۵ دقیقه",
+      "ageRating": "عمومی (بدون محدودیت سنی)",
+      "language": "زبان اصلی ژاپنی با زیرنویس فارسی اختصاصی و کریستالی",
+      "posterUrl": "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop",
+      "bannerUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop",
+      "synopsis": "چیهیرو دختربچه ۱۰ ساله‌ای است که همراه پدر و مادرش وارد دنیایی ناشناخته از خدایان، اشباح و جادوگران می‌شود. پس از تبدیل شدن والدینش به حیوان، او برای نجات آنها و بازگشت به دنیای انسان‌ها در حمام اسرارآمیز یوکای مشغول به کار می‌شود...",
+      "featured": false,
+      "createdAt": "2026-11-01T11:00:00Z",
       "seatMap": {
         "rows": 8,
         "cols": 12,
+        "vipPrice": 250000,
+        "standardPrice": 20000,
+        "economyPrice": 140000,
         "seats": [
           {
             "id": "r1-c1",
@@ -29,8 +32,8 @@
             "col": 1,
             "rowLabel": "A",
             "seatNumber": 1,
-            "type": "blocked",
-            "price": 190000,
+            "type": "economy",
+            "price": 140000,
             "status": "available"
           },
           {
@@ -139,8 +142,8 @@
             "col": 12,
             "rowLabel": "A",
             "seatNumber": 10,
-            "type": "blocked",
-            "price": 190000,
+            "type": "economy",
+            "price": 140000,
             "status": "available"
           },
           {
@@ -150,8 +153,14 @@
             "rowLabel": "B",
             "seatNumber": 1,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "اعهاه",
+              "buyerPhone": "09102357990",
+              "bookingId": "ORB-755576",
+              "bookedAt": "2026-11-05T12:40:24.143Z"
+            }
           },
           {
             "id": "r2-c2",
@@ -160,8 +169,14 @@
             "rowLabel": "B",
             "seatNumber": 2,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "اعهاه",
+              "buyerPhone": "09102357990",
+              "bookingId": "ORB-755576",
+              "bookedAt": "2026-11-05T12:40:24.143Z"
+            }
           },
           {
             "id": "r2-c3",
@@ -170,7 +185,7 @@
             "rowLabel": "B",
             "seatNumber": 3,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -190,7 +205,7 @@
             "rowLabel": "B",
             "seatNumber": 4,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -200,7 +215,7 @@
             "rowLabel": "B",
             "seatNumber": 5,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -210,7 +225,7 @@
             "rowLabel": "B",
             "seatNumber": 6,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -220,7 +235,7 @@
             "rowLabel": "B",
             "seatNumber": 7,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -240,7 +255,7 @@
             "rowLabel": "B",
             "seatNumber": 8,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -250,7 +265,7 @@
             "rowLabel": "B",
             "seatNumber": 9,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -260,7 +275,7 @@
             "rowLabel": "B",
             "seatNumber": 10,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -270,8 +285,14 @@
             "rowLabel": "C",
             "seatNumber": 1,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "اعهاه",
+              "buyerPhone": "09102357990",
+              "bookingId": "ORB-755576",
+              "bookedAt": "2026-11-05T12:40:24.143Z"
+            }
           },
           {
             "id": "r3-c2",
@@ -280,8 +301,14 @@
             "rowLabel": "C",
             "seatNumber": 2,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "اعهاه",
+              "buyerPhone": "09102357990",
+              "bookingId": "ORB-755576",
+              "bookedAt": "2026-11-05T12:40:24.143Z"
+            }
           },
           {
             "id": "r3-c3",
@@ -290,7 +317,7 @@
             "rowLabel": "C",
             "seatNumber": 3,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -310,7 +337,7 @@
             "rowLabel": "C",
             "seatNumber": 4,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -320,8 +347,14 @@
             "rowLabel": "C",
             "seatNumber": 5,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "آرش علوی",
+              "buyerPhone": "۰۹۳۶۷۷۷۸۸۹۹",
+              "bookingId": "ORB-519842",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
           },
           {
             "id": "r3-c7",
@@ -330,7 +363,7 @@
             "rowLabel": "C",
             "seatNumber": 6,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -340,7 +373,7 @@
             "rowLabel": "C",
             "seatNumber": 7,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -360,7 +393,7 @@
             "rowLabel": "C",
             "seatNumber": 8,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -370,7 +403,7 @@
             "rowLabel": "C",
             "seatNumber": 9,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -380,7 +413,7 @@
             "rowLabel": "C",
             "seatNumber": 10,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -390,7 +423,7 @@
             "rowLabel": "D",
             "seatNumber": 1,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -400,7 +433,7 @@
             "rowLabel": "D",
             "seatNumber": 2,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -410,7 +443,7 @@
             "rowLabel": "D",
             "seatNumber": 3,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -430,7 +463,7 @@
             "rowLabel": "D",
             "seatNumber": 4,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -440,7 +473,7 @@
             "rowLabel": "D",
             "seatNumber": 5,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -450,14 +483,8 @@
             "rowLabel": "D",
             "seatNumber": 6,
             "type": "standard",
-            "price": 190000,
-            "status": "sold",
-            "bookedBy": {
-              "buyerName": "سارا کاظمی",
-              "buyerPhone": "۰۹۳۵۲۲۲۳۳۴۴",
-              "bookingId": "ORB-831920",
-              "bookedAt": "۱۴۰۳/۰۸/۲۲"
-            }
+            "price": 20000,
+            "status": "available"
           },
           {
             "id": "r4-c8",
@@ -466,14 +493,8 @@
             "rowLabel": "D",
             "seatNumber": 7,
             "type": "standard",
-            "price": 190000,
-            "status": "sold",
-            "bookedBy": {
-              "buyerName": "سارا کاظمی",
-              "buyerPhone": "۰۹۳۵۲۲۲۳۳۴۴",
-              "bookingId": "ORB-831920",
-              "bookedAt": "۱۴۰۳/۰۸/۲۲"
-            }
+            "price": 20000,
+            "status": "available"
           },
           {
             "id": "r4-c9",
@@ -492,7 +513,7 @@
             "rowLabel": "D",
             "seatNumber": 8,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -502,7 +523,7 @@
             "rowLabel": "D",
             "seatNumber": 9,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -512,7 +533,7 @@
             "rowLabel": "D",
             "seatNumber": 10,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -522,7 +543,7 @@
             "rowLabel": "E",
             "seatNumber": 1,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -532,7 +553,7 @@
             "rowLabel": "E",
             "seatNumber": 2,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -542,7 +563,7 @@
             "rowLabel": "E",
             "seatNumber": 3,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -562,8 +583,14 @@
             "rowLabel": "E",
             "seatNumber": 4,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "نیلوفر زمانی",
+              "buyerPhone": "۰۹۱۲۸۸۸۹۹۰۰",
+              "bookingId": "ORB-625143",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
           },
           {
             "id": "r5-c6",
@@ -572,8 +599,14 @@
             "rowLabel": "E",
             "seatNumber": 5,
             "type": "standard",
-            "price": 190000,
-            "status": "available"
+            "price": 20000,
+            "status": "sold",
+            "bookedBy": {
+              "buyerName": "نیلوفر زمانی",
+              "buyerPhone": "۰۹۱۲۸۸۸۹۹۰۰",
+              "bookingId": "ORB-625143",
+              "bookedAt": "۱۴۰۳/۰۸/۲۲"
+            }
           },
           {
             "id": "r5-c7",
@@ -582,7 +615,7 @@
             "rowLabel": "E",
             "seatNumber": 6,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -592,7 +625,7 @@
             "rowLabel": "E",
             "seatNumber": 7,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -612,7 +645,7 @@
             "rowLabel": "E",
             "seatNumber": 8,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -622,7 +655,7 @@
             "rowLabel": "E",
             "seatNumber": 9,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -632,7 +665,7 @@
             "rowLabel": "E",
             "seatNumber": 10,
             "type": "standard",
-            "price": 190000,
+            "price": 20000,
             "status": "available"
           },
           {
@@ -641,8 +674,8 @@
             "col": 1,
             "rowLabel": "F",
             "seatNumber": 1,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -651,8 +684,8 @@
             "col": 2,
             "rowLabel": "F",
             "seatNumber": 2,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -661,8 +694,8 @@
             "col": 3,
             "rowLabel": "F",
             "seatNumber": 3,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -681,8 +714,8 @@
             "col": 5,
             "rowLabel": "F",
             "seatNumber": 4,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -691,8 +724,8 @@
             "col": 6,
             "rowLabel": "F",
             "seatNumber": 5,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -701,8 +734,8 @@
             "col": 7,
             "rowLabel": "F",
             "seatNumber": 6,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -711,8 +744,8 @@
             "col": 8,
             "rowLabel": "F",
             "seatNumber": 7,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -731,8 +764,8 @@
             "col": 10,
             "rowLabel": "F",
             "seatNumber": 8,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -741,8 +774,8 @@
             "col": 11,
             "rowLabel": "F",
             "seatNumber": 9,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -751,8 +784,8 @@
             "col": 12,
             "rowLabel": "F",
             "seatNumber": 10,
-            "type": "vip",
-            "price": 250000,
+            "type": "standard",
+            "price": 20000,
             "status": "available"
           },
           {
@@ -823,13 +856,7 @@
             "seatNumber": 6,
             "type": "vip",
             "price": 250000,
-            "status": "sold",
-            "bookedBy": {
-              "buyerName": "مهرداد پاکدل",
-              "buyerPhone": "۰۹۱۹۵۵۵۶۶۷۷",
-              "bookingId": "ORB-746219",
-              "bookedAt": "۱۴۰۳/۰۸/۲۲"
-            }
+            "status": "available"
           },
           {
             "id": "r7-c8",
@@ -887,8 +914,8 @@
             "col": 1,
             "rowLabel": "H",
             "seatNumber": 1,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -897,8 +924,8 @@
             "col": 2,
             "rowLabel": "H",
             "seatNumber": 2,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -907,8 +934,8 @@
             "col": 3,
             "rowLabel": "H",
             "seatNumber": 3,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -927,8 +954,8 @@
             "col": 5,
             "rowLabel": "H",
             "seatNumber": 4,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -937,8 +964,8 @@
             "col": 6,
             "rowLabel": "H",
             "seatNumber": 5,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -947,8 +974,8 @@
             "col": 7,
             "rowLabel": "H",
             "seatNumber": 6,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -957,8 +984,8 @@
             "col": 8,
             "rowLabel": "H",
             "seatNumber": 7,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -977,8 +1004,8 @@
             "col": 10,
             "rowLabel": "H",
             "seatNumber": 8,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -987,8 +1014,8 @@
             "col": 11,
             "rowLabel": "H",
             "seatNumber": 9,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           },
           {
@@ -997,762 +1024,13 @@
             "col": 12,
             "rowLabel": "H",
             "seatNumber": 10,
-            "type": "standard",
-            "price": 190000,
+            "type": "vip",
+            "price": 250000,
             "status": "available"
           }
-        ],
-        "vipPrice": 250000,
-        "standardPrice": 190000,
-        "economyPrice": 140000
-      }
-    },
-    {
-      "id": "screening-spirited-away",
-      "titleFa": "شهر اشباح",
-      "titleEn": "Spirited Away (Sen to Chihiro)",
-      "tagline": "بازپخش با کیفیت 4K و مسترینگ صدای سینمایی هایائو میازاکی",
-      "genre": "انیمه • فانتزی کلاسیک • شاهکار استودیو جیبلی",
-      "city": "شیراز",
-      "venueName": "سینما هنر شیراز — سالن یاقوت",
-      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
-      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
-      "time": "۲۰:۰۰",
-      "duration": "۱۲۵ دقیقه",
-      "ageRating": "عمومی (بدون محدودیت سنی)",
-      "language": "زبان اصلی ژاپنی با زیرنویس فارسی اختصاصی و کریستالی",
-      "posterUrl": "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop",
-      "bannerUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=1600&auto=format&fit=crop",
-      "synopsis": "چیهیرو دختربچه ۱۰ ساله‌ای است که همراه پدر و مادرش وارد دنیایی ناشناخته از خدایان، اشباح و جادوگران می‌شود. پس از تبدیل شدن والدینش به حیوان، او برای نجات آنها و بازگشت به دنیای انسان‌ها در حمام اسرارآمیز یوکای مشغول به کار می‌شود...",
-      "featured": false,
-      "createdAt": "2026-11-01T11:00:00Z",
-      "seatMap": {
-        "rows": 7,
-        "cols": 10,
-        "seats": [
-          {
-            "id": "r1-c1",
-            "row": 1,
-            "col": 1,
-            "rowLabel": "A",
-            "seatNumber": 1,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c2",
-            "row": 1,
-            "col": 2,
-            "rowLabel": "A",
-            "seatNumber": 2,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c3",
-            "row": 1,
-            "col": 3,
-            "rowLabel": "A",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r1-c4",
-            "row": 1,
-            "col": 4,
-            "rowLabel": "A",
-            "seatNumber": 3,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c5",
-            "row": 1,
-            "col": 5,
-            "rowLabel": "A",
-            "seatNumber": 4,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c6",
-            "row": 1,
-            "col": 6,
-            "rowLabel": "A",
-            "seatNumber": 5,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c7",
-            "row": 1,
-            "col": 7,
-            "rowLabel": "A",
-            "seatNumber": 6,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c8",
-            "row": 1,
-            "col": 8,
-            "rowLabel": "A",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r1-c9",
-            "row": 1,
-            "col": 9,
-            "rowLabel": "A",
-            "seatNumber": 7,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r1-c10",
-            "row": 1,
-            "col": 10,
-            "rowLabel": "A",
-            "seatNumber": 8,
-            "type": "economy",
-            "price": 120000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c1",
-            "row": 2,
-            "col": 1,
-            "rowLabel": "B",
-            "seatNumber": 1,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c2",
-            "row": 2,
-            "col": 2,
-            "rowLabel": "B",
-            "seatNumber": 2,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c3",
-            "row": 2,
-            "col": 3,
-            "rowLabel": "B",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r2-c4",
-            "row": 2,
-            "col": 4,
-            "rowLabel": "B",
-            "seatNumber": 3,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c5",
-            "row": 2,
-            "col": 5,
-            "rowLabel": "B",
-            "seatNumber": 4,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c6",
-            "row": 2,
-            "col": 6,
-            "rowLabel": "B",
-            "seatNumber": 5,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c7",
-            "row": 2,
-            "col": 7,
-            "rowLabel": "B",
-            "seatNumber": 6,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c8",
-            "row": 2,
-            "col": 8,
-            "rowLabel": "B",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r2-c9",
-            "row": 2,
-            "col": 9,
-            "rowLabel": "B",
-            "seatNumber": 7,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r2-c10",
-            "row": 2,
-            "col": 10,
-            "rowLabel": "B",
-            "seatNumber": 8,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c1",
-            "row": 3,
-            "col": 1,
-            "rowLabel": "C",
-            "seatNumber": 1,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c2",
-            "row": 3,
-            "col": 2,
-            "rowLabel": "C",
-            "seatNumber": 2,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c3",
-            "row": 3,
-            "col": 3,
-            "rowLabel": "C",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r3-c4",
-            "row": 3,
-            "col": 4,
-            "rowLabel": "C",
-            "seatNumber": 3,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c5",
-            "row": 3,
-            "col": 5,
-            "rowLabel": "C",
-            "seatNumber": 4,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c6",
-            "row": 3,
-            "col": 6,
-            "rowLabel": "C",
-            "seatNumber": 5,
-            "type": "standard",
-            "price": 170000,
-            "status": "sold",
-            "bookedBy": {
-              "buyerName": "آرش علوی",
-              "buyerPhone": "۰۹۳۶۷۷۷۸۸۹۹",
-              "bookingId": "ORB-519842",
-              "bookedAt": "۱۴۰۳/۰۸/۲۲"
-            }
-          },
-          {
-            "id": "r3-c7",
-            "row": 3,
-            "col": 7,
-            "rowLabel": "C",
-            "seatNumber": 6,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c8",
-            "row": 3,
-            "col": 8,
-            "rowLabel": "C",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r3-c9",
-            "row": 3,
-            "col": 9,
-            "rowLabel": "C",
-            "seatNumber": 7,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r3-c10",
-            "row": 3,
-            "col": 10,
-            "rowLabel": "C",
-            "seatNumber": 8,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c1",
-            "row": 4,
-            "col": 1,
-            "rowLabel": "D",
-            "seatNumber": 1,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c2",
-            "row": 4,
-            "col": 2,
-            "rowLabel": "D",
-            "seatNumber": 2,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c3",
-            "row": 4,
-            "col": 3,
-            "rowLabel": "D",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r4-c4",
-            "row": 4,
-            "col": 4,
-            "rowLabel": "D",
-            "seatNumber": 3,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c5",
-            "row": 4,
-            "col": 5,
-            "rowLabel": "D",
-            "seatNumber": 4,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c6",
-            "row": 4,
-            "col": 6,
-            "rowLabel": "D",
-            "seatNumber": 5,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c7",
-            "row": 4,
-            "col": 7,
-            "rowLabel": "D",
-            "seatNumber": 6,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c8",
-            "row": 4,
-            "col": 8,
-            "rowLabel": "D",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r4-c9",
-            "row": 4,
-            "col": 9,
-            "rowLabel": "D",
-            "seatNumber": 7,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r4-c10",
-            "row": 4,
-            "col": 10,
-            "rowLabel": "D",
-            "seatNumber": 8,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r5-c1",
-            "row": 5,
-            "col": 1,
-            "rowLabel": "E",
-            "seatNumber": 1,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r5-c2",
-            "row": 5,
-            "col": 2,
-            "rowLabel": "E",
-            "seatNumber": 2,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r5-c3",
-            "row": 5,
-            "col": 3,
-            "rowLabel": "E",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r5-c4",
-            "row": 5,
-            "col": 4,
-            "rowLabel": "E",
-            "seatNumber": 3,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r5-c5",
-            "row": 5,
-            "col": 5,
-            "rowLabel": "E",
-            "seatNumber": 4,
-            "type": "vip",
-            "price": 220000,
-            "status": "sold",
-            "bookedBy": {
-              "buyerName": "نیلوفر زمانی",
-              "buyerPhone": "۰۹۱۲۸۸۸۹۹۰۰",
-              "bookingId": "ORB-625143",
-              "bookedAt": "۱۴۰۳/۰۸/۲۲"
-            }
-          },
-          {
-            "id": "r5-c6",
-            "row": 5,
-            "col": 6,
-            "rowLabel": "E",
-            "seatNumber": 5,
-            "type": "vip",
-            "price": 220000,
-            "status": "sold",
-            "bookedBy": {
-              "buyerName": "نیلوفر زمانی",
-              "buyerPhone": "۰۹۱۲۸۸۸۹۹۰۰",
-              "bookingId": "ORB-625143",
-              "bookedAt": "۱۴۰۳/۰۸/۲۲"
-            }
-          },
-          {
-            "id": "r5-c7",
-            "row": 5,
-            "col": 7,
-            "rowLabel": "E",
-            "seatNumber": 6,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r5-c8",
-            "row": 5,
-            "col": 8,
-            "rowLabel": "E",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r5-c9",
-            "row": 5,
-            "col": 9,
-            "rowLabel": "E",
-            "seatNumber": 7,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r5-c10",
-            "row": 5,
-            "col": 10,
-            "rowLabel": "E",
-            "seatNumber": 8,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c1",
-            "row": 6,
-            "col": 1,
-            "rowLabel": "F",
-            "seatNumber": 1,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c2",
-            "row": 6,
-            "col": 2,
-            "rowLabel": "F",
-            "seatNumber": 2,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c3",
-            "row": 6,
-            "col": 3,
-            "rowLabel": "F",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r6-c4",
-            "row": 6,
-            "col": 4,
-            "rowLabel": "F",
-            "seatNumber": 3,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c5",
-            "row": 6,
-            "col": 5,
-            "rowLabel": "F",
-            "seatNumber": 4,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c6",
-            "row": 6,
-            "col": 6,
-            "rowLabel": "F",
-            "seatNumber": 5,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c7",
-            "row": 6,
-            "col": 7,
-            "rowLabel": "F",
-            "seatNumber": 6,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c8",
-            "row": 6,
-            "col": 8,
-            "rowLabel": "F",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r6-c9",
-            "row": 6,
-            "col": 9,
-            "rowLabel": "F",
-            "seatNumber": 7,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r6-c10",
-            "row": 6,
-            "col": 10,
-            "rowLabel": "F",
-            "seatNumber": 8,
-            "type": "vip",
-            "price": 220000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c1",
-            "row": 7,
-            "col": 1,
-            "rowLabel": "G",
-            "seatNumber": 1,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c2",
-            "row": 7,
-            "col": 2,
-            "rowLabel": "G",
-            "seatNumber": 2,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c3",
-            "row": 7,
-            "col": 3,
-            "rowLabel": "G",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r7-c4",
-            "row": 7,
-            "col": 4,
-            "rowLabel": "G",
-            "seatNumber": 3,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c5",
-            "row": 7,
-            "col": 5,
-            "rowLabel": "G",
-            "seatNumber": 4,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c6",
-            "row": 7,
-            "col": 6,
-            "rowLabel": "G",
-            "seatNumber": 5,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c7",
-            "row": 7,
-            "col": 7,
-            "rowLabel": "G",
-            "seatNumber": 6,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c8",
-            "row": 7,
-            "col": 8,
-            "rowLabel": "G",
-            "seatNumber": 0,
-            "type": "aisle",
-            "price": 0,
-            "status": "available"
-          },
-          {
-            "id": "r7-c9",
-            "row": 7,
-            "col": 9,
-            "rowLabel": "G",
-            "seatNumber": 7,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          },
-          {
-            "id": "r7-c10",
-            "row": 7,
-            "col": 10,
-            "rowLabel": "G",
-            "seatNumber": 8,
-            "type": "standard",
-            "price": 170000,
-            "status": "available"
-          }
-        ],
-        "vipPrice": 220000,
-        "standardPrice": 170000,
-        "economyPrice": 120000
-      }
+        ]
+      },
+      "isSoldOut": false
     },
     {
       "id": "screening-oppenheimer",
@@ -3065,7 +2343,8 @@
         "vipPrice": 280000,
         "standardPrice": 210000,
         "economyPrice": 150000
-      }
+      },
+      "isSoldOut": true
     },
     {
       "id": "screening-fireflies",
@@ -3706,10 +2985,128 @@
         "vipPrice": 200000,
         "standardPrice": 160000,
         "economyPrice": 110000
-      }
+      },
+      "isSoldOut": true
     }
   ],
   "bookings": [
+    {
+      "id": "ORB-767025",
+      "screeningId": "screening-spirited-away",
+      "movieTitleFa": "شهر اشباح",
+      "movieTitleEn": "Spirited Away (Sen to Chihiro)",
+      "city": "شیراز",
+      "venueName": "سینما هنر شیراز — سالن یاقوت",
+      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
+      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
+      "time": "۲۰:۰۰",
+      "buyerName": "ربسیبی",
+      "buyerPhone": "09123456789",
+      "seatIds": [
+        "r3-c4"
+      ],
+      "seatDetails": [
+        {
+          "seatId": "r3-c4",
+          "rowLabel": "C",
+          "seatNumber": 3,
+          "type": "standard",
+          "price": 170000
+        }
+      ],
+      "totalAmount": 170000,
+      "status": "expired",
+      "createdAt": "2026-11-07T19:34:58.589Z",
+      "paymentRef": "VRZ-TX9hzTsildGkEgM303Ni4",
+      "varizaSlug": "TX9hzTsildGkEgM303Ni4",
+      "varizaPayUrl": "https://variza.ir/pay/TX9hzTsildGkEgM303Ni4",
+      "expiresAt": "2026-11-07T20:05:01.000Z"
+    },
+    {
+      "id": "ORB-256951",
+      "screeningId": "screening-spirited-away",
+      "movieTitleFa": "شهر اشباح",
+      "movieTitleEn": "Spirited Away (Sen to Chihiro)",
+      "city": "شیراز",
+      "venueName": "سینما هنر شیراز — سالن یاقوت",
+      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
+      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
+      "time": "۲۰:۰۰",
+      "buyerName": "عرفان",
+      "buyerPhone": "09102357990",
+      "seatIds": [
+        "r3-c10"
+      ],
+      "seatDetails": [
+        {
+          "seatId": "r3-c10",
+          "rowLabel": "C",
+          "seatNumber": 8,
+          "type": "standard",
+          "price": 170000
+        }
+      ],
+      "totalAmount": 170000,
+      "status": "expired",
+      "createdAt": "2026-11-07T19:20:51.879Z",
+      "paymentRef": "VRZ-7WY4YEm7kUNWovGOHvRFB",
+      "varizaSlug": "7WY4YEm7kUNWovGOHvRFB",
+      "varizaPayUrl": "https://variza.ir/pay/7WY4YEm7kUNWovGOHvRFB",
+      "expiresAt": "2026-11-07T19:50:55.000Z"
+    },
+    {
+      "id": "ORB-755576",
+      "screeningId": "screening-spirited-away",
+      "movieTitleFa": "شهر اشباح",
+      "movieTitleEn": "Spirited Away (Sen to Chihiro)",
+      "city": "شیراز",
+      "venueName": "سینما هنر شیراز — سالن یاقوت",
+      "venueAddress": "شیراز، بلوار ستارخان، مجتمع بزرگ فرهنگی یاقوت",
+      "date": "پنجشنبه ۱ آذر ۱۴۰۳",
+      "time": "۲۰:۰۰",
+      "buyerName": "اعهاه",
+      "buyerPhone": "09102357990",
+      "seatIds": [
+        "r2-c2",
+        "r2-c1",
+        "r3-c1",
+        "r3-c2"
+      ],
+      "seatDetails": [
+        {
+          "seatId": "r2-c2",
+          "rowLabel": "B",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "seatId": "r2-c1",
+          "rowLabel": "B",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "seatId": "r3-c1",
+          "rowLabel": "C",
+          "seatNumber": 1,
+          "type": "standard",
+          "price": 170000
+        },
+        {
+          "seatId": "r3-c2",
+          "rowLabel": "C",
+          "seatNumber": 2,
+          "type": "standard",
+          "price": 170000
+        }
+      ],
+      "totalAmount": 680000,
+      "status": "confirmed",
+      "createdAt": "2026-11-05T12:40:24.143Z",
+      "paymentRef": "PAY-2142221"
+    },
     {
       "id": "ORB-831920",
       "screeningId": "screening-suzume",
@@ -6450,17 +5847,17 @@
   ],
   "admins": [
     {
-      "id": "admin-1",
-      "username": "admin",
-      "password": "orbit1234",
-      "name": "مدیر کل اوربیت",
+      "id": "admin-erfan",
+      "username": "Erfan.Rahemi",
+      "password": "Erf@n8664",
+      "name": "عرفان راحمی",
       "role": "superadmin",
-      "createdAt": "2026-11-01T10:00:00Z"
+      "createdAt": "2026-11-07T20:23:16.067Z"
     }
   ],
   "settings": {
     "logoUrl": "",
-    "brandName": "ORBIT",
+    "brandName": "اوربیت",
     "brandSubtitle": "اکران‌های اختصاصی",
     "brandTagline": "اکران‌های سینمایی و انیمه با کیفیت برتر",
     "aboutTitle": "درباره پلتفرم اکران‌های اختصاصی اوربیت",
@@ -6470,7 +5867,11 @@
     "contactEmail": "contact@orbit-cinema.ir",
     "contactAddress": "تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸",
     "contactInstagram": "orbit_screenings",
-    "contactTelegram": "orbit_screenings"
+    "contactTelegram": "orbit_screenings",
+    "seatHoldMinutes": 30,
+    "paymentExpiresIn": "30m",
+    "varizaCardLast4": "8589",
+    "appUrl": "https://small-crabs-say.loca.lt"
   },
   "tickets": [
     {
@@ -6493,5 +5894,6 @@
       "status": "resolved",
       "createdAt": "2026-11-04T10:17:04.058Z"
     }
-  ]
+  ],
+  "processedWebhooks": []
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Seat, SeatType, VenueTemplate, SeatMap } from '@/types';
+import { Seat, SeatType, VenueTemplate, SeatMap, Screening } from '@/types';
 import { formatPrice, toPersianDigits } from '@/lib/utils';
 import {
   Grid,
@@ -12,6 +12,9 @@ import {
   Layers,
   Crown,
   MinusCircle,
+  Film,
+  RotateCcw,
+  Loader2,
 } from 'lucide-react';
 
 interface SeatMapBuilderProps {
@@ -40,8 +43,13 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
   const [savingTemplate, setSavingTemplate] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
 
+  const [screenings, setScreenings] = useState<Screening[]>([]);
+  const [selectedScreeningId, setSelectedScreeningId] = useState<string>('');
+  const [savingScreeningMap, setSavingScreeningMap] = useState<boolean>(false);
+
   useEffect(() => {
     loadTemplates();
+    loadScreenings();
   }, []);
 
   async function loadTemplates() {
@@ -55,6 +63,102 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
       console.error(e);
     }
   }
+
+  async function loadScreenings() {
+    try {
+      const res = await fetch('/api/screenings');
+      const data = await res.json();
+      if (data.success && Array.isArray(data.data)) {
+        setScreenings(data.data);
+        if (data.data.length > 0 && !selectedScreeningId) {
+          setSelectedScreeningId(data.data[0].id);
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  const handleUpdateVipPrice = (newPrice: number) => {
+    setVipPrice(newPrice);
+    setSeats((prev) =>
+      prev.map((s) => (s.type === 'vip' ? { ...s, price: newPrice } : s))
+    );
+  };
+
+  const handleUpdateStandardPrice = (newPrice: number) => {
+    setStandardPrice(newPrice);
+    setSeats((prev) =>
+      prev.map((s) => (s.type === 'standard' ? { ...s, price: newPrice } : s))
+    );
+  };
+
+  const handleUpdateEconomyPrice = (newPrice: number) => {
+    setEconomyPrice(newPrice);
+    setSeats((prev) =>
+      prev.map((s) => (s.type === 'economy' ? { ...s, price: newPrice } : s))
+    );
+  };
+
+  const handleLoadScreeningMap = () => {
+    const scr = screenings.find((s) => s.id === selectedScreeningId);
+    if (!scr || !scr.seatMap) return;
+
+    setRowsCount(scr.seatMap.rows);
+    setColsCount(scr.seatMap.cols);
+    setVipPrice(scr.seatMap.vipPrice || 250000);
+    setStandardPrice(scr.seatMap.standardPrice || 190000);
+    setEconomyPrice(scr.seatMap.economyPrice || 140000);
+    setSeats(scr.seatMap.seats);
+    setStatusMessage(`نقشه و قیمت‌های اکران «${scr.titleFa}» با موفقیت بارگذاری شد.`);
+  };
+
+  const handleSaveToScreening = async () => {
+    if (!selectedScreeningId) {
+      alert('لطفاً ابتدا یک رویداد اکران را انتخاب فرمایید.');
+      return;
+    }
+
+    setSavingScreeningMap(true);
+    setStatusMessage(null);
+    try {
+      const finalSeats = seats.map((s) => {
+        let p = s.price;
+        if (s.type === 'vip') p = vipPrice;
+        else if (s.type === 'standard') p = standardPrice;
+        else if (s.type === 'economy') p = economyPrice;
+        else if (s.type === 'aisle' || s.type === 'blocked') p = 0;
+        return { ...s, price: p };
+      });
+
+      const res = await fetch(`/api/screenings/${selectedScreeningId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          seatMap: {
+            rows: rowsCount,
+            cols: colsCount,
+            vipPrice,
+            standardPrice,
+            economyPrice,
+            seats: finalSeats,
+          },
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setStatusMessage('قیمت‌های جدید و نقشه صندلی‌ها با موفقیت روی رویداد ذخیره شدند.');
+        loadScreenings();
+      } else {
+        setStatusMessage(data.error || 'خطا در ذخیره اکران');
+      }
+    } catch (e) {
+      setStatusMessage('خطای اتصال به سرور');
+    } finally {
+      setSavingScreeningMap(false);
+    }
+  };
 
   function generateInitialGrid(
     rCount: number,
@@ -256,10 +360,19 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
   };
 
   const handleExport = () => {
+    const finalSeats = seats.map((s) => {
+      let p = s.price;
+      if (s.type === 'vip') p = vipPrice;
+      else if (s.type === 'standard') p = standardPrice;
+      else if (s.type === 'economy') p = economyPrice;
+      else if (s.type === 'aisle' || s.type === 'blocked') p = 0;
+      return { ...s, price: p };
+    });
+
     const seatMap: SeatMap = {
       rows: rowsCount,
       cols: colsCount,
-      seats,
+      seats: finalSeats,
       vipPrice,
       standardPrice,
       economyPrice,
@@ -267,12 +380,66 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
     if (onSave) {
       onSave(seatMap);
     }
-    setStatusMessage('نقشه صندلی‌ها با موفقیت ذخیره و اعمال شد.');
+    setStatusMessage('نقشه صندلی‌ها و قیمت‌های جدید با موفقیت ذخیره و اعمال شد.');
   };
 
   return (
     <div className="space-y-8">
       <div className="p-6 rounded-3xl bg-[#12131A] border border-white/10 space-y-6">
+        {/* Screening Quick Selector & Direct Save for Standalone Mode */}
+        {!onSave && screenings.length > 0 && (
+          <div className="p-4 rounded-2xl bg-gradient-to-r from-[#7B2CBF]/20 to-[#3A86FF]/20 border border-[#3A86FF]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <Film className="w-5 h-5 text-[#00F0FF] flex-shrink-0" />
+              <div>
+                <span className="text-xs font-bold text-white block">
+                  اعمال و ویرایش مستقیم قیمت‌ها روی رویداد اکران:
+                </span>
+                <span className="text-[11px] text-slate-300">
+                  می‌توانید نقشه و قیمت‌های هر فیلم را انتخاب و قیمت‌های جدید را مستقیماً روی آن ذخیره کنید.
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 flex-wrap">
+              <select
+                value={selectedScreeningId}
+                onChange={(e) => setSelectedScreeningId(e.target.value)}
+                className="px-3 py-2 rounded-xl bg-[#181A24] border border-white/20 text-white text-xs font-semibold focus:outline-none focus:border-[#3A86FF] cursor-pointer"
+              >
+                {screenings.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.titleFa} ({s.city} — {s.date})
+                  </option>
+                ))}
+              </select>
+
+              <button
+                type="button"
+                onClick={handleLoadScreeningMap}
+                className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
+              >
+                <FolderOpen className="w-3.5 h-3.5 text-[#00F0FF]" />
+                <span>بارگذاری نقشه و قیمت‌ها</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={handleSaveToScreening}
+                disabled={savingScreeningMap}
+                className="btn-cosmic px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-glow disabled:opacity-50"
+              >
+                {savingScreeningMap ? (
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                ) : (
+                  <Save className="w-3.5 h-3.5" />
+                )}
+                <span>ذخیره مستقیم قیمت‌ها روی اکران</span>
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
           <div>
             <h3 className="text-base font-bold text-white flex items-center gap-2">
@@ -324,7 +491,7 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
               type="number"
               step={10000}
               value={vipPrice}
-              onChange={(e) => setVipPrice(parseInt(e.target.value) || 0)}
+              onChange={(e) => handleUpdateVipPrice(parseInt(e.target.value) || 0)}
               className="w-full px-3 py-2 rounded-xl bg-purple-950/20 border border-purple-500/30 text-white font-mono text-center focus:outline-none focus:border-purple-400"
             />
           </div>
@@ -335,7 +502,7 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
               type="number"
               step={10000}
               value={standardPrice}
-              onChange={(e) => setStandardPrice(parseInt(e.target.value) || 0)}
+              onChange={(e) => handleUpdateStandardPrice(parseInt(e.target.value) || 0)}
               className="w-full px-3 py-2 rounded-xl bg-blue-950/20 border border-blue-500/30 text-white font-mono text-center focus:outline-none focus:border-[#3A86FF]"
             />
           </div>
@@ -346,7 +513,7 @@ export default function SeatMapBuilder({ initialSeatMap, onSave }: SeatMapBuilde
               type="number"
               step={10000}
               value={economyPrice}
-              onChange={(e) => setEconomyPrice(parseInt(e.target.value) || 0)}
+              onChange={(e) => handleUpdateEconomyPrice(parseInt(e.target.value) || 0)}
               className="w-full px-3 py-2 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-white font-mono text-center focus:outline-none focus:border-emerald-400"
             />
           </div>

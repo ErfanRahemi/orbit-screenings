@@ -12,6 +12,10 @@ import {
   X,
   Save,
   Layers,
+  Ban,
+  CheckCircle2,
+  Loader2,
+  Sparkles,
 } from 'lucide-react';
 
 const CITIES = ['تهران', 'شیراز', 'اصفهان', 'مشهد', 'تبریز'];
@@ -40,6 +44,12 @@ export default function ScreeningsManager() {
   const [bannerUrl, setBannerUrl] = useState('');
   const [synopsis, setSynopsis] = useState('');
   const [featured, setFeatured] = useState(false);
+  const [isSoldOut, setIsSoldOut] = useState(false);
+
+  const [vipPrice, setVipPrice] = useState<number>(250000);
+  const [standardPrice, setStandardPrice] = useState<number>(190000);
+  const [economyPrice, setEconomyPrice] = useState<number>(140000);
+  const [togglingSoldOutId, setTogglingSoldOutId] = useState<string | null>(null);
 
   const [customSeatMap, setCustomSeatMap] = useState<SeatMap | null>(null);
   const [selectedTemplateId, setSelectedTemplateId] = useState<string>('');
@@ -98,6 +108,10 @@ export default function ScreeningsManager() {
     setBannerUrl('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop');
     setSynopsis('');
     setFeatured(false);
+    setIsSoldOut(false);
+    setVipPrice(250000);
+    setStandardPrice(190000);
+    setEconomyPrice(140000);
     setCustomSeatMap(null);
     setShowSeatBuilder(false);
     setIsFormOpen(true);
@@ -121,9 +135,37 @@ export default function ScreeningsManager() {
     setBannerUrl(screening.bannerUrl);
     setSynopsis(screening.synopsis);
     setFeatured(screening.featured);
+    setIsSoldOut(!!screening.isSoldOut);
+    setVipPrice(screening.seatMap?.vipPrice || 250000);
+    setStandardPrice(screening.seatMap?.standardPrice || 190000);
+    setEconomyPrice(screening.seatMap?.economyPrice || 140000);
     setCustomSeatMap(screening.seatMap);
     setShowSeatBuilder(false);
     setIsFormOpen(true);
+  };
+
+  const handleToggleSoldOut = async (screening: Screening) => {
+    setTogglingSoldOutId(screening.id);
+    try {
+      const newStatus = !screening.isSoldOut;
+      const res = await fetch(`/api/screenings/${screening.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ isSoldOut: newStatus }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setScreenings((prev) =>
+          prev.map((s) => (s.id === screening.id ? { ...s, isSoldOut: newStatus } : s))
+        );
+      } else {
+        alert(data.error || 'خطا در تغییر وضعیت ظرفیت');
+      }
+    } catch (e) {
+      alert('خطای اتصال به سرور');
+    } finally {
+      setTogglingSoldOutId(null);
+    }
   };
 
   const handleDelete = async (id: string, title: string) => {
@@ -146,20 +188,41 @@ export default function ScreeningsManager() {
     let seatMapToUse: SeatMap;
 
     if (customSeatMap) {
-      seatMapToUse = customSeatMap;
+      seatMapToUse = {
+        ...customSeatMap,
+        vipPrice,
+        standardPrice,
+        economyPrice,
+        seats: customSeatMap.seats.map((s) => {
+          let p = s.price;
+          if (s.type === 'vip') p = vipPrice;
+          else if (s.type === 'standard') p = standardPrice;
+          else if (s.type === 'economy') p = economyPrice;
+          else if (s.type === 'aisle' || s.type === 'blocked') p = 0;
+          return { ...s, price: p };
+        }),
+      };
     } else {
       const chosenTemplate = templates.find((t) => t.id === selectedTemplateId) || templates[0];
       if (chosenTemplate) {
         seatMapToUse = {
           rows: chosenTemplate.rows,
           cols: chosenTemplate.cols,
-          vipPrice: chosenTemplate.vipPrice,
-          standardPrice: chosenTemplate.standardPrice,
-          economyPrice: chosenTemplate.economyPrice,
-          seats: chosenTemplate.seats.map((s) => ({
-            ...s,
-            status: 'available',
-          })),
+          vipPrice,
+          standardPrice,
+          economyPrice,
+          seats: chosenTemplate.seats.map((s) => {
+            let p = s.price;
+            if (s.type === 'vip') p = vipPrice;
+            else if (s.type === 'standard') p = standardPrice;
+            else if (s.type === 'economy') p = economyPrice;
+            else if (s.type === 'aisle' || s.type === 'blocked') p = 0;
+            return {
+              ...s,
+              price: p,
+              status: 'available',
+            };
+          }),
         };
       } else {
         alert('لطفاً نقشه سالن را مشخص فرمایید.');
@@ -184,6 +247,7 @@ export default function ScreeningsManager() {
       bannerUrl: bannerUrl.trim(),
       synopsis: synopsis.trim(),
       featured,
+      isSoldOut,
       seatMap: seatMapToUse,
     };
 
@@ -305,28 +369,59 @@ export default function ScreeningsManager() {
                     </td>
 
                     <td className="p-4">
-                      {s.featured ? (
-                        <span className="px-2 py-0.5 rounded-full bg-[#7B2CBF]/30 text-[#00F0FF] border border-[#7B2CBF]/50 text-[10px] font-bold">
-                          برگزیده در صفحه اصلی
-                        </span>
-                      ) : (
-                        <span className="px-2 py-0.5 rounded-full bg-white/5 text-slate-400 text-[10px]">
-                          عادی
-                        </span>
-                      )}
+                      <div className="flex flex-col gap-1 items-start">
+                        {s.isSoldOut ? (
+                          <span className="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[10px] font-bold flex items-center gap-1">
+                            <Ban className="w-3 h-3 text-rose-400" />
+                            تکمیل ظرفیت (Sold Out)
+                          </span>
+                        ) : (
+                          <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[10px] font-semibold flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                            در حال فروش بلیت
+                          </span>
+                        )}
+
+                        {s.featured && (
+                          <span className="px-2 py-0.5 rounded-full bg-[#7B2CBF]/30 text-[#00F0FF] border border-[#7B2CBF]/50 text-[10px] font-bold">
+                            برگزیده در صفحه اصلی
+                          </span>
+                        )}
+                      </div>
                     </td>
 
                     <td className="p-4 text-center">
                       <div className="flex items-center justify-center gap-2">
                         <button
+                          type="button"
+                          onClick={() => handleToggleSoldOut(s)}
+                          disabled={togglingSoldOutId === s.id}
+                          className={`px-3 py-1.5 rounded-xl text-[11px] font-bold flex items-center gap-1 transition-all shadow-sm ${
+                            s.isSoldOut
+                              ? 'bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40'
+                              : 'bg-white/5 hover:bg-rose-500/15 text-slate-300 hover:text-rose-300 border border-white/10'
+                          }`}
+                          title={s.isSoldOut ? 'بازگشایی مجدد فروش بلیت' : 'تکمیل ظرفیت و توقف فروش بلیت'}
+                        >
+                          {togglingSoldOutId === s.id ? (
+                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          ) : (
+                            <Ban className="w-3.5 h-3.5" />
+                          )}
+                          <span>{s.isSoldOut ? 'بازگشایی فروش' : 'اعلام Sold Out'}</span>
+                        </button>
+
+                        <button
                           onClick={() => handleOpenEdit(s)}
                           className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-[#3A86FF] transition-colors"
+                          title="ویرایش اطلاعات اکران و قیمت‌ها"
                         >
                           <Edit2 className="w-4 h-4" />
                         </button>
                         <button
                           onClick={() => handleDelete(s.id, s.titleFa)}
                           className="p-2 rounded-xl bg-white/5 hover:bg-red-500/10 text-red-400 transition-colors"
+                          title="حذف اکران"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -511,17 +606,81 @@ export default function ScreeningsManager() {
                   />
                 </div>
 
-                <div className="sm:col-span-2 flex items-center gap-2 pt-2">
-                  <input
-                    type="checkbox"
-                    id="featured-cb"
-                    checked={featured}
-                    onChange={(e) => setFeatured(e.target.checked)}
-                    className="w-4 h-4 rounded text-[#3A86FF] focus:ring-0 cursor-pointer"
-                  />
-                  <label htmlFor="featured-cb" className="text-xs font-semibold text-white cursor-pointer">
-                    نمایش در بنر اصلی و اکران‌های برگزیده صفحه اول
-                  </label>
+                <div className="sm:col-span-2 flex flex-col gap-2.5 pt-2 border-t border-white/5">
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="featured-cb"
+                      checked={featured}
+                      onChange={(e) => setFeatured(e.target.checked)}
+                      className="w-4 h-4 rounded text-[#3A86FF] focus:ring-0 cursor-pointer"
+                    />
+                    <label htmlFor="featured-cb" className="text-xs font-semibold text-white cursor-pointer">
+                      نمایش در بنر اصلی و اکران‌های برگزیده صفحه اول
+                    </label>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="soldout-cb"
+                      checked={isSoldOut}
+                      onChange={(e) => setIsSoldOut(e.target.checked)}
+                      className="w-4 h-4 rounded text-rose-500 focus:ring-0 cursor-pointer"
+                    />
+                    <label htmlFor="soldout-cb" className="text-xs font-bold text-rose-400 cursor-pointer flex items-center gap-1.5">
+                      <Ban className="w-3.5 h-3.5" />
+                      اعلام تکمیل ظرفیت فیلم (Sold Out) — توقف فروش بلیت و نمایش برچسب Sold Out
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              {/* Direct Seat Pricing Section */}
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-[#00F0FF]" />
+                    قیمت‌گذاری صندلی‌های این اکران (تومان):
+                  </span>
+                  <span className="text-[10px] text-slate-400">
+                    تغییر این مقادیر مستقیماً روی قیمت صندلی‌های این سانس اعمال می‌شود.
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="space-y-1">
+                    <label className="text-[11px] font-semibold text-purple-300">قیمت بلیت VIP (تومان):</label>
+                    <input
+                      type="number"
+                      step={10000}
+                      value={vipPrice}
+                      onChange={(e) => setVipPrice(parseInt(e.target.value) || 0)}
+                      className="w-full px-3 py-2 rounded-xl bg-purple-950/20 border border-purple-500/30 text-white font-mono text-center text-xs font-bold focus:outline-none focus:border-purple-400"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[11px] font-semibold text-[#3A86FF]">قیمت بلیت استاندارد (تومان):</label>
+                    <input
+                      type="number"
+                      step={10000}
+                      value={standardPrice}
+                      onChange={(e) => setStandardPrice(parseInt(e.target.value) || 0)}
+                      className="w-full px-3 py-2 rounded-xl bg-blue-950/20 border border-blue-500/30 text-white font-mono text-center text-xs font-bold focus:outline-none focus:border-[#3A86FF]"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[11px] font-semibold text-emerald-300">قیمت بلیت اکونومی (تومان):</label>
+                    <input
+                      type="number"
+                      step={10000}
+                      value={economyPrice}
+                      onChange={(e) => setEconomyPrice(parseInt(e.target.value) || 0)}
+                      className="w-full px-3 py-2 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-white font-mono text-center text-xs font-bold focus:outline-none focus:border-emerald-400"
+                    />
+                  </div>
                 </div>
               </div>
 

@@ -48,6 +48,7 @@ export interface Screening {
   bannerUrl: string;
   synopsis: string;
   featured: boolean;
+  isSoldOut?: boolean;
   seatMap: SeatMap;
   createdAt: string;
 }
@@ -59,6 +60,8 @@ export interface BookingSeatDetail {
   type: SeatType;
   price: number;
 }
+
+export type BookingStatus = 'pending' | 'confirmed' | 'cancelled' | 'expired';
 
 export interface Booking {
   id: string; // e.g. "ORB-739102"
@@ -75,9 +78,14 @@ export interface Booking {
   seatIds: string[];
   seatDetails: BookingSeatDetail[];
   totalAmount: number;
-  status: 'confirmed' | 'cancelled';
+  status: BookingStatus;
   createdAt: string;
   paymentRef: string;
+  varizaSlug?: string;
+  varizaPayUrl?: string;
+  attemptCode?: string;
+  expiresAt?: string;
+  paidAt?: string;
 }
 
 export interface VenueTemplate {
@@ -121,6 +129,14 @@ export interface SiteSettings {
   contactAddress?: string;
   contactInstagram?: string;
   contactTelegram?: string;
+  // Payment & Reservation parameters
+  seatHoldMinutes?: number;
+  paymentExpiresIn?: string;
+  varizaCardLast4?: string;
+  varizaApiKey?: string;
+  varizaWebhookSecret?: string;
+  appUrl?: string;
+  paymentInstructions?: string;
 }
 
 export interface SupportTicket {
@@ -141,4 +157,5 @@ export interface DatabaseSchema {
   admins: AdminUser[];
   settings: SiteSettings;
   tickets?: SupportTicket[];
+  processedWebhooks?: string[];
 }

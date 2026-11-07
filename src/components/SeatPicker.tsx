@@ -31,6 +31,10 @@ export default function SeatPicker({ screening }: SeatPickerProps) {
 
   const toggleSeat = (seat: Seat) => {
     setErrorMsg(null);
+    if (screening.isSoldOut) {
+      setErrorMsg('فروش بلیت برای این اکران متوقف شده است (تکمیل ظرفیت / Sold Out).');
+      return;
+    }
     if (seat.type === 'aisle' || seat.type === 'blocked' || seat.status === 'sold') {
       return;
     }
@@ -317,18 +321,27 @@ export default function SeatPicker({ screening }: SeatPickerProps) {
               </div>
             </div>
 
-            <button
-              disabled={selectedSeatIds.length === 0}
-              onClick={handleProceedToCheckout}
-              className={`px-8 py-3.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 transition-all duration-300 ${
-                selectedSeatIds.length > 0
-                  ? 'btn-cosmic shadow-glow cursor-pointer'
-                  : 'bg-white/10 text-slate-500 cursor-not-allowed border border-white/5'
-              }`}
-            >
-              <span>تایید و ادامه خرید</span>
-              <ChevronLeft className="w-4 h-4" />
-            </button>
+            {screening.isSoldOut ? (
+              <button
+                disabled
+                className="px-8 py-3.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 bg-rose-950/60 border border-rose-500/40 text-rose-300 cursor-not-allowed"
+              >
+                <span>تکمیل ظرفیت (Sold Out)</span>
+              </button>
+            ) : (
+              <button
+                disabled={selectedSeatIds.length === 0}
+                onClick={handleProceedToCheckout}
+                className={`px-8 py-3.5 rounded-2xl font-bold text-xs sm:text-sm flex items-center gap-2 transition-all duration-300 ${
+                  selectedSeatIds.length > 0
+                    ? 'btn-cosmic shadow-glow cursor-pointer'
+                    : 'bg-white/10 text-slate-500 cursor-not-allowed border border-white/5'
+                }`}
+              >
+                <span>تایید و ادامه خرید</span>
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+            )}
           </div>
         </div>
       </div>

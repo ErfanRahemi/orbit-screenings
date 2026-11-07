@@ -92,7 +92,9 @@ export default function BookingsDashboard() {
   const adminHoldCount = validSeats.filter((s) => s.status === 'sold' && isAdminHold(s)).length;
   const customerSoldCount = validSeats.filter((s) => s.status === 'sold' && !isAdminHold(s)).length;
   const remainingSeatsCount = totalCapacity - soldSeatsCount;
-  const totalRevenue = screeningBookings.reduce((sum, b) => sum + b.totalAmount, 0);
+  const totalRevenue = screeningBookings
+    .filter((b) => b.status === 'confirmed')
+    .reduce((sum, b) => sum + b.totalAmount, 0);
   const occupancyRate = totalCapacity > 0 ? Math.round((soldSeatsCount / totalCapacity) * 100) : 0;
 
   const handleToggleSeatHold = async (seat: Seat) => {
@@ -597,6 +599,7 @@ export default function BookingsDashboard() {
                     <th className="p-3">نام و نام خانوادگی خریدار</th>
                     <th className="p-3">شماره همراه</th>
                     <th className="p-3">صندلی‌ها</th>
+                    <th className="p-3">وضعیت و کد رهگیری واریزا</th>
                     <th className="p-3">مبلغ پرداختی</th>
                     <th className="p-3">زمان ثبت خرید</th>
                     <th className="p-3 text-center">عملیات ادمین</th>
@@ -605,7 +608,7 @@ export default function BookingsDashboard() {
                 <tbody className="divide-y divide-white/5">
                   {filteredBookings.length === 0 ? (
                     <tr>
-                      <td colSpan={7} className="p-8 text-center text-slate-500">
+                      <td colSpan={8} className="p-8 text-center text-slate-500">
                         موردی برای نمایش یافت نشد.
                       </td>
                     </tr>
@@ -625,6 +628,28 @@ export default function BookingsDashboard() {
                                 ردیف {s.rowLabel} - صندلی {toPersianDigits(s.seatNumber)}
                               </span>
                             ))}
+                          </div>
+                        </td>
+                        <td className="p-3">
+                          <div className="flex flex-col gap-1">
+                            {b.status === 'confirmed' ? (
+                              <span className="inline-flex w-fit items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold">
+                                <CheckCircle2 className="w-3 h-3" /> تایید شده
+                              </span>
+                            ) : b.status === 'pending' ? (
+                              <span className="inline-flex w-fit items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-bold">
+                                در انتظار پرداخت واریزا
+                              </span>
+                            ) : (
+                              <span className="inline-flex w-fit items-center gap-1 px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30 text-[10px] font-bold">
+                                منقضی شده
+                              </span>
+                            )}
+                            {(b.attemptCode || b.paymentRef) && (
+                              <span className="font-mono text-[10px] text-slate-400">
+                                {b.attemptCode || b.paymentRef}
+                              </span>
+                            )}
                           </div>
                         </td>
                         <td className="p-3 font-bold text-white">{formatPrice(b.totalAmount)}</td>

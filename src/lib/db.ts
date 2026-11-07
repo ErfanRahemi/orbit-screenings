@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { DatabaseSchema, Screening, Booking, VenueTemplate, Seat, SeatMap, AdminUser, SiteSettings, SupportTicket } from '@/types';
+import { DatabaseSchema, Screening, Booking, BookingStatus, VenueTemplate, Seat, SeatMap, AdminUser, SiteSettings, SupportTicket } from '@/types';
 
-const DB_DIR = path.join(process.cwd(), 'data');
+const DB_DIR = process.env.DATA_DIR || path.join(process.cwd(), 'data');
 const DB_FILE = path.join(DB_DIR, 'orbit_db.json');
 
 // Helper to generate a realistic cinema seat grid
@@ -373,10 +373,10 @@ function getInitialData(): DatabaseSchema {
 
   const admins: AdminUser[] = [
     {
-      id: 'admin-1',
-      username: 'admin',
-      password: 'orbit1234',
-      name: 'مدیر کل اوربیت',
+      id: 'admin-erfan',
+      username: 'Erfan.Rahemi',
+      password: 'Erf@n8664',
+      name: 'عرفان راحمی',
       role: 'superadmin',
       createdAt: '2026-11-01T10:00:00Z',
     },
@@ -387,6 +387,10 @@ function getInitialData(): DatabaseSchema {
     brandName: 'ORBIT',
     brandSubtitle: 'اکران‌های اختصاصی',
     brandTagline: 'اکران‌های سینمایی و انیمه با کیفیت برتر',
+    seatHoldMinutes: 30,
+    paymentExpiresIn: '30m',
+    varizaCardLast4: '8589',
+    appUrl: 'https://small-crabs-say.loca.lt',
   };
 
   return { screenings, bookings, venueTemplates, admins, settings };
@@ -399,6 +403,16 @@ export function getDb(): DatabaseSchema {
   }
 
   if (!fs.existsSync(DB_FILE)) {
+    const seedFile = path.join(process.cwd(), 'data', 'orbit_db.json');
+    if (seedFile !== DB_FILE && fs.existsSync(seedFile)) {
+      try {
+        const seedData = fs.readFileSync(seedFile, 'utf-8');
+        fs.writeFileSync(DB_FILE, seedData, 'utf-8');
+        return JSON.parse(seedData) as DatabaseSchema;
+      } catch (e) {
+        console.error('Error copying seed data to volume:', e);
+      }
+    }
     const initialData = getInitialData();
     fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
     return initialData;
@@ -412,10 +426,10 @@ export function getDb(): DatabaseSchema {
     if (!parsed.admins || !Array.isArray(parsed.admins) || parsed.admins.length === 0) {
       parsed.admins = [
         {
-          id: 'admin-1',
-          username: 'admin',
-          password: 'orbit1234',
-          name: 'مدیر کل اوربیت',
+          id: 'admin-erfan',
+          username: 'Erfan.Rahemi',
+          password: 'Erf@n8664',
+          name: 'عرفان راحمی',
           role: 'superadmin',
           createdAt: new Date().toISOString(),
         },
@@ -473,6 +487,22 @@ export function getDb(): DatabaseSchema {
         parsed.settings.contactTelegram = 'orbit_screenings';
         settingsMutated = true;
       }
+      if (!parsed.settings.seatHoldMinutes) {
+        parsed.settings.seatHoldMinutes = 30;
+        settingsMutated = true;
+      }
+      if (!parsed.settings.paymentExpiresIn) {
+        parsed.settings.paymentExpiresIn = '30m';
+        settingsMutated = true;
+      }
+      if (!parsed.settings.varizaCardLast4) {
+        parsed.settings.varizaCardLast4 = '8589';
+        settingsMutated = true;
+      }
+      if (!parsed.settings.appUrl) {
+        parsed.settings.appUrl = 'https://small-crabs-say.loca.lt';
+        settingsMutated = true;
+      }
       if (settingsMutated) mutated = true;
     }
 
@@ -500,6 +530,35 @@ export function getDb(): DatabaseSchema {
         }
       ];
       mutated = true;
+    }
+
+    if (!parsed.processedWebhooks || !Array.isArray(parsed.processedWebhooks)) {
+      parsed.processedWebhooks = [];
+      mutated = true;
+    }
+
+    // Automatically release expired pending reservations
+    const nowMs = Date.now();
+    for (const b of parsed.bookings) {
+      if (b.status === 'pending' && b.expiresAt) {
+        const expMs = new Date(b.expiresAt).getTime();
+        if (!isNaN(expMs) && expMs < nowMs) {
+          b.status = 'expired';
+          const scr = parsed.screenings.find((s) => s.id === b.screeningId);
+          if (scr) {
+            for (const seat of scr.seatMap.seats) {
+              if (
+                (b.seatIds && b.seatIds.includes(seat.id) && seat.bookedBy?.bookingId === b.id) ||
+                seat.bookedBy?.bookingId === b.id
+              ) {
+                seat.status = 'available';
+                seat.bookedBy = undefined;
+              }
+            }
+          }
+          mutated = true;
+        }
+      }
     }
 
     if (mutated) {
@@ -542,8 +601,22 @@ export function getScreeningById(id: string): Screening | null {
 export function createScreening(screeningData: Omit<Screening, 'id' | 'createdAt'>): Screening {
   const db = getDb();
   const id = `screening-${Date.now()}`;
+  const seatMap = screeningData.seatMap ? { ...screeningData.seatMap } : undefined;
+
+  if (seatMap && Array.isArray(seatMap.seats)) {
+    seatMap.seats = seatMap.seats.map((seat) => {
+      let price = seat.price;
+      if (seat.type === 'vip') price = seatMap.vipPrice;
+      else if (seat.type === 'standard') price = seatMap.standardPrice;
+      else if (seat.type === 'economy') price = seatMap.economyPrice;
+      else if (seat.type === 'aisle' || seat.type === 'blocked') price = 0;
+      return { ...seat, price };
+    });
+  }
+
   const newScreening: Screening = {
     ...screeningData,
+    seatMap: seatMap as SeatMap,
     id,
     createdAt: new Date().toISOString(),
   };
@@ -557,9 +630,36 @@ export function updateScreening(id: string, updates: Partial<Screening>): Screen
   const index = db.screenings.findIndex((s) => s.id === id);
   if (index === -1) return null;
 
+  const existingScreening = db.screenings[index];
+  let finalSeatMap = updates.seatMap ? { ...updates.seatMap } : existingScreening.seatMap;
+
+  if (updates.seatMap && Array.isArray(updates.seatMap.seats)) {
+    const existingSeatsMap = new Map<string, Seat>();
+    for (const seat of existingScreening.seatMap?.seats || []) {
+      existingSeatsMap.set(seat.id, seat);
+    }
+
+    finalSeatMap.seats = updates.seatMap.seats.map((seat) => {
+      const prevSeat = existingSeatsMap.get(seat.id);
+      let calculatedPrice = seat.price;
+      if (seat.type === 'vip') calculatedPrice = updates.seatMap!.vipPrice;
+      else if (seat.type === 'standard') calculatedPrice = updates.seatMap!.standardPrice;
+      else if (seat.type === 'economy') calculatedPrice = updates.seatMap!.economyPrice;
+      else if (seat.type === 'aisle' || seat.type === 'blocked') calculatedPrice = 0;
+
+      return {
+        ...seat,
+        price: calculatedPrice,
+        status: prevSeat?.status === 'sold' ? 'sold' : seat.status || 'available',
+        bookedBy: prevSeat?.bookedBy || seat.bookedBy,
+      };
+    });
+  }
+
   db.screenings[index] = {
-    ...db.screenings[index],
+    ...existingScreening,
     ...updates,
+    seatMap: finalSeatMap,
   };
   saveDb(db);
   return db.screenings[index];
@@ -599,11 +699,60 @@ export function getBookingById(id: string): Booking | null {
   return db.bookings.find((b) => b.id.toUpperCase() === id.trim().toUpperCase()) || null;
 }
 
+export function getBookingBySlug(slug: string): Booking | null {
+  const db = getDb();
+  return db.bookings.find((b) => b.varizaSlug === slug.trim()) || null;
+}
+
 export interface CreateBookingParams {
+  id?: string;
   screeningId: string;
   buyerName: string;
   buyerPhone: string;
   seatIds: string[];
+  status?: BookingStatus;
+  varizaSlug?: string;
+  varizaPayUrl?: string;
+  expiresAt?: string;
+  paymentRef?: string;
+}
+
+export function validateBookingSeats(screeningId: string, seatIds: string[]): {
+  screening: Screening;
+  totalAmount: number;
+  seatDetails: Booking['seatDetails'];
+} {
+  const db = getDb();
+  const screening = db.screenings.find((s) => s.id === screeningId);
+  if (!screening) {
+    throw new Error('رویداد اکران یافت نشد.');
+  }
+
+  let totalAmount = 0;
+  const seatDetails: Booking['seatDetails'] = [];
+
+  for (const sId of seatIds) {
+    const seat = screening.seatMap.seats.find((s) => s.id === sId);
+    if (!seat) {
+      throw new Error(`صندلی با شناسه ${sId} در سالن موجود نیست.`);
+    }
+    if (seat.type === 'aisle' || seat.type === 'blocked') {
+      throw new Error(`صندلی ${seat.rowLabel}${seat.seatNumber} قابل خرید نیست.`);
+    }
+    if (seat.status === 'sold') {
+      throw new Error(`صندلی ردیف ${seat.rowLabel} شماره ${seat.seatNumber} قبلاً رزرو شده است.`);
+    }
+    totalAmount += seat.price;
+    seatDetails.push({
+      seatId: seat.id,
+      rowLabel: seat.rowLabel,
+      seatNumber: seat.seatNumber,
+      type: seat.type,
+      price: seat.price,
+    });
+  }
+
+  return { screening, totalAmount, seatDetails };
 }
 
 export function createBooking(params: CreateBookingParams): Booking {
@@ -629,8 +778,10 @@ export function createBooking(params: CreateBookingParams): Booking {
     seatsToBook.push(seat);
   }
 
-  const bookingId = `ORB-${Math.floor(100000 + Math.random() * 900000)}`;
-  const paymentRef = `PAY-${Math.floor(1000000 + Math.random() * 9000000)}`;
+  const bookingId = params.id || `ORB-${Math.floor(100000 + Math.random() * 900000)}`;
+  const paymentRef =
+    params.paymentRef ||
+    (params.varizaSlug ? `VRZ-${params.varizaSlug}` : `PAY-${Math.floor(1000000 + Math.random() * 9000000)}`);
   const now = new Date().toISOString();
 
   let totalAmount = 0;
@@ -669,15 +820,101 @@ export function createBooking(params: CreateBookingParams): Booking {
     seatIds: params.seatIds,
     seatDetails,
     totalAmount,
-    status: 'confirmed',
+    status: params.status || 'confirmed',
     createdAt: now,
     paymentRef,
+    varizaSlug: params.varizaSlug,
+    varizaPayUrl: params.varizaPayUrl,
+    expiresAt: params.expiresAt,
   };
 
   db.bookings.unshift(newBooking);
   saveDb(db);
 
   return newBooking;
+}
+
+export interface VarizaWebhookConfirmParams {
+  slug: string;
+  attemptCode: string;
+  amount: number;
+  sentAt?: string;
+  memberPhone?: string | null;
+}
+
+export function confirmBookingByVarizaWebhook(
+  params: VarizaWebhookConfirmParams
+): { booking: Booking | null; alreadyProcessed: boolean } {
+  const db = getDb();
+  if (!db.processedWebhooks) {
+    db.processedWebhooks = [];
+  }
+
+  // 1. Strict idempotency check by attemptCode
+  if (params.attemptCode && db.processedWebhooks.includes(params.attemptCode)) {
+    const existing =
+      db.bookings.find(
+        (b) => b.attemptCode === params.attemptCode || b.varizaSlug === params.slug
+      ) || null;
+    return { booking: existing, alreadyProcessed: true };
+  }
+
+  // 2. Locate booking by Variza payment link slug (or booking ID fallback)
+  const booking = db.bookings.find(
+    (b) =>
+      (b.varizaSlug && b.varizaSlug === params.slug) ||
+      b.id.toUpperCase() === params.slug.toUpperCase()
+  );
+
+  if (!booking) {
+    return { booking: null, alreadyProcessed: false };
+  }
+
+  // 3. Idempotency check if booking is already confirmed
+  if (booking.status === 'confirmed' && booking.attemptCode) {
+    if (params.attemptCode && !db.processedWebhooks.includes(params.attemptCode)) {
+      db.processedWebhooks.push(params.attemptCode);
+      saveDb(db);
+    }
+    return { booking, alreadyProcessed: true };
+  }
+
+  // 4. Verify amount matches if provided
+  if (params.amount > 0 && booking.totalAmount !== params.amount) {
+    console.warn(
+      `[Variza Webhook] Amount mismatch for booking ${booking.id}: expected ${booking.totalAmount}, got ${params.amount}`
+    );
+  }
+
+  const paidTime = params.sentAt || new Date().toISOString();
+  booking.status = 'confirmed';
+  booking.attemptCode = params.attemptCode;
+  booking.paymentRef = params.attemptCode || booking.paymentRef;
+  booking.paidAt = paidTime;
+
+  // 5. Ensure corresponding seats are marked sold for this buyer
+  const screening = db.screenings.find((s) => s.id === booking.screeningId);
+  if (screening) {
+    for (const sId of booking.seatIds) {
+      const seat = screening.seatMap.seats.find((s) => s.id === sId);
+      if (seat && seat.type !== 'aisle' && seat.type !== 'blocked') {
+        seat.status = 'sold';
+        seat.bookedBy = {
+          buyerName: booking.buyerName,
+          buyerPhone: booking.buyerPhone,
+          bookingId: booking.id,
+          bookedAt: paidTime,
+        };
+      }
+    }
+  }
+
+  if (params.attemptCode) {
+    db.processedWebhooks.push(params.attemptCode);
+  }
+
+  saveDb(db);
+  return { booking, alreadyProcessed: false };
 }
 
 export function deleteBooking(bookingId: string): boolean {
@@ -949,6 +1186,10 @@ export function getSiteSettings(): SiteSettings {
       contactAddress: 'تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸',
       contactInstagram: 'orbit_screenings',
       contactTelegram: 'orbit_screenings',
+      seatHoldMinutes: 30,
+      paymentExpiresIn: '30m',
+      varizaCardLast4: '8589',
+      appUrl: 'https://small-crabs-say.loca.lt',
     }
   );
 }

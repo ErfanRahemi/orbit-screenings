@@ -141,10 +141,23 @@ export default function TrackTicketPage() {
               className="p-6 rounded-3xl bg-[#12131A] border border-white/10 hover:border-[#3A86FF]/40 transition-all shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
               <div className="space-y-3">
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-[#3A86FF]/20 text-[#00F0FF] border border-[#3A86FF]/40">
                     {b.id}
                   </span>
+                  {b.status === 'confirmed' ? (
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                      پرداخت تایید شده
+                    </span>
+                  ) : b.status === 'pending' ? (
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                      در انتظار پرداخت واریزا
+                    </span>
+                  ) : (
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/30">
+                      منقضی شده
+                    </span>
+                  )}
                   <span className="text-xs text-slate-400">
                     خریدار: <strong className="text-white">{b.buyerName}</strong>
                   </span>

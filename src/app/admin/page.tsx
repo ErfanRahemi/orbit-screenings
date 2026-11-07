@@ -7,6 +7,7 @@ import BookingsDashboard from '@/components/admin/BookingsDashboard';
 import AdminAccountsManager from '@/components/admin/AdminAccountsManager';
 import SiteSettingsManager from '@/components/admin/SiteSettingsManager';
 import TicketsManager from '@/components/admin/TicketsManager';
+import PaymentSettingsManager from '@/components/admin/PaymentSettingsManager';
 import {
   Shield,
   Film,
@@ -22,6 +23,7 @@ import {
   Image as ImageIcon,
   UserCheck,
   MessageSquare,
+  CreditCard,
 } from 'lucide-react';
 
 interface CurrentUser {
@@ -36,13 +38,13 @@ export default function AdminPage() {
   const [authLoading, setAuthLoading] = useState<boolean>(true);
   const [currentUser, setCurrentUser] = useState<CurrentUser | null>(null);
 
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('orbit1234');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState<string | null>(null);
   const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
 
   const [activeTab, setActiveTab] = useState<
-    'screenings' | 'mapBuilder' | 'bookings' | 'tickets' | 'admins' | 'branding'
+    'screenings' | 'mapBuilder' | 'bookings' | 'tickets' | 'payment' | 'admins' | 'branding'
   >('screenings');
 
   useEffect(() => {
@@ -58,17 +60,17 @@ export default function AdminPage() {
           setCurrentUser(JSON.parse(savedUser));
         } catch (e) {
           setCurrentUser({
-            id: 'admin-1',
-            username: 'admin',
-            name: 'مدیر کل اوربیت',
+            id: 'admin-erfan',
+            username: 'Erfan.Rahemi',
+            name: 'عرفان راحمی',
             role: 'superadmin',
           });
         }
       } else {
         setCurrentUser({
-          id: 'admin-1',
-          username: 'admin',
-          name: 'مدیر کل اوربیت',
+          id: 'admin-erfan',
+          username: 'Erfan.Rahemi',
+          name: 'عرفان راحمی',
           role: 'superadmin',
         });
       }
@@ -190,16 +192,6 @@ export default function AdminPage() {
               <span>ورود به سامانه</span>
             </button>
           </form>
-
-          <div className="p-3 rounded-xl bg-[#00F0FF]/10 border border-[#00F0FF]/20 text-[11px] text-[#00F0FF] space-y-1">
-            <span className="font-bold block flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5" /> راهنمای دسترسی اولیه برای تست:
-            </span>
-            <div className="font-mono text-slate-300 space-y-0.5 text-[10px]" dir="ltr">
-              <div>Username: <strong className="text-white">admin</strong></div>
-              <div>Password: <strong className="text-white">orbit1234</strong></div>
-            </div>
-          </div>
         </div>
       </div>
     );
@@ -220,7 +212,7 @@ export default function AdminPage() {
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              مدیریت اکران‌ها، سازنده بصری سالن، تعریف ادمین‌های جدید، تغییر کلمه عبور و شخصی‌سازی لوگو
+              مدیریت اکران‌ها، سازنده سالن، تنظیمات پرداخت، تیکت‌ها، ادمین‌ها و برند
             </p>
           </div>
         </div>
@@ -284,6 +276,18 @@ export default function AdminPage() {
         </button>
 
         <button
+          onClick={() => setActiveTab('payment')}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all ${
+            activeTab === 'payment'
+              ? 'bg-gradient-to-r from-[#7B2CBF] to-[#3A86FF] text-white shadow-glow'
+              : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
+          }`}
+        >
+          <CreditCard className="w-4 h-4 text-emerald-400" />
+          <span>ماژول ۵: تنظیمات پرداخت و رزرو</span>
+        </button>
+
+        <button
           onClick={() => setActiveTab('admins')}
           className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all ${
             activeTab === 'admins'
@@ -292,7 +296,7 @@ export default function AdminPage() {
           }`}
         >
           <UserCheck className="w-4 h-4" />
-          <span>ماژول ۵: ادمین‌ها و حساب من</span>
+          <span>ماژول ۶: ادمین‌ها و حساب من</span>
         </button>
 
         <button
@@ -304,7 +308,7 @@ export default function AdminPage() {
           }`}
         >
           <ImageIcon className="w-4 h-4" />
-          <span>ماژول ۶: لوگو، برند و درباره ما</span>
+          <span>ماژول ۷: لوگو، برند و درباره ما</span>
         </button>
       </div>
 
@@ -313,6 +317,7 @@ export default function AdminPage() {
         {activeTab === 'mapBuilder' && <SeatMapBuilder />}
         {activeTab === 'bookings' && <BookingsDashboard />}
         {activeTab === 'tickets' && <TicketsManager />}
+        {activeTab === 'payment' && <PaymentSettingsManager />}
         {activeTab === 'admins' && (
           <AdminAccountsManager
             currentAdminUser={currentUser}

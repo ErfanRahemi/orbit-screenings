@@ -99,7 +99,22 @@ export default function ScreeningPage({ params }: PageProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-6">
+        {screening.isSoldOut && (
+          <div className="p-4 rounded-2xl bg-rose-500/15 border border-rose-500/30 text-rose-200 text-xs sm:text-sm flex items-center gap-3 font-bold animate-fadeIn">
+            <span className="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center flex-shrink-0 text-base">
+              ✕
+            </span>
+            <div>
+              <span className="block font-black text-rose-300">
+                فروش بلیت این اکران به دلیل تکمیل ظرفیت متوقف شده است (SOLD OUT)
+              </span>
+              <span className="text-[11px] text-slate-300 font-normal">
+                تمامی صندلی‌های این سانس تکمیل شده یا فروش آن توسط مدیریت متوقف گردیده است. امکان ثبت رزرو جدید وجود ندارد.
+              </span>
+            </div>
+          </div>
+        )}
         <SeatPicker screening={screening} />
       </div>
     </div>

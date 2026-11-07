@@ -3,7 +3,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Screening } from '@/types';
+import { Screening, Booking } from '@/types';
 import { formatPrice, toPersianDigits, validateIranianMobile } from '@/lib/utils';
 import {
   ShieldCheck,
@@ -16,10 +16,10 @@ import {
   Phone,
   AlertTriangle,
   ArrowRight,
-  CheckCircle2,
-  XCircle,
+  ExternalLink,
   Lock,
   Loader2,
+  Sparkles,
 } from 'lucide-react';
 
 function CheckoutContent() {
@@ -36,9 +36,9 @@ function CheckoutContent() {
   const [buyerPhone, setBuyerPhone] = useState('');
   const [formError, setFormError] = useState<string | null>(null);
 
-  const [showGateway, setShowGateway] = useState(false);
   const [paymentProcessing, setPaymentProcessing] = useState(false);
-  const [gatewayError, setGatewayError] = useState<string | null>(null);
+  const [createdBooking, setCreatedBooking] = useState<Booking | null>(null);
+  const [varizaPayUrl, setVarizaPayUrl] = useState<string | null>(null);
 
   const seatIds = seatIdsParam ? seatIdsParam.split(',') : [];
 
@@ -72,7 +72,9 @@ function CheckoutContent() {
       <div className="flex-1 flex items-center justify-center py-24">
         <div className="flex flex-col items-center gap-3">
           <Loader2 className="w-8 h-8 text-[#3A86FF] animate-spin" />
-          <span className="text-xs text-slate-400">در حال بررسی صندلی‌ها و آماده‌سازی فاکتور...</span>
+          <span className="text-xs text-slate-400">
+            در حال بررسی صندلی‌ها و آماده‌سازی فاکتور...
+          </span>
         </div>
       </div>
     );
@@ -82,8 +84,12 @@ function CheckoutContent() {
     return (
       <div className="max-w-md mx-auto my-20 p-8 rounded-3xl bg-[#12131A] border border-white/10 text-center space-y-4">
         <AlertTriangle className="w-12 h-12 text-yellow-400 mx-auto" />
-        <h2 className="text-base font-bold text-white">مشکلی در دریافت اطلاعات وجود دارد</h2>
-        <p className="text-xs text-slate-400">{error || 'اطلاعات اکران نامعتبر است.'}</p>
+        <h2 className="text-base font-bold text-white">
+          مشکلی در دریافت اطلاعات وجود دارد
+        </h2>
+        <p className="text-xs text-slate-400">
+          {error || 'اطلاعات اکران نامعتبر است.'}
+        </p>
         <Link
           href="/"
           className="inline-block px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold"
@@ -94,10 +100,32 @@ function CheckoutContent() {
     );
   }
 
-  const selectedSeats = screening.seatMap.seats.filter((s) => seatIds.includes(s.id));
+  if (screening.isSoldOut) {
+    return (
+      <div className="max-w-md mx-auto my-20 p-8 rounded-3xl bg-[#12131A] border border-rose-500/30 text-center space-y-4 shadow-2xl">
+        <AlertTriangle className="w-12 h-12 text-rose-400 mx-auto" />
+        <h2 className="text-base font-bold text-white">
+          فروش بلیت متوقف شده است (Sold Out)
+        </h2>
+        <p className="text-xs text-slate-300">
+          به دلیل تکمیل ظرفیت سالن، امکان خرید بلیت جدید برای این سانس وجود ندارد.
+        </p>
+        <Link
+          href="/"
+          className="inline-block px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold"
+        >
+          مشاهده سایر اکران‌ها
+        </Link>
+      </div>
+    );
+  }
+
+  const selectedSeats = screening.seatMap.seats.filter((s) =>
+    seatIds.includes(s.id)
+  );
   const totalAmount = selectedSeats.reduce((sum, s) => sum + s.price, 0);
 
-  const handleSubmitForm = (e: React.FormEvent) => {
+  const handleSubmitForm = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
 
@@ -107,16 +135,13 @@ function CheckoutContent() {
     }
 
     if (!validateIranianMobile(buyerPhone)) {
-      setFormError('شماره موبایل وارد شده معتبر نیست. لطفاً یک شماره ایرانی معتبر مانند ۰۹۱۲۳۴۵۶۷۸۹ وارد کنید.');
+      setFormError(
+        'شماره موبایل وارد شده معتبر نیست. لطفاً یک شماره ایرانی معتبر مانند ۰۹۱۲۳۴۵۶۷۸۹ وارد کنید.'
+      );
       return;
     }
 
-    setShowGateway(true);
-  };
-
-  const handleSimulatePaymentSuccess = async () => {
     setPaymentProcessing(true);
-    setGatewayError(null);
 
     try {
       const res = await fetch('/api/bookings', {
@@ -132,20 +157,21 @@ function CheckoutContent() {
 
       const result = await res.json();
 
-      if (result.success && result.data) {
-        router.push(`/ticket/${result.data.id}`);
+      if (result.success && result.data && result.payUrl) {
+        setCreatedBooking(result.data);
+        setVarizaPayUrl(result.payUrl);
+        // Redirect user to Variza hosted payment page
+        window.location.href = result.payUrl;
       } else {
-        setGatewayError(result.error || 'خطایی در ثبت بلیت رخ داد.');
+        setFormError(
+          result.error || 'خطایی در ساخت لینک پرداخت واریزا رخ داد.'
+        );
         setPaymentProcessing(false);
       }
     } catch (err) {
-      setGatewayError('خطای ارتباط با سرور. لطفاً مجدداً تلاش کنید.');
+      setFormError('خطای ارتباط با سرور. لطفاً مجدداً تلاش کنید.');
       setPaymentProcessing(false);
     }
-  };
-
-  const handleSimulatePaymentFailure = () => {
-    setGatewayError('پرداخت توسط کاربر لغو گردید یا تراکنش از سوی بانک ناموفق اعلام شد.');
   };
 
   return (
@@ -160,7 +186,7 @@ function CheckoutContent() {
         </Link>
         <span className="text-xs text-[#00F0FF] flex items-center gap-1">
           <ShieldCheck className="w-4 h-4" />
-          مرحله نهایی: تایید اطلاعات و پرداخت
+          مرحله نهایی: تایید اطلاعات و پرداخت امن واریزا
         </span>
       </div>
 
@@ -173,7 +199,7 @@ function CheckoutContent() {
                 اطلاعات خریدار (بدون نیاز به ثبت‌نام)
               </h2>
               <p className="text-xs text-slate-400">
-                بلیت الکترونیک شما پس از پرداخت مستقیماً صادر شده و مشخصات برای احراز هویت در ورودی سالن استفاده می‌شود.
+                صندلی‌های انتخابی شما به مدت ۳۰ دقیقه قفل شده و پس از تکمیل پرداخت در درگاه خودکار واریزا، بلیت الکترونیک بلافاصله صادر می‌شود.
               </p>
             </div>
 
@@ -187,30 +213,32 @@ function CheckoutContent() {
                 <input
                   type="text"
                   required
+                  disabled={paymentProcessing}
                   placeholder="مثال: پارسا ناصری"
                   value={buyerName}
                   onChange={(e) => setBuyerName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#3A86FF] focus:ring-1 focus:ring-[#3A86FF] transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-[#3A86FF] focus:ring-1 focus:ring-[#3A86FF] transition-all disabled:opacity-50"
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
                   <Phone className="w-3.5 h-3.5 text-[#00F0FF]" />
-                  <span>شماره موبایل (جهت پیگیری بلیت)</span>
+                  <span>شماره موبایل (جهت پیگیری و تایید پرداخت)</span>
                   <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="tel"
                   required
+                  disabled={paymentProcessing}
                   dir="ltr"
                   placeholder="09123456789"
                   value={buyerPhone}
                   onChange={(e) => setBuyerPhone(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm font-mono text-left focus:outline-none focus:border-[#3A86FF] focus:ring-1 focus:ring-[#3A86FF] transition-all"
+                  className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder-slate-500 text-sm font-mono text-left focus:outline-none focus:border-[#3A86FF] focus:ring-1 focus:ring-[#3A86FF] transition-all disabled:opacity-50"
                 />
                 <span className="text-[11px] text-slate-500 block">
-                  کد رهگیری بلیت به این شماره تخصیص می‌یابد.
+                  کد رهگیری بلیت و استعلام پرداخت واریزا به این شماره تخصیص می‌یابد.
                 </span>
               </div>
 
@@ -223,18 +251,30 @@ function CheckoutContent() {
 
               <button
                 type="submit"
-                className="w-full btn-cosmic py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-glow"
+                disabled={paymentProcessing}
+                className="w-full btn-cosmic py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-glow disabled:opacity-60"
               >
-                <CreditCard className="w-4 h-4 text-white" />
-                <span>اتصال به درگاه و پرداخت آنلاین ({formatPrice(totalAmount)})</span>
+                {paymentProcessing ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin text-white" />
+                    <span>در حال قفل صندلی‌ها و اتصال به درگاه واریزا...</span>
+                  </>
+                ) : (
+                  <>
+                    <CreditCard className="w-4 h-4 text-white" />
+                    <span>
+                      پرداخت آنلاین از طریق درگاه واریزا ({formatPrice(totalAmount)})
+                    </span>
+                  </>
+                )}
               </button>
             </form>
 
             <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500">
               <span className="flex items-center gap-1">
-                <Lock className="w-3.5 h-3.5 text-[#06D6A0]" /> تراکنش امن و رمزنگاری‌شده
+                <Lock className="w-3.5 h-3.5 text-[#06D6A0]" /> درگاه پرداخت خودکار واریزا (Variza.ir)
               </span>
-              <span>امکان لغو یا پیگیری با کد بلیت</span>
+              <span>مهلت تکمیل پرداخت: ۳۰ دقیقه</span>
             </div>
           </div>
         </div>
@@ -259,10 +299,14 @@ function CheckoutContent() {
               />
               <div className="space-y-1">
                 <h4 className="text-sm font-bold text-white">{screening.titleFa}</h4>
-                <p className="text-xs text-slate-400 font-light truncate">{screening.titleEn}</p>
+                <p className="text-xs text-slate-400 font-light truncate">
+                  {screening.titleEn}
+                </p>
                 <div className="text-[11px] text-[#00F0FF] font-medium flex items-center gap-1 pt-1">
                   <MapPin className="w-3 h-3" />
-                  <span>{screening.city} — {screening.venueName}</span>
+                  <span>
+                    {screening.city} — {screening.venueName}
+                  </span>
                 </div>
               </div>
             </div>
@@ -300,7 +344,11 @@ function CheckoutContent() {
                         ردیف {seat.rowLabel} — صندلی {toPersianDigits(seat.seatNumber)}
                       </span>
                       <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 text-slate-400">
-                        {seat.type === 'vip' ? 'VIP' : seat.type === 'economy' ? 'اکونومی' : 'استاندارد'}
+                        {seat.type === 'vip'
+                          ? 'VIP'
+                          : seat.type === 'economy'
+                          ? 'اکونومی'
+                          : 'استاندارد'}
                       </span>
                     </div>
                     <span className="font-semibold text-[#00F0FF]">
@@ -312,7 +360,9 @@ function CheckoutContent() {
             </div>
 
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-              <span className="text-sm font-bold text-white">مبلغ کل قابل پرداخت:</span>
+              <span className="text-sm font-bold text-white">
+                مبلغ کل قابل پرداخت:
+              </span>
               <span className="text-lg font-black text-[#00F0FF]">
                 {formatPrice(totalAmount)}
               </span>
@@ -321,88 +371,81 @@ function CheckoutContent() {
         </div>
       </div>
 
-      {showGateway && (
+      {createdBooking && varizaPayUrl && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
           <div className="w-full max-w-lg rounded-3xl bg-[#12131A] border border-[#3A86FF]/40 shadow-2xl overflow-hidden animate-fadeIn">
             <div className="bg-gradient-to-r from-[#181A24] to-[#202434] p-5 border-b border-white/10 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#7B2CBF] to-[#3A86FF] flex items-center justify-center text-white">
-                  <CreditCard className="w-4 h-4" />
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#7B2CBF] to-[#3A86FF] flex items-center justify-center text-white">
+                  <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white">درگاه پرداخت الکترونیک شاپرک</h3>
-                  <span className="text-[10px] text-emerald-400">محیط شبیه‌ساز پرداخت آزمایشی اوربیت</span>
+                  <h3 className="text-sm font-bold text-white">
+                    درگاه پرداخت خودکار واریزا (Variza)
+                  </h3>
+                  <span className="text-[10px] text-emerald-400">
+                    صندلی‌های شما به مدت ۳۰ دقیقه رزرو موقت شدند
+                  </span>
                 </div>
               </div>
-              <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-slate-300 font-mono">
+              <span className="text-xs px-2.5 py-1 rounded-full bg-white/10 text-[#00F0FF] font-bold">
                 {formatPrice(totalAmount)}
               </span>
             </div>
 
-            <div className="p-6 space-y-6">
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2 text-xs">
+            <div className="p-6 space-y-5">
+              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-2.5 text-xs">
                 <div className="flex justify-between text-slate-400">
-                  <span>پذیرنده:</span>
-                  <span className="text-white font-semibold">اوربیت سینما (ORBIT Exclusive)</span>
+                  <span>کد رزرو موقت بلیت:</span>
+                  <span className="text-[#00F0FF] font-mono font-bold">
+                    {createdBooking.id}
+                  </span>
+                </div>
+                <div className="flex justify-between text-slate-400">
+                  <span>شناسه پرداخت واریزا:</span>
+                  <span className="text-white font-mono">
+                    {createdBooking.varizaSlug}
+                  </span>
                 </div>
                 <div className="flex justify-between text-slate-400">
                   <span>نام خریدار:</span>
-                  <span className="text-white">{buyerName}</span>
+                  <span className="text-white font-semibold">{buyerName}</span>
                 </div>
                 <div className="flex justify-between text-slate-400">
-                  <span>شماره تماس:</span>
-                  <span className="text-white font-mono" dir="ltr">{buyerPhone}</span>
-                </div>
-                <div className="flex justify-between text-slate-400">
-                  <span>تعداد صندلی‌ها:</span>
-                  <span className="text-white">{toPersianDigits(selectedSeats.length)} بلیت</span>
+                  <span>شماره همراه:</span>
+                  <span className="text-white font-mono" dir="ltr">
+                    {buyerPhone}
+                  </span>
                 </div>
               </div>
 
-              {gatewayError && (
-                <div className="p-3 rounded-xl bg-red-500/15 border border-red-500/30 text-red-300 text-xs flex items-center gap-2">
-                  <XCircle className="w-4 h-4 text-red-400 flex-shrink-0" />
-                  <span>{gatewayError}</span>
-                </div>
-              )}
-
-              <div className="space-y-3 pt-2">
-                <button
-                  disabled={paymentProcessing}
-                  onClick={handleSimulatePaymentSuccess}
-                  className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all duration-200 disabled:opacity-50"
-                >
-                  {paymentProcessing ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>در حال ثبت رزرو و صدور بلیت...</span>
-                    </>
-                  ) : (
-                    <>
-                      <CheckCircle2 className="w-4 h-4" />
-                      <span>پرداخت موفق آزمایشی (Simulate Success)</span>
-                    </>
-                  )}
-                </button>
-
-                <button
-                  disabled={paymentProcessing}
-                  onClick={handleSimulatePaymentFailure}
-                  className="w-full py-3 px-4 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 font-semibold text-xs flex items-center justify-center gap-2 transition-all duration-200 disabled:opacity-50"
-                >
-                  <XCircle className="w-4 h-4" />
-                  <span>انصراف / خطای پرداخت (Simulate Failure)</span>
-                </button>
+              <div className="flex flex-col items-center gap-2 text-center py-2">
+                <Loader2 className="w-6 h-6 text-[#00F0FF] animate-spin" />
+                <p className="text-xs text-slate-300">
+                  در حال انتقال خودکار به صفحه پرداخت امن واریزا...
+                </p>
+                <p className="text-[11px] text-slate-500">
+                  چنانچه به صورت خودکار منتقل نشدید، روی دکمه زیر کلیک کنید.
+                </p>
               </div>
 
-              <div className="text-center pt-2">
-                <button
-                  onClick={() => setShowGateway(false)}
-                  disabled={paymentProcessing}
-                  className="text-xs text-slate-400 hover:text-white transition-colors"
+              <div className="space-y-3">
+                <a
+                  href={varizaPayUrl}
+                  className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all duration-200"
                 >
-                  بازگشت و تغییر مشخصات
-                </button>
+                  <span>ورود به صفحه پرداخت واریزا</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+
+                <Link
+                  href={`/payment/callback?bookingId=${encodeURIComponent(
+                    createdBooking.id
+                  )}`}
+                  className="w-full py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10 font-semibold text-xs flex items-center justify-center gap-2 transition-all"
+                >
+                  <span>مشاهده وضعیت تایید پرداخت و بلیت</span>
+                </Link>
               </div>
             </div>
           </div>
