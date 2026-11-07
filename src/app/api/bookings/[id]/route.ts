@@ -5,10 +5,11 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const booking = getBookingById(params.id) || getBookingBySlug(params.id);
+    const { id } = await params;
+    const booking = getBookingById(id) || getBookingBySlug(id);
     if (!booking) {
       return NextResponse.json(
         { success: false, error: 'بلیت با این کد پیگیری یافت نشد.' },
@@ -27,10 +28,11 @@ export async function GET(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const success = deleteBooking(params.id);
+    const { id } = await params;
+    const success = deleteBooking(id);
     if (!success) {
       return NextResponse.json(
         { success: false, error: 'رزرو یا بلیت یافت نشد.' },

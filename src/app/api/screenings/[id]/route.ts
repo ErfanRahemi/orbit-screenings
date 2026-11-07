@@ -3,10 +3,11 @@ import { getScreeningById, updateScreening, deleteScreening } from '@/lib/db';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const screening = getScreeningById(params.id);
+    const { id } = await params;
+    const screening = getScreeningById(id);
     if (!screening) {
       return NextResponse.json({ success: false, error: 'اکران مورد نظر یافت نشد' }, { status: 404 });
     }
@@ -19,11 +20,12 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
-    const updated = updateScreening(params.id, body);
+    const updated = updateScreening(id, body);
     if (!updated) {
       return NextResponse.json({ success: false, error: 'اکران برای ویرایش یافت نشد' }, { status: 404 });
     }
@@ -36,10 +38,11 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const success = deleteScreening(params.id);
+    const { id } = await params;
+    const success = deleteScreening(id);
     if (!success) {
       return NextResponse.json({ success: false, error: 'اکران برای حذف یافت نشد' }, { status: 404 });
     }

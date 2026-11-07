@@ -13,11 +13,12 @@ import {
 } from 'lucide-react';
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ScreeningPage({ params }: PageProps) {
-  const screening = getScreeningById(params.id);
+export default async function ScreeningPage({ params }: PageProps) {
+  const { id } = await params;
+  const screening = getScreeningById(id);
 
   if (!screening) {
     notFound();

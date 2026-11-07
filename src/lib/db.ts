@@ -398,11 +398,11 @@ function getInitialData(): DatabaseSchema {
 
 // Ensure DB directory and file exist
 export function getDb(): DatabaseSchema {
-  if (!fs.existsSync(DB_DIR)) {
+  if (!fs.existsSync(/*turbopackIgnore: true*/ DB_DIR)) {
     fs.mkdirSync(DB_DIR, { recursive: true });
   }
 
-  if (!fs.existsSync(DB_FILE)) {
+  if (!fs.existsSync(/*turbopackIgnore: true*/ DB_FILE)) {
     const seedFile = path.join(process.cwd(), 'data', 'orbit_db.json');
     if (seedFile !== DB_FILE && fs.existsSync(seedFile)) {
       try {
@@ -576,7 +576,7 @@ export function getDb(): DatabaseSchema {
 
 // Atomically save to disk
 export function saveDb(data: DatabaseSchema): void {
-  if (!fs.existsSync(DB_DIR)) {
+  if (!fs.existsSync(/*turbopackIgnore: true*/ DB_DIR)) {
     fs.mkdirSync(DB_DIR, { recursive: true });
   }
   const tempPath = `${DB_FILE}.tmp`;

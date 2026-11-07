@@ -3,14 +3,15 @@ import { toggleSeatAdminHold, batchSetSeatsAdminHold } from '@/lib/db';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
     const { seatId, seatIds, hold } = body;
 
     if (seatId) {
-      const result = toggleSeatAdminHold(params.id, seatId);
+      const result = toggleSeatAdminHold(id, seatId);
       const msg =
         result.action === 'blocked'
           ? 'صندلی با موفقیت غیرقابل فروش شد (به عنوان پر شده به مشتریان نمایش داده می‌شود).'
@@ -25,7 +26,7 @@ export async function POST(
 
     if (Array.isArray(seatIds) && seatIds.length > 0) {
       const isHold = hold !== false;
-      const result = batchSetSeatsAdminHold(params.id, seatIds, isHold);
+      const result = batchSetSeatsAdminHold(id, seatIds, isHold);
       const msg = isHold
         ? `${result.updatedCount} صندلی با موفقیت غیرقابل فروش شدند.`
         : `${result.updatedCount} صندلی با موفقیت آزاد شدند.`;

@@ -7,11 +7,12 @@ import { Film, MapPin, Calendar, Clock, Sparkles, ChevronLeft, Ticket, Flame, Ch
 const CITIES = ['همه شهرها', 'تهران', 'شیراز', 'اصفهان', 'مشهد', 'تبریز'];
 
 interface PageProps {
-  searchParams: { city?: string };
+  searchParams: Promise<{ city?: string }>;
 }
 
-export default function HomePage({ searchParams }: PageProps) {
-  const currentCity = searchParams?.city || 'همه شهرها';
+export default async function HomePage({ searchParams }: PageProps) {
+  const resolvedSearchParams = await searchParams;
+  const currentCity = resolvedSearchParams?.city || 'همه شهرها';
   const screenings = getScreenings(currentCity);
   
   // Find featured screening

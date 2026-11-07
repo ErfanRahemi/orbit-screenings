@@ -3,10 +3,11 @@ import { deleteAdmin } from '@/lib/db';
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const success = deleteAdmin(params.id);
+    const { id } = await params;
+    const success = deleteAdmin(id);
     if (!success) {
       return NextResponse.json({ success: false, error: 'مدیر برای حذف یافت نشد.' }, { status: 404 });
     }

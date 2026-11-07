@@ -29,12 +29,13 @@ import {
 export const dynamic = 'force-dynamic';
 
 interface PageProps {
-  params: { bookingId: string };
+  params: Promise<{ bookingId: string }>;
 }
 
 export default async function TicketPage({ params }: PageProps) {
+  const { bookingId } = await params;
   const booking =
-    getBookingById(params.bookingId) || getBookingBySlug(params.bookingId);
+    getBookingById(bookingId) || getBookingBySlug(bookingId);
 
   if (!booking) {
     notFound();

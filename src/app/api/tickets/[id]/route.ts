@@ -3,9 +3,10 @@ import { updateSupportTicketStatus, deleteSupportTicket } from '@/lib/db';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const body = await request.json();
     const { status } = body;
 
@@ -13,7 +14,7 @@ export async function PATCH(
       return NextResponse.json({ success: false, error: 'وضعیت نامعتبر است.' }, { status: 400 });
     }
 
-    const updated = updateSupportTicketStatus(params.id, status);
+    const updated = updateSupportTicketStatus(id, status);
     return NextResponse.json({ success: true, data: updated });
   } catch (error: any) {
     console.error('Error updating ticket status:', error);
@@ -26,10 +27,11 @@ export async function PATCH(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const success = deleteSupportTicket(params.id);
+    const { id } = await params;
+    const success = deleteSupportTicket(id);
     if (!success) {
       return NextResponse.json({ success: false, error: 'تیکت مورد نظر یافت نشد.' }, { status: 404 });
     }
