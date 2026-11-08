@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="mt-24 border-t border-white/10 bg-[#07080B] text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-          
+
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
@@ -63,7 +63,7 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="text-white font-semibold text-xs tracking-wider">شهرهای تحت پوشش</h4>
             <p className="text-slate-400 leading-relaxed">
-              تهران (پردیس چارسو، مگامال) • شیراز (هنر یاقوت) • اصفهان (ساحل آیمکس) • مشهد (هویزه) • تبریز
+              تهران  • شیراز  • اصفهان  • مشهد  • تبریز
             </p>
             <div className="pt-2 text-[11px] text-slate-500">
               با افتخار برای عاشقان پرده نقره‌ای و انیمه
