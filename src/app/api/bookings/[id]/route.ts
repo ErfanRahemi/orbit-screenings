@@ -1,5 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getBookingById, getBookingBySlug, deleteBooking } from '@/lib/db';
+import {
+  getBookingById,
+  getBookingBySlug,
+  deleteBooking,
+  confirmBookingManually,
+} from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,6 +27,27 @@ export async function GET(
     return NextResponse.json(
       { success: false, error: 'خطا در استعلام بلیت' },
       { status: 500 }
+    );
+  }
+}
+
+export async function PATCH(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    const updated = confirmBookingManually(id);
+    return NextResponse.json({
+      success: true,
+      data: updated,
+      message: 'وضعیت بلیت با موفقیت به تایید شده تغییر یافت.',
+    });
+  } catch (error: any) {
+    console.error('Error confirming booking manually:', error);
+    return NextResponse.json(
+      { success: false, error: error.message || 'خطا در تایید بلیت' },
+      { status: 400 }
     );
   }
 }

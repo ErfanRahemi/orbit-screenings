@@ -1020,6 +1020,40 @@ export function deleteBooking(bookingId: string): boolean {
   return true;
 }
 
+export function confirmBookingManually(bookingId: string): Booking {
+  const db = getDb();
+  const cleanId = bookingId.trim().toUpperCase();
+  const booking = db.bookings.find((b) => b.id.toUpperCase() === cleanId);
+  if (!booking) {
+    throw new Error('رزرو یا بلیت مورد نظر یافت نشد.');
+  }
+
+  const paidTime = new Date().toISOString();
+  booking.status = 'confirmed';
+  booking.paidAt = booking.paidAt || paidTime;
+  booking.attemptCode = booking.attemptCode || `ADM-${Math.floor(100000 + Math.random() * 900000)}`;
+  booking.paymentRef = booking.attemptCode;
+
+  const screening = db.screenings.find((s) => s.id === booking.screeningId);
+  if (screening) {
+    for (const sId of booking.seatIds) {
+      const seat = screening.seatMap.seats.find((s) => s.id === sId);
+      if (seat && seat.type !== 'aisle' && seat.type !== 'blocked') {
+        seat.status = 'sold';
+        seat.bookedBy = {
+          buyerName: booking.buyerName,
+          buyerPhone: booking.buyerPhone,
+          bookingId: booking.id,
+          bookedAt: paidTime,
+        };
+      }
+    }
+  }
+
+  saveDb(db);
+  return booking;
+}
+
 // Admin seat hold / unsellable operations
 export function toggleSeatAdminHold(
   screeningId: string,

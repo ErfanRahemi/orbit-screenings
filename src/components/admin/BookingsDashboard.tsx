@@ -30,6 +30,7 @@ export default function BookingsDashboard() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [confirmingId, setConfirmingId] = useState<string | null>(null);
   const [holdingSeatId, setHoldingSeatId] = useState<string | null>(null);
   const [quickToggleHoldMode, setQuickToggleHoldMode] = useState(false);
 
@@ -201,6 +202,30 @@ export default function BookingsDashboard() {
       alert('خطای اتصال به سرور');
     } finally {
       setDeletingId(null);
+    }
+  };
+
+  const handleConfirmBooking = async (booking: Booking) => {
+    const confirmed = confirm(
+      `آیا مایل به تایید دستی پرداخت بلیت «${booking.buyerName}» (کد: ${booking.id}) هستید؟`
+    );
+    if (!confirmed) return;
+
+    setConfirmingId(booking.id);
+    try {
+      const res = await fetch(`/api/bookings/${booking.id}`, {
+        method: 'PATCH',
+      });
+      const data = await res.json();
+      if (data.success) {
+        await loadData();
+      } else {
+        alert(data.error || 'خطا در تایید بلیت');
+      }
+    } catch {
+      alert('خطای اتصال به سرور');
+    } finally {
+      setConfirmingId(null);
     }
   };
 
@@ -657,15 +682,28 @@ export default function BookingsDashboard() {
                           {new Date(b.createdAt).toLocaleString('fa-IR')}
                         </td>
                         <td className="p-3 text-center">
-                          <button
-                            onClick={() => handleDeleteBooking(b)}
-                            disabled={deletingId === b.id}
-                            className="px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/20 text-[11px] font-semibold inline-flex items-center gap-1.5 transition-all shadow-sm disabled:opacity-50"
-                            title="حذف کامل از لیست تماشاچیان و آزادسازی صندلی‌ها"
-                          >
-                            <Trash2 className="w-3.5 h-3.5" />
-                            <span>{deletingId === b.id ? 'در حال حذف...' : 'حذف تماشاچی'}</span>
-                          </button>
+                          <div className="flex items-center justify-center gap-1.5">
+                            {b.status !== 'confirmed' && (
+                              <button
+                                onClick={() => handleConfirmBooking(b)}
+                                disabled={confirmingId === b.id}
+                                className="px-2.5 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 text-[11px] font-semibold inline-flex items-center gap-1 transition-all shadow-sm disabled:opacity-50"
+                                title="تایید دستی پرداخت و صدور نهایی بلیت"
+                              >
+                                <CheckCircle2 className="w-3.5 h-3.5" />
+                                <span>{confirmingId === b.id ? '...' : 'تایید دستی'}</span>
+                              </button>
+                            )}
+                            <button
+                              onClick={() => handleDeleteBooking(b)}
+                              disabled={deletingId === b.id}
+                              className="px-3 py-1.5 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/20 text-[11px] font-semibold inline-flex items-center gap-1.5 transition-all shadow-sm disabled:opacity-50"
+                              title="حذف کامل از لیست تماشاچیان و آزادسازی صندلی‌ها"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                              <span>{deletingId === b.id ? 'در حال حذف...' : 'حذف تماشاچی'}</span>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))

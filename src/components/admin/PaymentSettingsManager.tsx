@@ -290,27 +290,25 @@ export default function PaymentSettingsManager() {
               <label className="font-semibold text-slate-300 flex items-center gap-1.5">
                 <CreditCard className="w-3.5 h-3.5 text-[#00F0FF]" />
                 <span>۴ رقم آخر کارت مقصد واریزا (Destination Card Last 4)</span>
-                <span className="text-red-400">*</span>
               </label>
               <input
                 type="text"
-                required
-                maxLength={4}
+                maxLength={10}
                 dir="ltr"
                 value={varizaCardLast4}
                 onChange={(e) => setVarizaCardLast4(e.target.value)}
-                placeholder="8589"
+                placeholder="8589 (یا خالی برای کارت پیش‌فرض)"
                 className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white font-mono text-center tracking-widest text-sm font-bold focus:outline-none focus:border-[#3A86FF]"
               />
               <span className="text-[10px] text-slate-500">
-                باید با کارت تعریف‌شده در پنل کاربری variza.ir شما مطابقت داشته باشد.
+                ۴ رقم آخر کارت فعال در variza.ir (یا <code className="text-slate-300">random</code> و یا خالی جهت انتخاب خودکار کارت فعال).
               </span>
             </div>
 
             <div className="space-y-1.5">
               <label className="font-semibold text-slate-300 flex items-center gap-1.5">
                 <Globe className="w-3.5 h-3.5 text-[#3A86FF]" />
-                <span>آدرس اصلی سایت (APP_URL / Return URL)</span>
+                <span>آدرس اصلی سایت روی لیارا (APP_URL / Return URL)</span>
                 <span className="text-red-400">*</span>
               </label>
               <input
@@ -319,7 +317,7 @@ export default function PaymentSettingsManager() {
                 dir="ltr"
                 value={appUrl}
                 onChange={(e) => setAppUrl(e.target.value)}
-                placeholder="https://small-crabs-say.loca.lt"
+                placeholder="https://your-app.liara.run"
                 className="w-full px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white font-mono text-xs focus:outline-none focus:border-[#3A86FF]"
               />
               <span className="text-[10px] text-slate-500">
