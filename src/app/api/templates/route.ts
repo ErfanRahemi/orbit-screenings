@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getVenueTemplates, saveVenueTemplate, deleteVenueTemplate } from '@/lib/db';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const templates = getVenueTemplates();

@@ -16,6 +16,8 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default function AboutPage() {
   const settings = getSiteSettings();
 

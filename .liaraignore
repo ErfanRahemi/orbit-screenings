@@ -9,3 +9,7 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+main.py
+requirements.txt
+Procfile
+render.yaml

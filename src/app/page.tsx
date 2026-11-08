@@ -6,6 +6,8 @@ import { Film, MapPin, Calendar, Clock, Sparkles, ChevronLeft, Ticket, Flame, Ch
 
 const CITIES = ['همه شهرها', 'تهران', 'شیراز', 'اصفهان', 'مشهد', 'تبریز'];
 
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   searchParams: Promise<{ city?: string }>;
 }

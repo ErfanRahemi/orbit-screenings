@@ -39,7 +39,7 @@ export default function PaymentSettingsManager() {
   const [seatHoldMinutes, setSeatHoldMinutes] = useState<number>(30);
   const [paymentExpiresIn, setPaymentExpiresIn] = useState<string>('30m');
   const [varizaCardLast4, setVarizaCardLast4] = useState<string>('8589');
-  const [appUrl, setAppUrl] = useState<string>('https://small-crabs-say.loca.lt');
+  const [appUrl, setAppUrl] = useState<string>('');
   const [varizaApiKey, setVarizaApiKey] = useState<string>('');
   const [varizaWebhookSecret, setVarizaWebhookSecret] = useState<string>('');
   const [paymentInstructions, setPaymentInstructions] = useState<string>('');
@@ -61,7 +61,13 @@ export default function PaymentSettingsManager() {
         setSeatHoldMinutes(s.seatHoldMinutes || 30);
         setPaymentExpiresIn(s.paymentExpiresIn || '30m');
         setVarizaCardLast4(s.varizaCardLast4 || '8589');
-        setAppUrl(s.appUrl || 'https://small-crabs-say.loca.lt');
+        const currentOrigin =
+          typeof window !== 'undefined' ? window.location.origin : '';
+        setAppUrl(
+          s.appUrl && !s.appUrl.includes('small-crabs-say.loca.lt')
+            ? s.appUrl
+            : currentOrigin
+        );
         setVarizaApiKey(s.varizaApiKey || '');
         setVarizaWebhookSecret(s.varizaWebhookSecret || '');
         setPaymentInstructions(s.paymentInstructions || '');

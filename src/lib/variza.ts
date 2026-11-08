@@ -20,7 +20,7 @@ function sanitizeEnvUrl(val: string | undefined, fallback: string): string {
   return trimmed.replace(/\/+$/, '');
 }
 
-export function getVarizaConfig() {
+export function getVarizaConfig(requestOrigin?: string) {
   let dbSettings: any = {};
   try {
     dbSettings = getSiteSettings() || {};
@@ -47,10 +47,21 @@ export function getVarizaConfig() {
     process.env.VARIZA_BASE_URL,
     'https://variza.ir/api/v1'
   );
-  const appUrl = sanitizeEnvUrl(
-    dbSettings.appUrl || process.env.APP_URL,
-    'https://small-crabs-say.loca.lt'
-  );
+
+  const rawDbUrl = sanitizeEnvUrl(dbSettings.appUrl, '');
+  const rawEnvUrl = sanitizeEnvUrl(process.env.APP_URL, '');
+  const cleanDbUrl =
+    rawDbUrl && !rawDbUrl.includes('small-crabs-say.loca.lt') ? rawDbUrl : '';
+  const cleanEnvUrl =
+    rawEnvUrl && !rawEnvUrl.includes('small-crabs-say.loca.lt') ? rawEnvUrl : '';
+  const cleanOrigin = sanitizeEnvUrl(requestOrigin, '');
+
+  const appUrl =
+    cleanDbUrl ||
+    cleanEnvUrl ||
+    cleanOrigin ||
+    'http://localhost:3000';
+
   const seatHoldMinutes = Number(dbSettings.seatHoldMinutes) || 30;
   const paymentExpiresIn = dbSettings.paymentExpiresIn || '30m';
 
@@ -78,6 +89,7 @@ export interface CreateVarizaPaymentInput {
   amount: number;
   title: string;
   buyerPhone?: string;
+  requestOrigin?: string;
 }
 
 export interface CreateVarizaPaymentResult {
@@ -92,7 +104,7 @@ export interface CreateVarizaPaymentResult {
 export async function createVarizaPayment(
   input: CreateVarizaPaymentInput
 ): Promise<CreateVarizaPaymentResult> {
-  const config = getVarizaConfig();
+  const config = getVarizaConfig(input.requestOrigin);
   const client = createVarizaClient();
 
   const returnUrl = `${config.appUrl}/payment/callback?bookingId=${encodeURIComponent(

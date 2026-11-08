@@ -78,11 +78,19 @@ export async function POST(request: NextRequest) {
     const paymentTitle = `بلیت سینما اوربیت: ${screening.titleFa} (${seatLabels}) - کد ${bookingId}`;
 
     // 2. Create real payment link via Variza API
+    const proto = request.headers.get('x-forwarded-proto') || 'https';
+    const host =
+      request.headers.get('x-forwarded-host') || request.headers.get('host');
+    const requestOrigin =
+      request.headers.get('origin') ||
+      (host ? `${proto}://${host}` : new URL(request.url).origin);
+
     const varizaLink = await createVarizaPayment({
       bookingId,
       amount: totalAmount,
       title: paymentTitle,
       buyerPhone: normalizedPhone,
+      requestOrigin,
     });
 
     // 3. Persist pending reservation and lock seats for 30 minutes

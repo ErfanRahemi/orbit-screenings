@@ -1,9 +1,34 @@
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import { DatabaseSchema, Screening, Booking, BookingStatus, VenueTemplate, Seat, SeatMap, AdminUser, SiteSettings, SupportTicket } from '@/types';
 
-const DB_DIR = process.env.DATA_DIR || path.join(process.cwd(), 'data');
-const DB_FILE = path.join(DB_DIR, 'orbit_db.json');
+const PRIMARY_DB_DIR = process.env.DATA_DIR || path.join(process.cwd(), 'data');
+const FALLBACK_DB_DIR = path.join(os.tmpdir(), 'orbit-data');
+
+let activeDbDir: string | null = null;
+let memoryDbFallback: DatabaseSchema | null = null;
+
+function getActiveDbPaths(): { dir: string; file: string } {
+  if (activeDbDir) {
+    return { dir: activeDbDir, file: path.join(activeDbDir, 'orbit_db.json') };
+  }
+
+  for (const candidateDir of [PRIMARY_DB_DIR, FALLBACK_DB_DIR]) {
+    try {
+      if (!fs.existsSync(/*turbopackIgnore: true*/ candidateDir)) {
+        fs.mkdirSync(candidateDir, { recursive: true });
+      }
+      fs.accessSync(candidateDir, fs.constants.R_OK | fs.constants.W_OK);
+      activeDbDir = candidateDir;
+      return { dir: candidateDir, file: path.join(candidateDir, 'orbit_db.json') };
+    } catch {
+      // Try next candidate directory
+    }
+  }
+
+  return { dir: PRIMARY_DB_DIR, file: path.join(PRIMARY_DB_DIR, 'orbit_db.json') };
+}
 
 // Helper to generate a realistic cinema seat grid
 export function createGridSeats(
@@ -390,36 +415,51 @@ function getInitialData(): DatabaseSchema {
     seatHoldMinutes: 30,
     paymentExpiresIn: '30m',
     varizaCardLast4: '8589',
-    appUrl: 'https://small-crabs-say.loca.lt',
+    appUrl: '',
   };
 
   return { screenings, bookings, venueTemplates, admins, settings };
 }
 
-// Ensure DB directory and file exist
-export function getDb(): DatabaseSchema {
-  if (!fs.existsSync(/*turbopackIgnore: true*/ DB_DIR)) {
-    fs.mkdirSync(DB_DIR, { recursive: true });
+function loadSeedData(): DatabaseSchema {
+  const candidates = [
+    path.join(process.cwd(), 'data', 'orbit_db.json'),
+    path.join(process.cwd(), 'public', 'orbit_seed.json'),
+  ];
+
+  for (const seedFile of candidates) {
+    try {
+      if (fs.existsSync(/*turbopackIgnore: true*/ seedFile)) {
+        const raw = fs.readFileSync(/*turbopackIgnore: true*/ seedFile, 'utf-8');
+        const parsed = JSON.parse(raw) as DatabaseSchema;
+        if (parsed && Array.isArray(parsed.screenings)) {
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.error('Error reading seed candidate:', seedFile, e);
+    }
   }
 
-  if (!fs.existsSync(/*turbopackIgnore: true*/ DB_FILE)) {
-    const seedFile = path.join(process.cwd(), 'data', 'orbit_db.json');
-    if (seedFile !== DB_FILE && fs.existsSync(seedFile)) {
-      try {
-        const seedData = fs.readFileSync(seedFile, 'utf-8');
-        fs.writeFileSync(DB_FILE, seedData, 'utf-8');
-        return JSON.parse(seedData) as DatabaseSchema;
-      } catch (e) {
-        console.error('Error copying seed data to volume:', e);
-      }
+  return getInitialData();
+}
+
+// Ensure DB directory and file exist
+export function getDb(): DatabaseSchema {
+  const { file: dbFile } = getActiveDbPaths();
+
+  if (!fs.existsSync(/*turbopackIgnore: true*/ dbFile)) {
+    if (memoryDbFallback) {
+      return memoryDbFallback;
     }
-    const initialData = getInitialData();
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
+    const seedData = loadSeedData();
+    memoryDbFallback = seedData;
+    saveDb(seedData);
+    return seedData;
   }
 
   try {
-    const raw = fs.readFileSync(DB_FILE, 'utf-8');
+    const raw = fs.readFileSync(/*turbopackIgnore: true*/ dbFile, 'utf-8');
     const parsed = JSON.parse(raw) as DatabaseSchema;
     let mutated = false;
 
@@ -451,6 +491,10 @@ export function getDb(): DatabaseSchema {
         contactAddress: 'تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸',
         contactInstagram: 'orbit_screenings',
         contactTelegram: 'orbit_screenings',
+        seatHoldMinutes: 30,
+        paymentExpiresIn: '30m',
+        varizaCardLast4: '8589',
+        appUrl: '',
       };
       mutated = true;
     } else {
@@ -499,8 +543,8 @@ export function getDb(): DatabaseSchema {
         parsed.settings.varizaCardLast4 = '8589';
         settingsMutated = true;
       }
-      if (!parsed.settings.appUrl) {
-        parsed.settings.appUrl = 'https://small-crabs-say.loca.lt';
+      if (parsed.settings.appUrl === 'https://small-crabs-say.loca.lt') {
+        parsed.settings.appUrl = '';
         settingsMutated = true;
       }
       if (settingsMutated) mutated = true;
@@ -561,27 +605,56 @@ export function getDb(): DatabaseSchema {
       }
     }
 
+    memoryDbFallback = parsed;
     if (mutated) {
       saveDb(parsed);
     }
 
     return parsed;
   } catch (error) {
-    console.error('Error reading db.json, repairing with initial data', error);
-    const initialData = getInitialData();
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
-    return initialData;
+    console.error('Error reading db.json, repairing with seed data', error);
+    const seedData = memoryDbFallback || loadSeedData();
+    memoryDbFallback = seedData;
+    saveDb(seedData);
+    return seedData;
   }
 }
 
-// Atomically save to disk
+// Atomically save to disk with fallback for read-only/container filesystems
 export function saveDb(data: DatabaseSchema): void {
-  if (!fs.existsSync(/*turbopackIgnore: true*/ DB_DIR)) {
-    fs.mkdirSync(DB_DIR, { recursive: true });
+  memoryDbFallback = data;
+  const serialized = JSON.stringify(data, null, 2);
+  const { dir, file } = getActiveDbPaths();
+
+  try {
+    if (!fs.existsSync(/*turbopackIgnore: true*/ dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    const tempPath = `${file}.tmp`;
+    fs.writeFileSync(tempPath, serialized, 'utf-8');
+    try {
+      fs.renameSync(tempPath, file);
+    } catch {
+      fs.writeFileSync(file, serialized, 'utf-8');
+      try {
+        fs.unlinkSync(tempPath);
+      } catch {
+        // ignore cleanup error
+      }
+    }
+  } catch (err) {
+    // If primary dir failed mid-flight, switch to os.tmpdir() fallback
+    try {
+      activeDbDir = FALLBACK_DB_DIR;
+      if (!fs.existsSync(/*turbopackIgnore: true*/ FALLBACK_DB_DIR)) {
+        fs.mkdirSync(FALLBACK_DB_DIR, { recursive: true });
+      }
+      const fallbackFile = path.join(FALLBACK_DB_DIR, 'orbit_db.json');
+      fs.writeFileSync(fallbackFile, serialized, 'utf-8');
+    } catch (fallbackErr) {
+      console.warn('Filesystem write unavailable, keeping state in memory:', fallbackErr);
+    }
   }
-  const tempPath = `${DB_FILE}.tmp`;
-  fs.writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf-8');
-  fs.renameSync(tempPath, DB_FILE);
 }
 
 // Screening operations

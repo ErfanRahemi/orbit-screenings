@@ -9,6 +9,9 @@
     "start:custom": "node server.js",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "@the6fallenangel/variza-node-sdk": "^1.2.0",
     "lucide-react": "^1.16.0",
