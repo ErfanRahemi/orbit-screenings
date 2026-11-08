@@ -16,6 +16,9 @@ import {
   CheckCircle2,
   Loader2,
   Sparkles,
+  Upload,
+  Image as ImageIcon,
+  Link as LinkIcon,
 } from 'lucide-react';
 
 const CITIES = ['تهران', 'شیراز', 'اصفهان', 'مشهد', 'تبریز'];
@@ -42,6 +45,10 @@ export default function ScreeningsManager() {
   const [language, setLanguage] = useState('ژاپنی با زیرنویس اختصاصی اوربیت');
   const [posterUrl, setPosterUrl] = useState('');
   const [bannerUrl, setBannerUrl] = useState('');
+  const [uploadingPoster, setUploadingPoster] = useState(false);
+  const [uploadingBanner, setUploadingBanner] = useState(false);
+  const [showPosterUrlInput, setShowPosterUrlInput] = useState(false);
+  const [showBannerUrlInput, setShowBannerUrlInput] = useState(false);
   const [synopsis, setSynopsis] = useState('');
   const [featured, setFeatured] = useState(false);
   const [isSoldOut, setIsSoldOut] = useState(false);
@@ -89,6 +96,78 @@ export default function ScreeningsManager() {
       console.error(e);
     }
   }
+
+  const compressAndSetImage = (file: File, type: 'poster' | 'banner') => {
+    if (!file.type.startsWith('image/')) {
+      alert('لطفاً یک فایل تصویری (JPG, PNG, WebP) انتخاب فرمایید.');
+      return;
+    }
+
+    if (type === 'poster') setUploadingPoster(true);
+    else setUploadingBanner(true);
+
+    const reader = new FileReader();
+    reader.onerror = () => {
+      alert('خطا در خواندن فایل تصویر.');
+      if (type === 'poster') setUploadingPoster(false);
+      else setUploadingBanner(false);
+    };
+
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onerror = () => {
+        alert('فایل انتخاب شده به عنوان تصویر معتبر شناسایی نشد.');
+        if (type === 'poster') setUploadingPoster(false);
+        else setUploadingBanner(false);
+      };
+
+      img.onload = () => {
+        const maxWidth = type === 'poster' ? 900 : 1600;
+        const maxHeight = type === 'poster' ? 1350 : 900;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+        if (height > maxHeight) {
+          width = Math.round((width * maxHeight) / height);
+          height = maxHeight;
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+
+        if (ctx) {
+          ctx.drawImage(img, 0, 0, width, height);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+          if (type === 'poster') {
+            setPosterUrl(dataUrl);
+            setUploadingPoster(false);
+          } else {
+            setBannerUrl(dataUrl);
+            setUploadingBanner(false);
+          }
+        } else {
+          const raw = e.target?.result as string;
+          if (type === 'poster') {
+            setPosterUrl(raw);
+            setUploadingPoster(false);
+          } else {
+            setBannerUrl(raw);
+            setUploadingBanner(false);
+          }
+        }
+      };
+
+      img.src = e.target?.result as string;
+    };
+
+    reader.readAsDataURL(file);
+  };
 
   const handleOpenCreate = () => {
     setEditingId(null);
@@ -228,6 +307,11 @@ export default function ScreeningsManager() {
         alert('لطفاً نقشه سالن را مشخص فرمایید.');
         return;
       }
+    }
+
+    if (!posterUrl.trim()) {
+      alert('لطفاً تصویر پوستر فیلم را از طریق دکمه آپلود فایل انتخاب نمایید.');
+      return;
     }
 
     const payload = {
@@ -570,29 +654,172 @@ export default function ScreeningsManager() {
                   </div>
                 </div>
 
-                <div className="sm:col-span-2 space-y-1.5">
-                  <label className="font-semibold text-slate-300">آدرس تصویر پوستر (نسبت ۲ به ۳) *</label>
-                  <input
-                    type="url"
-                    required
-                    dir="ltr"
-                    placeholder="https://..."
-                    value={posterUrl}
-                    onChange={(e) => setPosterUrl(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white font-mono focus:outline-none focus:border-[#3A86FF]"
-                  />
+                {/* POSTER UPLOAD SECTION */}
+                <div className="sm:col-span-2 space-y-2 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                  <div className="flex items-center justify-between">
+                    <label className="font-bold text-white text-xs flex items-center gap-1.5">
+                      <ImageIcon className="w-4 h-4 text-[#00F0FF]" />
+                      <span>تصویر پوستر فیلم (نسبت عمودی ۲ به ۳) *</span>
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setShowPosterUrlInput(!showPosterUrlInput)}
+                      className="text-[11px] text-[#3A86FF] hover:underline flex items-center gap-1"
+                    >
+                      <LinkIcon className="w-3 h-3" />
+                      <span>{showPosterUrlInput ? 'مخفی‌سازی کادر لینک' : 'یا درج دستی لینک اینترنتی'}</span>
+                    </button>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    {posterUrl ? (
+                      <div className="relative group rounded-xl overflow-hidden border border-white/20 w-24 h-36 flex-shrink-0 bg-black/40">
+                        <img
+                          src={posterUrl}
+                          alt="پیش‌نمایش پوستر"
+                          className="w-full h-full object-cover"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setPosterUrl('')}
+                          className="absolute inset-0 bg-black/75 text-rose-300 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-1 text-[11px] transition-all font-semibold"
+                        >
+                          <Trash2 className="w-4 h-4 text-rose-400" />
+                          <span>حذف تصویر</span>
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="w-24 h-36 rounded-xl border border-dashed border-white/15 flex flex-col items-center justify-center gap-1 text-slate-500 text-[10px] flex-shrink-0 bg-white/[0.01]">
+                        <ImageIcon className="w-6 h-6 text-slate-600" />
+                        <span>بدون پوستر</span>
+                      </div>
+                    )}
+
+                    <div className="flex-1 w-full space-y-2">
+                      <label className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border-2 border-dashed border-white/20 hover:border-[#00F0FF] bg-white/[0.03] hover:bg-white/[0.06] cursor-pointer text-slate-200 text-xs font-semibold transition-all">
+                        {uploadingPoster ? (
+                          <Loader2 className="w-4 h-4 animate-spin text-[#00F0FF]" />
+                        ) : (
+                          <Upload className="w-4 h-4 text-[#00F0FF]" />
+                        )}
+                        <span>
+                          {posterUrl
+                            ? 'تعویض فایل پوستر از سیستم (فایل عکس)...'
+                            : 'انتخاب و آپلود تصویر پوستر از فایل‌های سیستم...'}
+                        </span>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          disabled={uploadingPoster}
+                          onChange={(e) => {
+                            const f = e.target.files?.[0];
+                            if (f) compressAndSetImage(f, 'poster');
+                          }}
+                          className="hidden"
+                        />
+                      </label>
+                      <span className="text-[10px] text-slate-400 block">
+                        فرمت‌های مجاز: JPG, PNG, WebP (تصویر به صورت خودکار برای سرعت لود بالا بهینه‌سازی می‌شود)
+                      </span>
+                    </div>
+                  </div>
+
+                  {showPosterUrlInput && (
+                    <div className="pt-2 animate-fadeIn">
+                      <input
+                        type="text"
+                        dir="ltr"
+                        placeholder="https://example.com/poster.jpg"
+                        value={posterUrl}
+                        onChange={(e) => setPosterUrl(e.target.value)}
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#181A24] border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-[#3A86FF]"
+                      />
+                    </div>
+                  )}
                 </div>
 
-                <div className="sm:col-span-2 space-y-1.5">
-                  <label className="font-semibold text-slate-300">آدرس تصویر بنر عریض (اختیاری)</label>
-                  <input
-                    type="url"
-                    dir="ltr"
-                    placeholder="https://..."
-                    value={bannerUrl}
-                    onChange={(e) => setBannerUrl(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white font-mono focus:outline-none focus:border-[#3A86FF]"
-                  />
+                {/* BANNER UPLOAD SECTION */}
+                <div className="sm:col-span-2 space-y-2 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                  <div className="flex items-center justify-between">
+                    <label className="font-bold text-white text-xs flex items-center gap-1.5">
+                      <ImageIcon className="w-4 h-4 text-purple-400" />
+                      <span>تصویر بنر عریض فیلم (افقی ۱۶ به ۹ - اختیاری)</span>
+                    </label>
+                    <button
+                      type="button"
+                      onClick={() => setShowBannerUrlInput(!showBannerUrlInput)}
+                      className="text-[11px] text-[#3A86FF] hover:underline flex items-center gap-1"
+                    >
+                      <LinkIcon className="w-3 h-3" />
+                      <span>{showBannerUrlInput ? 'مخفی‌سازی کادر لینک' : 'یا درج دستی لینک اینترنتی'}</span>
+                    </button>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
+                    {bannerUrl ? (
+                      <div className="relative group rounded-xl overflow-hidden border border-white/20 w-44 h-24 flex-shrink-0 bg-black/40">
+                        <img
+                          src={bannerUrl}
+                          alt="پیش‌نمایش بنر"
+                          className="w-full h-full object-cover"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setBannerUrl('')}
+                          className="absolute inset-0 bg-black/75 text-rose-300 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-1 text-[11px] transition-all font-semibold"
+                        >
+                          <Trash2 className="w-4 h-4 text-rose-400" />
+                          <span>حذف بنر</span>
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="w-44 h-24 rounded-xl border border-dashed border-white/15 flex flex-col items-center justify-center gap-1 text-slate-500 text-[10px] flex-shrink-0 bg-white/[0.01]">
+                        <ImageIcon className="w-6 h-6 text-slate-600" />
+                        <span>بدون بنر عریض</span>
+                      </div>
+                    )}
+
+                    <div className="flex-1 w-full space-y-2">
+                      <label className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border-2 border-dashed border-white/20 hover:border-purple-400 bg-white/[0.03] hover:bg-white/[0.06] cursor-pointer text-slate-200 text-xs font-semibold transition-all">
+                        {uploadingBanner ? (
+                          <Loader2 className="w-4 h-4 animate-spin text-purple-400" />
+                        ) : (
+                          <Upload className="w-4 h-4 text-purple-400" />
+                        )}
+                        <span>
+                          {bannerUrl
+                            ? 'تعویض فایل بنر از سیستم (فایل عکس)...'
+                            : 'انتخاب و آپلود تصویر بنر از فایل‌های سیستم...'}
+                        </span>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          disabled={uploadingBanner}
+                          onChange={(e) => {
+                            const f = e.target.files?.[0];
+                            if (f) compressAndSetImage(f, 'banner');
+                          }}
+                          className="hidden"
+                        />
+                      </label>
+                      <span className="text-[10px] text-slate-400 block">
+                        نمایش در پس‌زمینه بالای صفحه اختصاصی اکران و اسلایدر صفحه اصلی
+                      </span>
+                    </div>
+                  </div>
+
+                  {showBannerUrlInput && (
+                    <div className="pt-2 animate-fadeIn">
+                      <input
+                        type="text"
+                        dir="ltr"
+                        placeholder="https://example.com/banner.jpg"
+                        value={bannerUrl}
+                        onChange={(e) => setBannerUrl(e.target.value)}
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-[#181A24] border border-white/15 text-white font-mono text-xs focus:outline-none focus:border-[#3A86FF]"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="sm:col-span-2 space-y-1.5">

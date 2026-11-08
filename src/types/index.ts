@@ -116,6 +116,12 @@ export interface AdminUser {
   createdAt: string;
 }
 
+export interface SavedPaymentCard {
+  id: string;
+  label: string;
+  last4: string;
+}
+
 export interface SiteSettings {
   logoUrl?: string;
   brandName: string;
@@ -129,10 +135,12 @@ export interface SiteSettings {
   contactAddress?: string;
   contactInstagram?: string;
   contactTelegram?: string;
+  contactTelegramSupport?: string;
   // Payment & Reservation parameters
   seatHoldMinutes?: number;
   paymentExpiresIn?: string;
   varizaCardLast4?: string;
+  savedCards?: SavedPaymentCard[];
   varizaApiKey?: string;
   varizaWebhookSecret?: string;
   appUrl?: string;

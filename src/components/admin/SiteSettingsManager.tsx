@@ -266,27 +266,40 @@ export default function SiteSettingsManager() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-semibold text-slate-300">پست الکترونیک (ایمیل)</label>
+                    <label className="font-semibold text-slate-300">آیدی پیج اینستاگرام (بدون @)</label>
                     <input
-                      type="email"
+                      type="text"
                       dir="ltr"
-                      placeholder="contact@orbit-cinema.ir"
-                      value={settings.contactEmail || ''}
-                      onChange={(e) => setSettings({ ...settings, contactEmail: e.target.value })}
+                      placeholder="orbit_screenings"
+                      value={settings.contactInstagram || ''}
+                      onChange={(e) => setSettings({ ...settings, contactInstagram: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white focus:outline-none focus:border-[#3A86FF] font-mono text-left"
                     />
                   </div>
-                </div>
 
-                <div className="space-y-1.5">
-                  <label className="font-semibold text-slate-300">نشانی دفتر مرکزی</label>
-                  <input
-                    type="text"
-                    placeholder="تهران، خیابان ولیعصر..."
-                    value={settings.contactAddress || ''}
-                    onChange={(e) => setSettings({ ...settings, contactAddress: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white focus:outline-none focus:border-[#3A86FF]"
-                  />
+                  <div className="space-y-1.5">
+                    <label className="font-semibold text-slate-300">آیدی کانال تلگرام (بدون @)</label>
+                    <input
+                      type="text"
+                      dir="ltr"
+                      placeholder="orbit_screenings"
+                      value={settings.contactTelegram || ''}
+                      onChange={(e) => setSettings({ ...settings, contactTelegram: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white focus:outline-none focus:border-[#3A86FF] font-mono text-left"
+                    />
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="font-semibold text-slate-300">آیدی پشتیبانی تلگرام (بدون @)</label>
+                    <input
+                      type="text"
+                      dir="ltr"
+                      placeholder="orbit_support"
+                      value={settings.contactTelegramSupport || ''}
+                      onChange={(e) => setSettings({ ...settings, contactTelegramSupport: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-white focus:outline-none focus:border-[#3A86FF] font-mono text-left"
+                    />
+                  </div>
                 </div>
               </div>
 

@@ -5868,9 +5868,17 @@
     "contactAddress": "تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸",
     "contactInstagram": "orbit_screenings",
     "contactTelegram": "orbit_screenings",
+    "contactTelegramSupport": "orbit_support",
     "seatHoldMinutes": 30,
     "paymentExpiresIn": "30m",
     "varizaCardLast4": "8589",
+    "savedCards": [
+      {
+        "id": "card-1",
+        "label": "کارت حساب پیش‌فرض",
+        "last4": "8589"
+      }
+    ],
     "appUrl": ""
   },
   "tickets": [

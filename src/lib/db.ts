@@ -491,9 +491,13 @@ export function getDb(): DatabaseSchema {
         contactAddress: 'تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸',
         contactInstagram: 'orbit_screenings',
         contactTelegram: 'orbit_screenings',
+        contactTelegramSupport: 'orbit_support',
         seatHoldMinutes: 30,
         paymentExpiresIn: '30m',
         varizaCardLast4: '8589',
+        savedCards: [
+          { id: 'card-1', label: 'کارت حساب پیش‌فرض', last4: '8589' }
+        ],
         appUrl: '',
       };
       mutated = true;
@@ -529,6 +533,16 @@ export function getDb(): DatabaseSchema {
       }
       if (!parsed.settings.contactTelegram) {
         parsed.settings.contactTelegram = 'orbit_screenings';
+        settingsMutated = true;
+      }
+      if (!parsed.settings.contactTelegramSupport) {
+        parsed.settings.contactTelegramSupport = 'orbit_support';
+        settingsMutated = true;
+      }
+      if (!parsed.settings.savedCards || !Array.isArray(parsed.settings.savedCards)) {
+        parsed.settings.savedCards = [
+          { id: 'card-1', label: 'کارت حساب پیش‌فرض', last4: parsed.settings.varizaCardLast4 || '8589' }
+        ];
         settingsMutated = true;
       }
       if (!parsed.settings.seatHoldMinutes) {
@@ -1293,10 +1307,12 @@ export function getSiteSettings(): SiteSettings {
       contactAddress: 'تهران، خیابان ولیعصر، بالاتر از میدان ونک، برج نگار، طبقه ۸',
       contactInstagram: 'orbit_screenings',
       contactTelegram: 'orbit_screenings',
+      contactTelegramSupport: 'orbit_support',
       seatHoldMinutes: 30,
       paymentExpiresIn: '30m',
       varizaCardLast4: '8589',
-      appUrl: 'https://small-crabs-say.loca.lt',
+      savedCards: [{ id: 'card-1', label: 'کارت حساب پیش‌فرض', last4: '8589' }],
+      appUrl: '',
     }
   );
 }
